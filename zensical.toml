@@ -1,0 +1,91 @@
+# ─────────────────────────────────────────────────────────────
+#  Site settings — change these three lines to make it yours
+# ─────────────────────────────────────────────────────────────
+[project]
+site_name = "Study Hub"
+site_description = "Free study guides for economics, math and management."
+site_url = "https://barr-studiesguelph.github.io/study-guides/"
+repo_url = "https://github.com/barr-studiesguelph/study-guides"
+repo_name = "study-guides"
+copyright = "Study Hub"
+
+# No "nav" list here on purpose: the menu builds itself from the
+# folders in docs/. Drop a new .md file into docs/economics/ and it
+# appears under Economics automatically.
+
+# Math rendering (KaTeX) and small style tweaks
+extra_javascript = [
+  "javascripts/katex.js",
+  "https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.js",
+  "https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/contrib/auto-render.min.js",
+]
+extra_css = [
+  "https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.css",
+  "stylesheets/extra.css",
+]
+
+[project.theme]
+language = "en"
+features = [
+  "content.code.copy",
+  "content.tabs.link",
+  "content.tooltips",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.path",
+  "navigation.sections",
+  "navigation.tabs",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  "toc.follow",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "indigo"
+accent = "amber"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "indigo"
+accent = "amber"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+tables = {}
+toc.permalink = true
+pymdownx.arithmatex.generic = true
+pymdownx.betterem = {}
+pymdownx.caret = {}
+pymdownx.details = {}
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.highlight.anchor_linenums = true
+pymdownx.inlinehilite = {}
+pymdownx.mark = {}
+pymdownx.smartsymbols = {}
+pymdownx.superfences.custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+pymdownx.tabbed.alternate_style = true
+pymdownx.tasklist.custom_checkbox = true
+pymdownx.tilde = {}
