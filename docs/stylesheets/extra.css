@@ -1,0 +1,4 @@
+/* Give practice-question boxes a little breathing room */
+.md-typeset details { margin: 1em 0; }
+/* Keep wide formulas from breaking the layout on phones */
+.md-typeset .arithmatex { overflow-x: auto; overflow-y: hidden; }
