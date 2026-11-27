@@ -22,6 +22,14 @@ To change the site name, colours or footer, edit `zensical.toml`. To change the 
 
 That's it. The menu updates on its own and the site republishes in about a minute.
 
+## Adding an interactive study tool (flashcards, tests)
+
+For a Claude-made interactive study tool like MGMT 1000, the tool keeps its own design and features:
+
+1. Create a folder for the course inside the subject, for example `docs/management/mgmt-1010/`.
+2. Save the tool's HTML in that folder as `index.html`.
+3. Add a line linking to it in the subject's `index.md`, for example `- [MGMT 1010: Course name](mgmt-1010/index.html): what it covers`.
+
 **New subject?** Create a new folder in `docs` (for example `docs/accounting/`) with an `index.md` inside it, the same way the existing subjects work.
 
 ## Preview on your own computer (optional)
