@@ -1,0 +1,1103 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>MGMT 1000 Study Set</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: one 960px study column under a sticky tab bar; index-card surfaces, a highlighter-yellow accent for "what to remember" */
+:root{
+  --bg:#EDF0F4; --surface:#FFFFFF; --surface-2:#F5F7FA; --ink:#141B26; --muted:#586374; --line:#D3DAE4;
+  --hl:#F4C542; --hl-ink:#141B26; --btn:#1C2B45; --btn-fg:#FFFFFF; --focus:#2C5BD6;
+  --ok:#1B7550; --ok-bg:#E2F2E9; --bad:#AE3828; --bad-bg:#F8E4E0;
+  --display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --ui:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F141B; --surface:#171E28; --surface-2:#1C2430; --ink:#E5EAF1; --muted:#9AA5B5; --line:#2B3544;
+  --hl:#E9B835; --hl-ink:#141B26; --btn:#DCE4F0; --btn-fg:#121822; --focus:#7FA2FF;
+  --ok:#62C79A; --ok-bg:#15301F; --bad:#F2917F; --bad-bg:#3A1D18; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F141B; --surface:#171E28; --surface-2:#1C2430; --ink:#E5EAF1; --muted:#9AA5B5; --line:#2B3544;
+  --hl:#E9B835; --hl-ink:#141B26; --btn:#DCE4F0; --btn-fg:#121822; --focus:#7FA2FF;
+  --ok:#62C79A; --ok-bg:#15301F; --bad:#F2917F; --bad-bg:#3A1D18; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+button,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+.mark{background:linear-gradient(transparent 58%,var(--hl) 58%,var(--hl) 92%,transparent 92%);padding:0 .08em}
+
+header.top{padding-block:36px 18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,52px);line-height:1.02;letter-spacing:-.02em;margin:6px 0 10px;text-wrap:balance}
+.lede{font-family:var(--body);font-size:17px;color:var(--muted);max-width:62ch;margin:0}
+
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.tabrow{display:flex;gap:4px;overflow-x:auto}
+.tab{appearance:none;border:0;background:none;padding:12px 14px 11px;font-weight:600;font-size:15px;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--hl)}
+.tab .n{font-family:var(--mono);font-size:11px;color:var(--muted);margin-left:6px}
+
+main{padding-block:24px 64px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{appearance:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:500;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--btn);color:var(--btn-fg);border-color:var(--btn)}
+.btn{appearance:none;border:1px solid var(--btn);background:var(--btn);color:var(--btn-fg);border-radius:8px;padding:9px 16px;font-weight:600;font-size:14px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--muted)}
+.btn:disabled{opacity:.45;cursor:default}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+
+/* Summaries */
+.chapter-head{display:grid;gap:6px;margin:22px 0 18px}
+.chapter-head .num{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.chapter-head h2{font-family:var(--display);font-weight:800;font-size:clamp(26px,4.4vw,36px);line-height:1.08;margin:0;text-wrap:balance}
+.chapter-head p{font-family:var(--body);font-size:17px;margin:0;max-width:65ch;color:var(--muted)}
+.sum-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
+@media (max-width:820px){.sum-grid{grid-template-columns:minmax(0,1fr)}}
+.section{border-top:1px solid var(--line);padding-block:16px 6px}
+.section h3{display:flex;gap:10px;align-items:baseline;font-family:var(--display);font-weight:600;font-size:20px;margin:0 0 6px;text-wrap:balance}
+.section h3 .sid{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--muted);flex:none}
+.section ul{margin:0;padding-left:20px;font-family:var(--body);font-size:16px;line-height:1.6;max-width:66ch}
+.section li{margin-bottom:6px}
+.section li b{font-weight:600;background:linear-gradient(transparent 62%,color-mix(in srgb,var(--hl) 55%,transparent) 62%)}
+aside.terms{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 64px);max-height:calc(100vh - 90px);overflow:auto}
+@media (max-width:820px){aside.terms{position:static;max-height:none}}
+aside.terms h4{margin:0 0 10px;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+aside.terms dl{margin:0;display:grid;gap:10px}
+aside.terms dt{font-weight:600;font-size:14px}
+aside.terms dd{margin:0;font-size:13.5px;color:var(--muted);line-height:1.45}
+.sum-actions{margin-top:20px}
+
+/* Flashcards */
+.fc-tools{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:18px}
+.toggle{display:inline-flex;align-items:center;gap:8px;font-size:14px;cursor:pointer;user-select:none}
+.toggle input{width:18px;height:18px;accent-color:var(--btn)}
+.stage{perspective:1400px;max-width:720px;margin:0 auto}
+.card{position:relative;width:100%;min-height:300px;cursor:pointer;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.7,.2,1);border:0;background:none;padding:0;display:block;text-align:center}
+.card.flipped{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 0 var(--line),0 10px 30px -18px rgba(10,20,40,.35);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:36px 28px;gap:12px;overflow:auto}
+.face.back{transform:rotateY(180deg)}
+.face .lab{position:absolute;top:14px;left:16px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.face .tag{position:absolute;top:14px;right:16px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.face .known{position:absolute;bottom:14px;right:16px;font-size:12px;font-weight:600;color:var(--ok)}
+.face .txt-term{font-family:var(--display);font-weight:800;font-size:clamp(26px,5vw,38px);line-height:1.1;text-wrap:balance}
+.face .txt-def{font-family:var(--body);font-size:clamp(17px,2.6vw,21px);line-height:1.5;max-width:46ch;text-wrap:pretty}
+.face .hint{font-size:12px;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){.card{transition:none}}
+.fc-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;max-width:720px;margin:16px auto 0;flex-wrap:wrap}
+.counter{font-family:var(--mono);font-size:14px;font-variant-numeric:tabular-nums}
+.bar{height:4px;background:var(--line);border-radius:4px;max-width:720px;margin:14px auto 0;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--hl);width:0;transition:width .25s}
+.sort{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.btn.learn{background:transparent;color:var(--bad);border-color:var(--bad)}
+.btn.know{background:transparent;color:var(--ok);border-color:var(--ok)}
+.tally{text-align:center;color:var(--muted);font-size:13px;margin-top:10px}
+.kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-radius:4px;padding:1px 5px;background:var(--surface-2)}
+.empty{max-width:560px;margin:30px auto;text-align:center;background:var(--surface);border:1px dashed var(--line);border-radius:14px;padding:30px 22px}
+
+/* Tests */
+.test-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px}
+.tcard h3{margin:0;font-family:var(--display);font-weight:600;font-size:19px;line-height:1.2}
+.tcard .meta{font-size:13px;color:var(--muted)}
+.tcard .best{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.tcard .best b{color:var(--ink);font-weight:500}
+.tcard .btn{margin-top:auto;align-self:flex-start}
+.group-label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px}
+.group-label:first-child{margin-top:0}
+.intro-note{font-family:var(--body);font-size:16px;color:var(--muted);max-width:64ch;margin:0 0 18px}
+
+.test-head{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:flex-end;margin-bottom:8px}
+.test-head h2{font-family:var(--display);font-weight:800;font-size:clamp(24px,4vw,32px);margin:0;line-height:1.1}
+.qsec{margin-top:26px}
+.qsec > h3{font-family:var(--display);font-weight:600;font-size:18px;margin:0 0 4px}
+.qsec > p{margin:0 0 12px;color:var(--muted);font-size:13.5px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;margin-bottom:10px}
+.q .qtop{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:6px}
+.q .stem{font-family:var(--body);font-size:17px;line-height:1.5;margin:0 0 12px}
+.q .stem em{font-style:normal;color:var(--muted);font-size:15px;display:block;margin-bottom:4px;font-family:var(--ui)}
+.opts{display:grid;gap:8px}
+.opts.two{grid-template-columns:1fr 1fr}
+.opt{appearance:none;text-align:left;border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:10px 12px;cursor:pointer;font-size:14.5px;line-height:1.4;display:flex;gap:10px;align-items:flex-start}
+.opt .k{font-family:var(--mono);font-size:12px;color:var(--muted);flex:none;width:16px;padding-top:2px}
+.opt:hover{border-color:var(--muted)}
+.opt[aria-pressed="true"]{border-color:var(--btn);box-shadow:inset 0 0 0 1px var(--btn);background:var(--surface)}
+.opt.is-right{border-color:var(--ok);background:var(--ok-bg);box-shadow:none}
+.opt.is-wrong{border-color:var(--bad);background:var(--bad-bg);box-shadow:none}
+.graded .opt{cursor:default}
+.mrow{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.mrow:first-of-type{border-top:0}
+.mrow .def{font-family:var(--body);font-size:15.5px;line-height:1.45}
+.mrow select{width:100%;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2)}
+.mrow.is-right select{border-color:var(--ok);background:var(--ok-bg)}
+.mrow.is-wrong select{border-color:var(--bad);background:var(--bad-bg)}
+.mrow .fix{grid-column:1/-1;font-size:13px;color:var(--bad)}
+@media (max-width:560px){.mrow{grid-template-columns:minmax(0,1fr)}.opts.two{grid-template-columns:1fr}}
+.feedback{margin-top:10px;font-size:14px;line-height:1.5;padding:10px 12px;border-radius:8px;background:var(--surface-2);border-left:3px solid var(--muted)}
+.feedback.ok{border-left-color:var(--ok)}
+.feedback.bad{border-left-color:var(--bad)}
+.feedback b{font-weight:600}
+.verdict{font-weight:600}
+.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
+
+.submitbar{position:sticky;bottom:0;margin-top:18px;background:var(--bg);border-top:1px solid var(--line);padding-block:12px calc(12px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.submitbar .count{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.warn{font-size:13px;color:var(--bad)}
+
+.result{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0 6px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center}
+@media (max-width:560px){.result{grid-template-columns:minmax(0,1fr)}}
+.score{font-family:var(--display);font-weight:800;font-size:56px;line-height:1;font-variant-numeric:tabular-nums}
+.score small{font-size:20px;color:var(--muted);font-weight:600}
+.result .breakdown{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted);margin:6px 0 12px}
+.result .breakdown b{color:var(--ink);font-variant-numeric:tabular-nums}
+.result .msg{font-family:var(--body);font-size:16px;margin:0}
+footer.src{font-size:12.5px;color:var(--muted);padding-block:0 40px}
+footer.src a{color:inherit}
+</style>
+
+<header class="top wrap">
+  <a href="../../" style="display:inline-block;margin-bottom:14px;font-size:14px;color:var(--muted)">&larr; Study Hub: Management</a>
+  <div class="eyebrow">MGMT 1000 · Introduction to Management · Chapters 1–6</div>
+  <h1><span class="mark">MGMT 1000</span> Study Set</h1>
+  <p class="lede">Chapter summaries, flashcards, and randomized practice tests built from the University of Guelph open textbook by Rodenburg, Conway &amp; Dajka.</p>
+</header>
+
+<nav class="tabs" aria-label="Study modes">
+  <div class="wrap tabrow" role="tablist">
+    <button class="tab" role="tab" id="tab-summaries" data-tab="summaries" aria-controls="panel-summaries">Summaries</button>
+    <button class="tab" role="tab" id="tab-flashcards" data-tab="flashcards" aria-controls="panel-flashcards">Flashcards<span class="n" id="fc-total"></span></button>
+    <button class="tab" role="tab" id="tab-tests" data-tab="tests" aria-controls="panel-tests">Practice tests<span class="n">9</span></button>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section id="panel-summaries" role="tabpanel" aria-labelledby="tab-summaries">
+    <div class="chips" id="sum-chips" aria-label="Choose a chapter"></div>
+    <div id="sum-body"></div>
+  </section>
+
+  <section id="panel-flashcards" role="tabpanel" aria-labelledby="tab-flashcards" hidden>
+    <div class="fc-tools">
+      <div class="chips" id="fc-chips" aria-label="Choose cards"></div>
+      <div class="row">
+        <label class="toggle"><input type="checkbox" id="fc-deffirst"> Definition first</label>
+        <label class="toggle"><input type="checkbox" id="fc-learning"> Still learning only</label>
+      </div>
+    </div>
+    <div id="fc-area"></div>
+  </section>
+
+  <section id="panel-tests" role="tabpanel" aria-labelledby="tab-tests" hidden>
+    <div id="test-area"></div>
+  </section>
+</main>
+
+<footer class="src wrap">
+  Source: <a href="https://books.lib.uoguelph.ca/mgmt1000/" target="_blank" rel="noopener">Introduction to Management</a>, Kathleen Rodenburg, Michael Conway &amp; Karley Dajka, University of Guelph, CC BY 4.0. Summaries and questions are paraphrased study aids; check your course outline for what your exam covers.
+</footer>
+
+<script>
+const CH = [
+{n:1, title:"Understanding the Canadian Business System",
+ overview:"What a business is, how profit and risk work, and the economic systems (capitalism, communism, socialism, mixed) that businesses operate within, including Canada’s mixed market economy.",
+ sections:[
+  ["1.1","Understanding Business & Profit",[
+   "A <b>business</b> is an organization that tries to earn a profit by providing goods and services customers want. <b>Goods</b> are tangible (a laptop); <b>services</b> are intangible and can’t be held, touched, or stored (a haircut, a flight, legal advice).",
+   "<b>Standard of living</b> is the output of goods and services people can buy with the money they have. High wages don’t guarantee a high standard of living: Switzerland and Germany pay more than the U.S., but higher prices mean the same money buys less.",
+   "<b>Quality of life</b> is the general level of human happiness, based on life expectancy, education, health, sanitation, and leisure time. In Mercer’s 2023 ranking Vienna was first; seven of the top 10 cities were in Western Europe, one in Canada, none in the U.S.; Khartoum, Sudan ranked lowest.",
+   "<b>Risk</b> is the potential to lose time and money or fail to meet goals. <b>Revenue</b> is money from sales; <b>costs</b> are expenses such as rent, salaries, and supplies. Revenue left after all costs is <b>profit</b>; costs greater than revenue is a <b>loss</b>.",
+   "Risk and profit move together: the greater the risk, the greater the potential profit or loss. Sony lost ground to Apple by clinging to proprietary technology instead of digital music; it later recovered with PlayStation 4.",
+   "A <b>not-for-profit organization</b> pursues a goal other than profit (charities, most hospitals, zoos, arts and religious groups). Government is the largest not-for-profit. Non-government not-for-profits contributed $216.5 billion to Canada’s economy in 2022.",
+   "Not-for-profits compete for talented employees, volunteer time, and donations, and use the same management tools as businesses: strategy, budgeting, performance measurement, and accountability. The line between the two sectors has blurred."]],
+  ["1.2","Economic Systems Around the World",[
+   "<b>Economics</b> is the study of how individuals, businesses, governments, and nations allocate limited resources to satisfy unlimited wants and needs.",
+   "Resources, also called <b>factors of production</b>, are the inputs used to make outputs: land and natural resources, labour, capital (buildings, equipment, cash), entrepreneurship, and knowledge. Entrepreneurship supplies the drive and creativity that combine the others.",
+   "In the <b>circular flow</b>, households supply labour, land, and capital to businesses and receive income (wages, rent, interest). Businesses use those inputs to produce goods and services, sell them to households, and use the revenue to buy more resources.",
+   "Economic systems differ in who decides four things: how to allocate resources, what to produce and how much, how and by whom it is produced, and how output is distributed.",
+   "<b>Capitalism</b> (private enterprise) rests on competition and private ownership of resources. It guarantees the rights to own property, make a profit, make free choices, and compete. Profit is the main incentive; when profits are high, new firms enter and competition pushes prices down.",
+   "<b>Communism</b> is the opposite: government owns virtually all resources and centrally decides what, where, and how much is produced and at what price. The lack of rewards for excellence lowered productivity and caused shortages, contributing to the Soviet Union’s 1991 collapse. North Korea and Cuba are the main remaining examples.",
+   "<b>Socialism</b>: government owns or tightly controls basic industries such as transportation, communications, and utilities, while smaller businesses like retail may be private. Citizens get more services (health care, unemployment benefits), and taxes tend to be higher. Examples: UK, Denmark, India, Israel.",
+   "<b>Mixed economies</b> fall between the extremes. The U.S. leans toward capitalism but uses policy to promote stability and fair competition. Canada, Sweden, and the UK are mixed; in Canada government is involved in communications, transportation, utilities, some natural resources, and health care."]],
+  ["1.3","The Canadian Market Economy",[
+   "Canada is primarily a free-market system, but the federal government controls some basic services, such as the postal service and air traffic control, and provides socialist-style programs like retirement benefits and public health care.",
+   "Adam Smith’s <i>The Wealth of Nations</i> (1776) argued that competition alone gives consumers the best products at the best prices. The <b>invisible hand</b> of competition makes markets work, so overpriced sellers find no buyers and overpriced job-seekers aren’t hired."]]
+ ],
+ terms:[
+  ["Business","An organization that strives for a profit by providing goods and services its customers want."],
+  ["Goods","Tangible items manufactured by businesses, such as laptops."],
+  ["Services","Intangible offerings that can’t be held, touched, or stored, such as haircuts, legal advice, or air travel."],
+  ["Standard of living","The output of goods and services people can buy with the money they have."],
+  ["Quality of life","The general level of human happiness, based on life expectancy, education, health, sanitation, and leisure time."],
+  ["Risk","The potential to lose time and money or otherwise fail to accomplish an organization’s goals."],
+  ["Revenue","Money a company receives by selling goods or providing services to customers."],
+  ["Costs","Expenses such as rent, salaries, supplies, and transportation incurred in creating and selling goods and services."],
+  ["Profit","Money left over after a company pays all its costs out of its revenue."],
+  ["Loss","The result when a company’s costs are greater than its revenues."],
+  ["Not-for-profit organization","An organization that exists to achieve a goal other than profit, such as a charity, hospital, or zoo."],
+  ["Economics","The study of how individuals, businesses, governments, and nations allocate limited resources to satisfy unlimited wants and needs."],
+  ["Factors of production","The resources used to produce goods and services: land, labour, capital, entrepreneurship, and knowledge."],
+  ["Entrepreneurship","The skill, drive, and creativity that bring the other resources together to produce a good or service."],
+  ["Capital","Buildings, equipment, vehicles, cash, and similar resources needed for the production process."],
+  ["Circular flow","Model in which households supply resources to businesses for income, and businesses sell goods and services back to households for revenue."],
+  ["Capitalism","An economic system based on competition and private ownership of the factors of production; also called the private enterprise system."],
+  ["Communism","An economic system in which the government owns virtually all resources and centrally controls all markets."],
+  ["Socialism","An economic system in which basic industries are government-owned or under strong government control, while smaller businesses may be private."],
+  ["Mixed economy","An economy that combines elements of more than one economic system, as Canada does."],
+  ["Invisible hand","Adam Smith’s idea that competition alone makes markets work effectively, so regulation isn’t needed."]
+ ],
+ mc:[
+  ["Which of these is a service rather than a good?","A haircut at a salon",["A laptop","A pair of running shoes","A bag of apples"],"Services are intangible: they can’t be held, touched, or stored."],
+  ["Switzerland has higher average wages than the U.S. but not a higher standard of living. Why?","Prices are much higher, so the same money buys less",["Swiss workers pay no income tax","Standard of living is measured by wages alone","Switzerland produces only services"],"Standard of living depends on what people can buy with their money, so high prices offset high wages."],
+  ["Which city ranked highest for quality of life in Mercer’s 2023 survey?","Vienna, Austria",["Toronto, Canada","New York, United States","Khartoum, Sudan"],"Vienna ranked first; Khartoum ranked lowest. No U.S. city made the top 10."],
+  ["What is the general relationship between risk and profit?","The greater the risk, the greater the potential for profit or loss",["Higher risk always guarantees higher profit","Risk and profit are unrelated","Lower risk produces higher potential profit"],"Risk raises the potential reward and the potential loss; it guarantees neither."],
+  ["Why did Sony lose ground to Apple in personal music devices?","It kept proprietary technology instead of embracing digital music and cross-platform options",["It priced its products too low","It became a not-for-profit organization","It focused too heavily on streaming"],"Sony misjudged the market; Apple took the digital music market with the iPod and iTunes."],
+  ["What is the largest and most pervasive not-for-profit group?","Government",["The United Way","Habitat for Humanity","Hospitals"],"The text identifies government as the largest not-for-profit group."],
+  ["Not-for-profit organizations compete with each other for all of the following EXCEPT:","Profits to pay shareholders",["Talented employees","Volunteers’ limited time","Donations"],"Not-for-profits don’t pursue profit; they compete for people, time, and money."],
+  ["Which is NOT one of the factors of production listed in the text?","Government regulation",["Land and natural resources","Labour","Entrepreneurship"],"The five resources are land and natural resources, labour, capital, entrepreneurship, and knowledge."],
+  ["In the circular flow model, what do households receive from businesses in exchange for resources?","Income such as wages, rent, and interest",["Factors of production","Business revenue","Government transfers"],"Households provide labour, land, and capital and are paid income for them."],
+  ["Which is NOT a right guaranteed under capitalism?","The right to a government-assigned job",["The right to own property","The right to make a profit","The right to compete"],"Capitalism guarantees the rights to own property, make a profit, make free choices, and compete. Government doesn’t assign jobs."],
+  ["In which system does government decide what is produced, how much, where, and at what price?","Communism",["Capitalism","A mixed economy","Monopolistic competition"],"Communism centralizes economic decisions in government."],
+  ["Which countries does the text name as the best remaining examples of communist economies?","North Korea and Cuba",["China and Russia","Denmark and Israel","Sweden and the UK"],"Russia and China have moved toward market systems; North Korea and Cuba remain."],
+  ["Compared with most capitalist countries, socialist countries typically have:","More public services, such as health care, and higher taxes",["Lower taxes and fewer services","No private businesses at all","No government role in industry"],"Higher service levels come with higher taxes and sometimes higher unemployment."],
+  ["Why is Canada described as a mixed economy?","It is mainly free-market, but government provides some services such as health care and the postal service",["Government owns every industry","Government plays no role in business","It switches between communism and capitalism each election"],"Canada combines private enterprise with government-run services and social programs."],
+  ["Who described the “invisible hand” of competition in The Wealth of Nations (1776)?","Adam Smith",["Michael Porter","Karl Marx","Vladimir Kvint"],"Smith argued competition alone would deliver the best products at the best prices."],
+  ["Under capitalism, what usually happens when an industry earns high profits?","New firms enter, competition rises, and prices tend to fall",["Government caps prices","Existing firms raise prices further","Workers are assigned to that industry"],"Entry and competition push prices down and force firms to become more efficient."]
+ ],
+ tf:[
+  ["Goods are intangible offerings that can’t be held or stored.",false,"That describes services. Goods are tangible."],
+  ["A company whose costs are greater than its revenues shows a loss.",true,"Profit is revenue left after costs; costs above revenue produce a loss."],
+  ["Seven of the top 10 cities in Mercer’s 2023 quality-of-life ranking were in Western Europe.",true,"Seven were in Western Europe, two in Australia/New Zealand, and one in Canada."],
+  ["Not-for-profit managers don’t need business skills like budgeting and strategy.",false,"They use the same concepts as for-profit managers: strategy, budgeting, performance measurement, and accountability."],
+  ["In pure capitalism, the government sets prices to coordinate economic activity.",false,"In pure capitalism all resources are privately owned and government doesn’t set prices."],
+  ["Communism raised productivity because everyone was guaranteed a job.",false,"Tight controls and no rewards for excellence led to lower productivity and shortages."],
+  ["In Denmark, most businesses are private, yet about two-thirds of the population is sustained by state welfare programs.",true,"Denmark is the text’s example of how socialist systems vary."],
+  ["The U.S. economy is an example of pure capitalism.",false,"It leans toward capitalism but is a mixed economy that uses government policy and transfers."],
+  ["Canada’s federal government controls some basic services, such as the postal service and air traffic control.",true,"These are examples of government involvement in Canada’s mostly free-market economy."],
+  ["Profit is the main incentive in a capitalist system.",true,"Profit encourages entrepreneurship and funds production, jobs, dividends, and taxes."],
+  ["Knowledge is one of the resources listed as a factor of production.",true,"The list is land, labour, capital, entrepreneurship, and knowledge."],
+  ["Government is the smallest not-for-profit group.",false,"Government is the largest and most pervasive not-for-profit group."]
+ ]},
+
+{n:2, title:"The Macro Environment of Business (PEST)",
+ overview:"The external forces managers can’t control: the economy and how it’s measured and managed, technology, politics and law, and social and demographic change.",
+ sections:[
+  ["2.1","Organizational Boundaries and Environments",[
+   "Managers control the <b>internal environment</b>: day-to-day choices about suppliers, hiring, products, and where to sell.",
+   "The <b>external environment</b> is generally beyond management’s control and keeps changing. The text groups it into seven sub-environments: economic, political and legal, demographic, social, competitive, global, and technological. Managers must keep studying it and adapt.",
+   "Natural and human-made disasters also matter. The 2010 Deepwater Horizon explosion killed 11 workers, released over 3 million barrels of oil over 87 days, and has cost BP more than $60 billion."]],
+  ["2.2","The Economic Environment",[
+   "Economies share three goals: <b>growth</b>, <b>high employment</b>, and <b>price stability</b>.",
+   "<b>Gross domestic product (GDP)</b> is the market value of all final goods and services produced domestically in a year. It excludes goods made abroad and intermediate products (a chip inside a computer is counted in the computer). A rise in inflation-adjusted GDP means growth; a fall means contraction.",
+   "<b>GDP per capita</b> is often a better measure. India’s total GDP ($3.55T) exceeds Canada’s ($2.14T), but Canada’s per-capita figure (about $53,372) is far higher than India’s (about $2,485).",
+   "The <b>business cycle</b> has four phases: prosperity, recession, depression (usually skipped), and recovery. A typical cycle lasts 3 to 5 years. A <b>recession</b> is often declared after two consecutive quarters of falling GDP; a <b>depression</b> is a long, severe downturn with no agreed definition.",
+   "The <b>unemployment rate</b> is the share of the labour force that is unemployed and actively seeking work (tracked by Statistics Canada). R4 is the common measure (like the U.S. U3); R8 is broader, adding discouraged searchers, involuntary part-timers, and people awaiting new jobs. <b>Full employment</b> in practice means about 95% employed.",
+   "<b>Inflation</b> is a rise in the overall price level. Canada averaged 3.15% from 1915 to 2018, peaking at 21.6% (June 1920) and bottoming at −17.8% (June 1921). The <b>consumer price index (CPI)</b>, reported monthly, tracks a basket of household goods; with 2002 = 100, a 2012 CPI of 121.7 means $100 of goods then cost $121.70. The inflation rate is the percentage change in a price index.",
+   "<b>Lagging indicators</b> describe the recent past (average length of unemployment). <b>Leading indicators</b> predict 3 to 12 months ahead: new claims for unemployment insurance, average weekly manufacturing hours, and housing starts.",
+   "<b>Monetary policy</b> (Bank of Canada) changes the money supply and interest rates: contractionary (less money, higher rates) to fight inflation; expansionary (more money, lower rates) to fight recession.",
+   "<b>Fiscal policy</b> uses government spending and taxes. Expansionary (spend more, tax less) fights recession and widens the deficit; contractionary (spend less, tax more) fights inflation and shrinks the deficit.",
+   "Spending less than tax revenue is a <b>budget surplus</b>; spending more is a <b>budget deficit</b>, financed by borrowing. Deficits are more common, and Canada’s national debt exceeds $1.43 trillion."]],
+  ["2.3","The Technological Environment",[
+   "<b>Technology</b> applies science and engineering knowledge to production and organizational problems. <b>Productivity</b> is the amount of goods and services one worker can produce; technology raises it and lowers costs.",
+   "Examples in business: cloud computing, mobile technology, and robots that automate repetitive work. <b>Technological innovation</b> can be a source of competitive advantage.",
+   "Emerging innovations named: AI, <b>extended reality</b> (XR, covering AR, VR, and mixed reality; challenges are cost, hardware, and privacy), breath testing for disease, generative AI, green hydrogen, and agricultural drones."]],
+  ["2.4","The Political-Legal Environment",[
+   "A country’s political climate has three components: the amount of government activity, the types of laws it passes, and political stability. Firms check these, plus tariffs, quotas, and foreign-ownership rules, before investing abroad.",
+   "Laws and regulators shape operations: drug approvals, securities registration, and rules against misleading advertising (the text’s Pfizer example).",
+   "Indigenous communities and organizations in Canada often sit in a regulatory gap or overlap between federal, provincial, and municipal control, affecting building codes, enforcement, bylaws, and taxation.",
+   "E-commerce raises three legal issues: <b>liability</b> (who is responsible for errors or fraud), <b>intellectual property</b> (copyright, patents, trademarks, trade secrets), and <b>taxation</b> (collecting sales tax where products are sold)."]],
+  ["2.5","The Socio-Cultural Environment",[
+   "Social factors (attitudes, values, ethics, lifestyles) shape what, how, where, and when people buy. They are subjective and hard to predict. Examples: a “poverty of time,” more women in the workforce, and renewed attention to workplace ethics.",
+   "<b>Demography</b> is the study of vital statistics such as age, gender, race and ethnicity, and location. It is uncontrollable and helps define markets and the workforce.",
+   "Generations: baby boomers (1946–1964), Generation X (1965–1980), and millennials (1981–1997), who passed boomers as America’s largest generation in 2017.",
+   "Diversity is growing: U.S. minorities were over 38% of the population in 2015 and are projected to be 56% by 2060, increasing their buying power."]]
+ ],
+ terms:[
+  ["Internal environment","The day-to-day factors managers control, such as suppliers, hiring, products, and where they sell."],
+  ["External environment","Outside forces (economic, political-legal, demographic, social, competitive, global, technological) generally beyond management’s control."],
+  ["Gross domestic product (GDP)","The market value of all final goods and services produced within a country in a given year."],
+  ["GDP per capita","Total production divided by population (the text says per household); often a better indicator of an economy’s performance than total GDP."],
+  ["Business cycle","The ups and downs of economic activity: prosperity, recession, depression, and recovery."],
+  ["Recession","A slowdown in economic activity, commonly identified by GDP falling for two consecutive quarters."],
+  ["Depression","A long recession with very high unemployment and severely curtailed production; it has no uniform definition."],
+  ["Unemployment rate","The percentage of the labour force that is unemployed and actively seeking work."],
+  ["Full employment","In practice, when about 95 percent of those who want to work are employed."],
+  ["Price stability","When the average of prices for goods and services doesn’t change, or changes very little."],
+  ["Inflation","A rise in the overall price level."],
+  ["Consumer price index (CPI)","Monthly Statistics Canada measure of inflation based on price changes in a basket of goods bought by a typical household."],
+  ["Lagging economic indicator","A statistic reporting the status of the economy a few months in the past, such as average length of unemployment."],
+  ["Leading economic indicator","A statistic that predicts the economy 3 to 12 months ahead, such as housing starts."],
+  ["Monetary policy","Bank of Canada actions that change the money supply and short-term interest rates."],
+  ["Fiscal policy","The government’s use of spending and taxation to influence the economy."],
+  ["Budget deficit","When the government spends more than it takes in through taxes."],
+  ["Budget surplus","When the government takes in more through taxes than it spends."],
+  ["National debt","The total accumulated borrowing of the government; over $1.43 trillion in Canada."],
+  ["Technology","The application of science and engineering knowledge to solve production and organizational problems."],
+  ["Productivity","The amount of goods and services one worker can produce."],
+  ["Extended reality (XR)","A superset covering augmented, virtual, and mixed reality."],
+  ["Generative AI","Machine learning that produces text, images, video, and other content from user prompts."],
+  ["Liability","The legal responsibility or obligation of a company or person."],
+  ["Intellectual property laws","Laws, including copyright, that protect creations of the mind such as patents, trademarks, music, and trade secrets."],
+  ["Demography","The study of people’s vital statistics, such as age, gender, race and ethnicity, and location."]
+ ],
+ mc:[
+  ["Which is NOT one of the seven external sub-environments of business?","Internal operations",["Demographic","Competitive","Global"],"The seven are economic, political-legal, demographic, social, competitive, global, and technological."],
+  ["Which is NOT one of the three main economic goals?","Maximizing exports",["Growth","High employment","Price stability"],"The three shared goals are growth, high employment, and price stability."],
+  ["A silicon chip sold to a computer maker isn’t counted directly in GDP because:","It is an intermediate product, already counted in the finished computer",["It was made by a foreign company","Chips are services, not goods","GDP only counts government spending"],"GDP counts only final goods and services to avoid double counting."],
+  ["India’s total GDP is larger than Canada’s, but Canada’s GDP per capita is far higher. What does this show?","Total GDP alone can mislead about performance; per-capita output adds context",["Canada produces more in total than India","GDP per capita is always smaller than GDP for rich countries","India’s economy is shrinking"],"Many economists prefer GDP per capita as an indicator of an economy’s performance."],
+  ["Economists often say a recession has begun when GDP:","Falls for two consecutive quarters",["Falls for one month","Grows more slowly than inflation","Falls for ten years"],"Two consecutive quarters of declining GDP is the common rule of thumb."],
+  ["Which phase of the business cycle is generally skipped?","Depression",["Recession","Recovery","Prosperity"],"The four phases are prosperity, recession, depression, and recovery, and depression is usually skipped."],
+  ["What does the R8 unemployment measure include that R4 does not?","Discouraged job-seekers, involuntary part-timers, and people awaiting confirmed new work",["Only full-time students","Retired workers","Workers employed in the U.S."],"R8 is broader and always higher than R4."],
+  ["With a base year basket of 100, the CPI is 121.7. What does this mean?","Goods that cost $100 in the base year now cost $121.70",["Prices fell by 21.7%","Unemployment rose 21.7%","GDP grew by $121.70 per person"],"The change in the index measures inflation since the base year."],
+  ["Which of these is a lagging economic indicator?","Average length of unemployment",["Housing starts","Average weekly manufacturing hours","New claims for unemployment insurance"],"Lagging indicators describe where the economy was a few months ago."],
+  ["Why do rising housing starts suggest an improving economy?","Building brings money in through home sales and through furniture and appliance purchases",["They reduce the national debt","They lower the CPI","They are a lagging indicator of past growth"],"Housing starts are a leading indicator for the housing sector."],
+  ["To fight inflation, the Bank of Canada would most likely:","Decrease the money supply and raise interest rates",["Increase the money supply and cut interest rates","Raise government spending","Cut income taxes"],"This contractionary monetary policy makes money “tighter” so demand and prices ease."],
+  ["Which is an example of expansionary fiscal policy?","Increasing government spending and cutting taxes during a recession",["Raising interest rates","Cutting spending to fight inflation","Decreasing the money supply"],"Fiscal policy uses spending and taxes; expansionary policy puts more money in people’s hands."],
+  ["Contractionary fiscal policy causes the government’s budget deficit to:","Decrease (or its surplus to increase)",["Increase","Stay exactly the same","Become national debt immediately"],"Spending less and taxing more narrows the deficit."],
+  ["Which is NOT one of the three components of a country’s political climate?","The size of its population",["The amount of government activity","The types of laws it passes","Its political stability"],"Population is demographic, not political."],
+  ["Which three legal issues does the text highlight for e-commerce?","Liability, intellectual property, and taxation",["Tariffs, quotas, and embargoes","Monetary, fiscal, and trade policy","Inflation, unemployment, and GDP"],"These three are summarized as key e-commerce legal issues."],
+  ["According to Indigenous Business in Canada, Indigenous communities and organizations often face:","A regulatory gap or overlap between federal, provincial, and municipal control",["No regulation of any kind","Only federal regulation","Exemption from all taxation"],"This affects building codes, enforcement, bylaws, and taxation."],
+  ["Which generation was born between 1965 and 1980?","Generation X",["Baby boomers","Millennials","The Silent Generation"],"Boomers: 1946–1964; Gen X: 1965–1980; millennials: 1981–1997."],
+  ["What are the three major challenges of extended reality (XR)?","Cost, hardware, and privacy",["Speed, color, and sound","Taxes, tariffs, and quotas","Energy, water, and land"],"The text lists cost, hardware, and privacy."]
+ ],
+ tf:[
+  ["Managers have a great deal of control over the external environment.",false,"They control the internal environment; the external environment is generally beyond their control."],
+  ["BP has spent more than $60 billion responding to the Deepwater Horizon disaster.",true,"The 2010 spill released over 3 million barrels of oil."],
+  ["GDP includes goods produced by Canadian companies in other countries.",false,"GDP includes only goods and services produced domestically."],
+  ["A typical business cycle runs about three to five years.",true,"Cycles are irregular but typically last 3 to 5 years, sometimes longer."],
+  ["Economists agree on a uniform standard for what counts as a depression.",false,"Unlike recession, depression has no agreed standard; it’s mainly characterized by duration."],
+  ["The unemployment rate tends to fall when the economy is expanding.",true,"High demand for products means more demand for workers."],
+  ["Full employment means 100 percent of people who want a job have one.",false,"In practice, full employment is about 95 percent."],
+  ["Canada’s inflation rate reached an all-time high of 21.6% in June 1920.",true,"The record low was −17.8% in June 1921."],
+  ["An inflation rate is the percentage change in a price index.",true,"That is the text’s definition."],
+  ["Monetary policy works through government spending and taxation.",false,"That is fiscal policy. Monetary policy works through the money supply and interest rates."],
+  ["Leading indicators predict the economy three to twelve months ahead.",true,"Lagging indicators look a few months back."],
+  ["Demographic factors are controllable by managers.",false,"Demographics are an uncontrollable factor in the business environment."],
+  ["Millennials surpassed baby boomers as America’s largest generation in 2017.",true,"There are more than 75 million millennials."],
+  ["Productivity is the amount of goods and services one worker can produce.",true,"Technology can raise productivity and reduce costs."]
+ ]},
+
+{n:3, title:"Impacts of Competition",
+ overview:"The four market structures, how supply and demand set prices, the supply and value chains, and Porter’s Five Forces for judging an industry’s profit potential.",
+ sections:[
+  ["3.1","Defining Business Competition",[
+   "Economists recognize four types of competition: perfect competition, monopolistic competition, oligopoly, and monopoly.",
+   "<b>Perfect competition</b>: many buyers purchase a standardized product from many small sellers. No seller can affect price, so everyone accepts the going price (like a fisher at a local market).",
+   "<b>Demand</b> is the quantity buyers will purchase at various prices; people buy more as price falls, so the demand curve slopes down. <b>Supply</b> is the quantity sellers will offer at various prices; sellers offer more as price rises, so the supply curve slopes up.",
+   "The <b>equilibrium price</b> is where the curves cross and quantity demanded equals quantity supplied. In the apple example it is $0.60 per pound at 2,000 pounds. (Demand: 1,500 lb at $0.80, 2,500 lb at $0.40. Supply: 1,000 lb at $0.40, 3,000 lb at $0.80.)",
+   "A farmer who charges above equilibrium sells little because others sell for less; charging below it sells more but earns less profit per pound, so there’s no incentive to cut."]],
+  ["3.2","Competitive Advantage & Industry Structure",[
+   "Market structure table: perfect competition has very many firms, homogeneous products, no real barriers (agriculture). Monopolistic competition has many firms, differentiated products, minor barriers (retail trade). Oligopoly has a few firms, homogeneous or differentiated products, considerable barriers (banking). Pure monopoly has one firm, a homogeneous product, extremely great barriers (public utilities).",
+   "<b>Monopoly</b>: one seller in a market, which may be a city or region. <b>Natural monopolies</b> (utilities) need huge investments that would be wasteful to duplicate; they are legal but regulated, must charge controlled prices, and must serve all customers. A <b>legal monopoly</b> comes from a patent, usually about 20 years (Polaroid’s instant film).",
+   "<b>Monopolistic competition</b>: many sellers of <b>differentiated products</b>, which differ (or seem to) by quality, style, convenience, location, or brand (Coke vs. Pepsi). Firms have only limited control over price; raise it too much and customers switch.",
+   "<b>Oligopoly</b>: a few large sellers with high start-up costs. They have some price control, but because products are similar, rivals match price cuts (airline fares, auto promotions).",
+   "Real industries sit on a continuum. Fast food has many firms like perfect competition, but differentiated products and minor barriers like monopolistic competition."]],
+  ["3.3","Understanding the Supply Chain",[
+   "<b>Production</b> turns inputs (natural resources, raw materials, people, capital) into outputs (products and services). Managing that conversion is <b>operations management</b>.",
+   "Since the 1980s, when U.S. auto, steel, and electronics firms lost customers over quality, most firms treat quality as central to operations.",
+   "PowerSki’s Jetboard took 16 years and thousands of design changes. The company then had to decide its production process, facility size and location, sourcing, and quality controls.",
+   "The <b>supply chain</b> is the process of turning a product idea into a finished product and converting raw materials into goods or services as efficiently as possible. The <b>value chain</b> shows how value is added at each step and how each activity’s cost makes up part of the final price."]],
+  ["3.4","Measuring Industry Competition: Porter’s Five Forces",[
+   "Michael Porter’s <b>five forces analysis</b> estimates an industry’s profit potential through: rivalry among competitors, the threat of new entrants, the threat of substitutes, the power of suppliers, and the power of buyers. If none undermine profit, potential is strong; if all do, it is weak.",
+   "<b>Rivalry</b> is high when competitors are numerous or equal in size, growth is slow, products are undifferentiated, fixed costs are high, exit barriers are high, there is excess capacity, capacity must be added in big increments, or the product is perishable. Concentrated industries (circuses: top four own 89%) tend to be polite; fragmented ones (restaurants; Subway vs. Quiznos) get fierce.",
+   "<b>New entrants</b> can be start-ups, foreign firms, suppliers, or buyers (Panera Bread entering Ontario in 2008). Entry is less likely with economies of scale, high capital needs, limited distribution access, discouraging government policy, high differentiation, high switching costs, expected retaliation, and cost advantages independent of size.",
+   "<b>Substitutes</b> come from outside the industry but meet similar needs; cable and streaming limit satellite TV prices, while candles are a poor substitute for lightbulbs. Whether a firm is a competitor or a substitute depends on how the industry is defined (Subway, Panera, The Keg).",
+   "<b>Suppliers</b> are powerful when they are few or more concentrated than their customers, have no substitutes, are relied on heavily, are costly to switch, offer differentiated products, or can integrate forward (Ford buying Hertz). <i>Flash of Genius</i> shows a small inventor with little leverage against Ford.",
+   "<b>Buyers</b> are powerful when they are few, buy a large share of output (Walmart), buy standardized products, face low switching costs, spend a large share of their costs on the item, can integrate backward (automakers, media companies vs. TiVo), or the item matters little to their own quality. Students have little buyer power over textbooks.",
+   "Limitation: the model treats competition as a <b>zero-sum game</b> and downplays collaboration, such as GM–Toyota joint ventures or just-in-time partnerships with suppliers."]]
+ ],
+ terms:[
+  ["Perfect competition","Many buyers and many small sellers of a standardized product; no seller can affect the price."],
+  ["Monopolistic competition","Many sellers offering differentiated products, which gives each limited control over price."],
+  ["Oligopoly","A market with a few large sellers, high start-up costs, and similar products, so rivals match price cuts."],
+  ["Monopoly","A market with only one seller."],
+  ["Natural monopoly","A regulated single supplier, like a utility, where duplicating huge investments would be inefficient."],
+  ["Legal monopoly","Exclusive use of an invented product or process granted by a patent, generally for about 20 years."],
+  ["Demand","The quantity of a product that buyers are willing to purchase at various prices."],
+  ["Supply","The quantity of a product that sellers are willing to sell at various prices."],
+  ["Equilibrium price","The price at which quantity demanded equals quantity supplied, where the supply and demand curves intersect."],
+  ["Differentiated products","Products that differ, or are perceived to differ, in quality, style, convenience, location, or brand while serving a similar purpose."],
+  ["Production","The creation of products and services by turning inputs into outputs."],
+  ["Operations management","Managing the process of converting inputs into finished goods and services."],
+  ["Supply chain","The process of turning a product idea into a finished product and converting raw materials into goods or services as efficiently as possible."],
+  ["Value chain","How value is added throughout the creation of a product and how each activity’s cost makes up part of the final price."],
+  ["Five forces analysis","Michael Porter’s tool for judging how much profit potential exists in an industry."],
+  ["Industry concentration","The extent to which a small number of firms dominate an industry."],
+  ["Fragmented industry","An industry in which the largest rivals control only a small share and many firms are important participants."],
+  ["Potential new entrants","Firms that don’t currently compete in an industry but might join it in the future."],
+  ["Substitutes","Offerings from outside an industry that fill needs similar to what the industry’s competitors offer."],
+  ["Switching costs","The costs a buyer faces in changing from one vendor to another."],
+  ["Exit barriers","Factors that keep firms in an industry, such as bad publicity from layoffs or a desire to recoup sunk costs."],
+  ["Forward vertical integration","A supplier entering the industry it supplies, as when Ford bought Hertz."],
+  ["Backward vertical integration","A buyer entering the industry it buys from, as when media companies made their own DVRs."],
+  ["Zero-sum game","The assumption that an industry’s profit is fixed, so one firm’s gain is another’s loss."]
+ ],
+ mc:[
+  ["A commercial fisher must accept whatever the local market pays. This illustrates:","Perfect competition",["Oligopoly","Monopoly","Monopolistic competition"],"In perfect competition no single seller can affect the price."],
+  ["In the textbook’s apple example, what is the equilibrium price and quantity?","$0.60 per pound and 2,000 pounds",["$0.40 per pound and 2,500 pounds","$0.80 per pound and 1,500 pounds","$0.80 per pound and 3,000 pounds"],"The supply and demand curves intersect at $0.60 and 2,000 pounds."],
+  ["Why won’t a farmer charge more than the equilibrium price under perfect competition?","Other suppliers sell for less, so the farmer won’t sell many apples",["The government forbids it","Demand rises as prices rise","Supply falls to zero"],"Buyers simply buy from cheaper sellers."],
+  ["Preferring Coke over Pepsi, but switching when Pepsi goes on sale, best illustrates:","Monopolistic competition",["Perfect competition","Pure monopoly","A natural monopoly"],"Differentiated products give sellers only limited control over price."],
+  ["When one airline cuts fares and the others immediately match, this illustrates:","Oligopoly",["Perfect competition","Monopolistic competition","A legal monopoly"],"With few sellers and similar products, rivals must follow price cuts."],
+  ["In the textbook’s market-structure table, banking is the example of:","Oligopoly",["Perfect competition","Monopolistic competition","Pure monopoly"],"Agriculture, retail trade, banking, and public utilities match the four structures in order."],
+  ["Which barriers to entry does a pure monopoly face?","Extremely great barriers",["No substantial barriers","Minor barriers","Considerable barriers"],"Monopolies sit at the far end of the spectrum from perfect competition."],
+  ["Polaroid’s years of exclusive control over instant-film technology is an example of:","A legal monopoly based on a patent",["A natural monopoly","An oligopoly","Perfect competition"],"Patents grant exclusive use for a limited time, usually about 20 years."],
+  ["Why are natural monopolies such as utilities permitted?","They are important to society and wasteful to duplicate, so they’re allowed but regulated",["They charge whatever prices they want","They hold a 20-year patent","They have many competitors"],"In exchange for no competition, they accept controlled prices and must serve all customers."],
+  ["The fast-food industry is used to show that:","Industries often fall on a continuum between market structures",["Fast food is a pure monopoly","Fast food has extremely great barriers to entry","Fast-food products are all identical"],"It has many firms like perfect competition, plus differentiation and minor barriers like monopolistic competition."],
+  ["What is the purpose of a five forces analysis?","To identify how much profit potential exists in an industry",["To set the equilibrium price","To choose a leadership style","To calculate GDP"],"Executives use it to decide strategic moves, including whether to exit."],
+  ["Which condition tends to INCREASE rivalry among competitors?","Slow industry growth",["Highly differentiated competitors","Low fixed costs","Low exit barriers"],"With few new customers, firms fight over existing ones."],
+  ["New firms are LESS likely to enter an industry when:","Incumbents enjoy economies of scale and switching costs are high",["Capital requirements are low","Distribution channels are wide open","Existing products are undifferentiated"],"These make it hard for newcomers to match prices or win customers."],
+  ["Why are candles a weak threat to lightbulb makers?","They give less light and a higher fire risk, so they’re a poor substitute",["Candle makers are new entrants","Candles are more expensive than bulbs","Candles are made by the same companies"],"Substitutes only threaten an industry if they serve customers effectively."],
+  ["If Subway’s industry is defined narrowly as “sub sandwiches,” Panera and The Keg are:","Substitutes",["Direct competitors","Suppliers","Buyers"],"Under the broadest definition (restaurants) both would be competitors."],
+  ["Ford buying the rental car company Hertz is an example of:","Forward vertical integration",["Backward vertical integration","A substitute","Industry fragmentation"],"A supplier (Ford) entered the industry it supplied (car rental)."],
+  ["Why have students had little power over textbook prices?","They must buy the specific book their professor assigns",["Textbooks have many substitutes","Students buy in huge volumes","Students can make their own textbooks"],"Buyers with no choice have no leverage."],
+  ["What is a key limitation of five forces analysis?","It treats competition as zero-sum and downplays collaboration",["It ignores rivalry among competitors","It only applies to monopolies","It can’t estimate profit potential"],"Rivals, suppliers, and buyers sometimes collaborate for mutual benefit."],
+  ["The story of Robert Kearns and his windshield wipers (Flash of Genius) illustrates:","A small supplier’s lack of bargaining power against a large buyer",["Backward vertical integration by Kearns","A natural monopoly","Perfect competition"],"Ford copied his design rather than buying from him."],
+  ["Walmart’s power over its suppliers comes mainly from:","Buying a large share of their output with its huge sales volume",["Holding patents on their products","Being a natural monopoly","High switching costs it faces"],"Losing Walmart means losing access to many consumers."]
+ ],
+ tf:[
+  ["Under perfect competition, individual sellers can set their own prices.",false,"Sellers accept the going market price."],
+  ["Buyers generally purchase more of a product as its price falls.",true,"That’s why the demand curve slopes downward."],
+  ["The supply curve slopes in the same direction as the demand curve.",false,"It slopes the opposite way: sellers offer more as price rises."],
+  ["Under monopolistic competition, brand loyalty gives firms unlimited control over price.",false,"Firms have only limited control; raise the price too much and buyers switch."],
+  ["Monopolistic competition faces only minor barriers to entry.",true,"That’s what the market-structure table shows."],
+  ["Patents are generally issued for about 20 years.",true,"This gives firms time to recover research and development costs."],
+  ["A monopoly market must cover an entire country.",false,"It could be a city or a regional area."],
+  ["Among circuses, the four largest companies own about 89% of the market.",true,"This is the text’s example of a concentrated industry with low rivalry."],
+  ["High fixed costs tend to reduce rivalry in an industry.",false,"High fixed costs increase rivalry, since firms must cover them even by slashing prices."],
+  ["Whether a firm is a competitor or a substitute depends on how the industry is defined.",true,"See the Subway, Panera, and Keg example."],
+  ["Buyers are more powerful when the products they buy are standardized.",true,"They can easily shop around."],
+  ["Suppliers are weaker when their industry is dominated by a few companies.",false,"Concentrated supplier industries are more powerful."],
+  ["It took 16 years to develop the PowerSki Jetboard.",true,"It involved thousands of design changes."],
+  ["Porter’s model tends to portray relationships with suppliers and buyers as collaborative.",false,"It tends to portray them as adversarial, which is one of its limitations."]
+ ]},
+
+{n:4, title:"Understanding Globalization",
+ overview:"Why nations trade (absolute and comparative advantage, opportunity cost), the barriers to trade, the institutions that foster it, the political, cultural, and economic risks abroad, and emerging markets.",
+ sections:[
+  ["4.1","The Globalization of Business",[
+   "Globalization touches daily life: Nike and Timberland make most products overseas, Spotify is Swedish, and global brands appear on Singapore’s Orchard Road and in Beijing and Pakistan.",
+   "You will likely buy foreign products and work with people from other countries as customers, suppliers, colleagues, or employers. The expanded circular flow model adds global trade to the flow of inputs and outputs."]],
+  ["4.2","Why Do Nations Trade?",[
+   "No country produces everything it needs. <b>Importers</b> buy from other countries; <b>exporters</b> sell to them. World trade in goods and commercial services was about USD $31 trillion in 2022.",
+   "<b>Absolute advantage</b>: being the only source of a product, or producing more of it with fewer resources (France’s early lead in wine). It rarely lasts unless based on a limited natural resource.",
+   "<b>Comparative advantage</b>: producing a product at a lower <b>opportunity cost</b> than another nation. Opportunity cost is the value of the next best alternative given up.",
+   "Worked examples: buying a $10 lunch instead of a $3 home lunch costs $7 a day; over 250 workdays, $10 a day is $2,500. If you can make 10 bowls or 30 plates a day, one bowl costs 3 plates. Extra airport security time (800 million passengers × 0.5 hour × $20/hour) has an opportunity cost of about $8 billion a year.",
+   "Benefits of globalization: faster productivity growth from specializing in comparative advantage, lower prices and inflation, innovation from foreign ideas, foreign capital and technology for poorer countries, and shared knowledge between trading partners. G20 countries have added over 1,200 restrictive trade measures since 2008."]],
+  ["4.3","Barriers to Trade",[
+   "<b>Natural barriers</b> are physical or cultural, like distance (shipping beef from Argentina to Siberia) and language.",
+   "A <b>tariff</b> is a tax on imports, charged per unit, as a percentage of value, or both. <b>Protective tariffs</b> make imports less attractive (Japan’s tariff made U.S. cigarettes 60% more expensive).",
+   "Arguments for tariffs: protect infant industries, protect domestic jobs, support military preparedness. Arguments against: they discourage free trade and raise prices, reducing purchasing power (U.S. tariffs of 63.86% to 190.71% on Chinese steel raised costs for construction and autos).",
+   "Non-tariff barriers: <b>import quotas</b> (limits on quantity), <b>embargoes</b> (complete bans, often for defence, like high-tech exports to non-allies), <b>buy-national regulations</b> (privileges for domestic firms), unusual customs rules, and <b>exchange controls</b> (exporters must sell foreign currency to a central bank, letting government limit imports)."]],
+  ["4.4","Fostering Global Trade",[
+   "<b>Dumping</b> is selling abroad at a lower price (possibly below cost) than at home; <b>predatory dumping</b> uses impossibly low prices to destroy foreign competitors. The U.S. applies duties of 11.03% to 15.79% to Canadian softwood lumber.",
+   "The <b>Uruguay Round</b> (1994, 164 nations) cut tariffs by about one-third and was the first agreement to cover services, intellectual property, and trade-related investment. The <b>Doha Round</b> (Qatar, 2001) stalled over rich countries’ farm subsidies.",
+   "The <b>World Trade Organization (WTO)</b> replaced GATT (1948), which had many loopholes. Members must comply with all Uruguay Round agreements and use a dispute process with strict time limits. Few countries (North Korea, Turkmenistan, Eritrea) are outside it. A major dispute pits Airbus aid ($15B) against support for Boeing ($23B in research, $3.2B in tax breaks).",
+   "The <b>World Bank</b> makes low-interest loans to developing nations, first for infrastructure and now also for debt relief, on condition they lower trade barriers. The <b>International Monetary Fund (IMF)</b>, founded in 1945, makes short-term loans as a lender of last resort, often requiring reforms. Relying on it creates <b>moral hazard</b>: investors take bigger risks expecting a bailout."]],
+  ["4.5","Threats & Opportunities in the Global Marketplace",[
+   "Political risks include <b>nationalism</b> (France’s 40% French-song quota for radio; Dutch opposition to PPG’s bid for AkzoNobel), <b>expropriation</b> (government takes foreign assets and compensates owners), and <b>confiscation</b> (no compensation).",
+   "Culture shapes preferences, negotiations, and marketing. Translation blunders: Mitsubishi’s Pajero, Toyota’s MR2 in France, Coca-Cola’s early Chinese name, and American Airlines’ “Fly in Leather.” In Mexico and Japan, personal relationships come before business; Western Europe largely shuts down in early August.",
+   "Etiquette: present business cards with both hands in Asia and study one you receive; use a soft sell in Japan; respect Ramadan. Don’t back-slap or use first names at a first Asian meeting, don’t open with business, and don’t fill a French host’s wine glass to the top.",
+   "Economic development varies widely. <b>Infrastructure</b> (banking, education, transportation, communications, energy, the market system) makes opportunities better. <b>Gross national income (GNI)</b> per capita, 2022: Bermuda $125,240 was highest and the Central African Republic $480 lowest. <b>Final goods</b> are consumed; <b>intermediate goods</b> (tires sold to a carmaker) are used to make them."]],
+  ["4.6","Emerging Markets",[
+   "There’s no consistent definition. Kvint describes an <b>emerging market</b> as a society moving from dictatorship to a free-market economy, with growing economic freedom, global integration, an expanding middle class, better living standards, social stability, and cooperation with multilateral institutions.",
+   "<b>Brazil</b>: Latin America’s largest market; history of single-export cycles (wood, sugar, gold and gems, coffee, rubber); now earns more from auto parts, aircraft, and machinery. <b>Russia</b>: major exporter of natural gas, oil, steel, and aluminum, so exposed to commodity booms and busts.",
+   "<b>India</b>: socialist planning until the mid-1980s; after a near-default in 1991, reforms cut trade barriers and began dismantling the “License Raj” of permits and quotas. <b>China</b>: moving since the 1980s (Deng Xiaoping’s reforms) toward a “socialist market economy with Chinese characteristics.” <b>South Africa</b>: built on minerals into Africa’s leading industrial economy.",
+   "<b>BRICS</b> added Egypt, Ethiopia, Iran, and the UAE in 2024. Jim O’Neill of Goldman Sachs coined “BRIC” in 2001 and later proposed adding Mexico, South Korea, Turkey, and Indonesia as “growth markets.”"]]
+ ],
+ terms:[
+  ["Importer","A country or firm that buys goods and services from other countries."],
+  ["Exporter","A country or firm that sells goods and services to other countries."],
+  ["Absolute advantage","Being the only source of a product, or producing more of it with fewer resources than other countries."],
+  ["Comparative advantage","Producing a product at a lower opportunity cost than another nation."],
+  ["Opportunity cost","The value of the next best alternative given up when making a choice."],
+  ["Natural barriers","Physical or cultural obstacles to trade, such as distance and language."],
+  ["Tariff","A tax a nation imposes on imported goods."],
+  ["Protective tariff","A tariff designed to make imported products less attractive than domestic ones."],
+  ["Import quota","A limit on the quantity of a certain good that can be imported."],
+  ["Embargo","A complete ban on importing or exporting a product."],
+  ["Buy-national regulations","Government rules that give special privileges to domestic manufacturers and retailers."],
+  ["Exchange controls","Laws requiring firms that earn foreign currency from exports to sell it to a control agency, usually the central bank."],
+  ["Dumping","Selling a product in foreign markets at a lower price, perhaps below cost, than in the home market."],
+  ["Predatory dumping","Using impossibly low prices to destroy competitors and gain control of a foreign market."],
+  ["Uruguay Round","The 1994 trade agreement that cut tariffs worldwide by about one-third and first covered services and intellectual property."],
+  ["World Trade Organization (WTO)","The institution that replaced GATT to lower trade barriers and settle trade disputes."],
+  ["World Bank","International organization offering low-interest loans to developing nations for infrastructure and debt relief."],
+  ["International Monetary Fund (IMF)","Makes short-term loans to member nations that can’t meet their expenses; a lender of last resort."],
+  ["Moral hazard","The risk that investors take bigger risks because they expect to be bailed out."],
+  ["Nationalism","A sense of national consciousness that boosts one country’s culture and interests above all others."],
+  ["Expropriation","A government taking ownership of a foreign company’s assets and compensating the former owners."],
+  ["Confiscation","A government seizing a foreign company’s assets without any compensation."],
+  ["Infrastructure","The basic institutions and public facilities an economy depends on: banking, education, transportation, communications, and energy."],
+  ["Gross national income (GNI)","GDP plus income received from other countries, minus similar payments made to other countries."],
+  ["Emerging market","A country moving toward a free-market economy, with growing economic freedom, global integration, and an expanding middle class."],
+  ["BRICS","A group of emerging economies: Brazil, Russia, India, China, and South Africa, expanded in 2024."]
+ ],
+ mc:[
+  ["In one day you can make either 10 bowls or 30 plates. What is the opportunity cost of one bowl?","3 plates",["1/3 of a plate","10 plates","30 plates"],"30 plates ÷ 10 bowls = 3 plates given up per bowl."],
+  ["Lunch out costs $10 and lunch from home costs $3. What is the daily opportunity cost of eating out?","$7",["$3","$10","$13"],"$10 − $3 = $7 each day."],
+  ["France’s early dominance in winemaking because of its climate and soil is an example of:","Absolute advantage",["Comparative advantage","Dumping","An embargo"],"France could produce more with fewer resources until other countries caught up."],
+  ["A country has a comparative advantage when it:","Can produce a product at a lower opportunity cost than another nation",["Is the only source of a product","Has the largest GDP","Imposes the highest tariffs"],"Comparative advantage is about opportunity cost, not total output."],
+  ["Why are there few examples of absolute advantage in the world today?","It seldom lasts unless based on a limited natural resource",["The WTO bans it","Tariffs eliminate it","It only applies to services"],"Competitors usually catch up."],
+  ["Which is an argument FOR tariffs?","They protect infant industries",["They encourage free trade","They lower consumer prices","They increase purchasing power"],"Other pro-tariff arguments are protecting jobs and military preparedness."],
+  ["Which is an argument AGAINST tariffs?","They raise prices and reduce consumers’ purchasing power",["They protect domestic jobs","They help military preparedness","They shelter new industries"],"Opponents also say tariffs discourage free trade."],
+  ["A U.S. rule banning foreign steel in highway construction is an example of:","A buy-national regulation",["An embargo","An exchange control","Dumping"],"It gives special privileges to domestic producers."],
+  ["The U.S. refusing to export supercomputers and lasers to non-allied countries is an example of:","An embargo",["An import quota","A protective tariff","Predatory dumping"],"An embargo is a complete ban, often for defence reasons."],
+  ["A Swiss firm must sell the U.S. dollars it earns to the Swiss central bank. This is:","An exchange control",["A tariff","A buy-national regulation","Expropriation"],"Controlling foreign currency lets government control imports."],
+  ["Which organization replaced the General Agreement on Tariffs and Trade (GATT)?","The World Trade Organization",["The World Bank","The International Monetary Fund","BRICS"],"GATT had extensive loopholes; WTO members must fully comply."],
+  ["What made the Uruguay Round different from earlier trade agreements?","It was the first to cover services, intellectual property, and trade-related investment",["It raised tariffs worldwide","It created the IMF","It applied only to agriculture"],"It also cut tariffs by about one-third."],
+  ["The Doha Round has made little progress largely because of disagreement over:","Farm subsidies in the U.S., Europe, and Japan",["Exchange rates in BRICS countries","Patents on software","Embargoes on oil"],"Developing nations say subsidies drive down global farm prices."],
+  ["Which organization acts as a “lender of last resort” for troubled nations?","The International Monetary Fund",["The World Bank","The World Trade Organization","Statistics Canada"],"The IMF makes short-term emergency loans, often requiring reforms."],
+  ["France requiring radio stations to play at least 40% French songs is an example of:","Nationalism",["Confiscation","Dumping","Comparative advantage"],"Nationalism puts one country’s culture and interests first."],
+  ["A government seizes a foreign company’s assets and pays the owners nothing. This is:","Confiscation",["Expropriation","An embargo","An exchange control"],"Expropriation includes compensation; confiscation does not."],
+  ["Why are business opportunities usually better in countries with strong infrastructure?","Businesses depend on banking, education, transportation, communications, and energy systems",["Infrastructure eliminates tariffs","Infrastructure guarantees absolute advantage","Infrastructure lowers GNI"],"Infrastructure ties a geography into one working market."],
+  ["Who coined the term “BRIC” in 2001?","Jim O’Neill of Goldman Sachs",["Adam Smith","Michael Porter","Manmohan Singh"],"He later proposed adding Mexico, South Korea, Turkey, and Indonesia."],
+  ["Which countries joined BRICS in 2024?","Egypt, Ethiopia, Iran, and the United Arab Emirates",["Mexico, South Korea, Turkey, and Indonesia","Canada, Mexico, and the U.S.","Norway, Sweden, and Denmark"],"The expansion aimed to increase members’ global influence."],
+  ["India’s 1991 reforms began dismantling a system of government control through permits and quotas known as the:","License Raj",["Doha Round","Moral hazard","Uruguay Round"],"Finance Minister Manmohan Singh led the effort."],
+  ["How is China’s current economic model commonly described?","A socialist market economy with Chinese characteristics",["Pure capitalism","Pure communism with no markets","A natural monopoly"],"Market forces operate alongside state ownership and intervention."],
+  ["In the airport security example, what was the single biggest cost?","Passengers’ extra waiting time, about $8 billion a year",["Sky marshals at $3 billion a year","Reinforced cockpit doors at $450 million","3D baggage scanners at $2 billion"],"Lost time can be a large part of opportunity cost."]
+ ],
+ tf:[
+  ["World trade in merchandise and commercial services was about USD $31 trillion in 2022.",true,"That figure comes from the World Trade Organization."],
+  ["Opportunity cost is the value of the next best alternative.",true,"Every choice has an opportunity cost."],
+  ["Distance and language are examples of tariff barriers.",false,"They are natural barriers."],
+  ["A tariff can be charged per unit, as a percentage of value, or both.",true,"Any tariff makes imports more costly."],
+  ["An import quota is a complete ban on a product.",false,"A quota limits quantity; a complete ban is an embargo."],
+  ["Dumping is suspected when price differences can’t be explained by the cost of serving each market.",true,"Most industrialized countries have antidumping rules."],
+  ["The Uruguay Round agreement has been signed by 164 nations.",true,"It was adopted in 1994."],
+  ["The IMF was founded before the World Bank.",false,"The IMF was founded in 1945, one year after the World Bank."],
+  ["North Korea, Turkmenistan, and Eritrea are among the few countries outside the WTO.",true,"Non-members must negotiate trade deals individually."],
+  ["In many countries, personal relationships matter more than financial considerations in business.",true,"Mexico and Japan are the text’s examples."],
+  ["At a first business meeting in Asia, you should get straight to business.",false,"Be patient and let clients get to know you first."],
+  ["Bermuda had the highest GNI per capita in 2022.",true,"$125,240, followed by Norway."],
+  ["A tire sold to a car manufacturer is a final good.",false,"It’s an intermediate good; the same tire sold to a consumer would be a final good."],
+  ["Brazil now earns more from nonagricultural products like auto parts and aircraft than from farm exports.",true,"The text credits industrial programs of the 1960s and 1970s."],
+  ["Russia’s reliance on commodity exports makes it vulnerable to boom-and-bust cycles.",true,"Commodity prices swing widely."]
+ ]},
+
+{n:5, title:"Forms of Business Ownership",
+ overview:"How Canada classifies businesses by size, the factors in choosing an ownership form, and the trade-offs among sole proprietorships, partnerships, cooperatives, corporations, LLCs, and not-for-profits, plus mergers and acquisitions.",
+ sections:[
+  ["5.1","Factors to Consider",[
+   "Innovation, Science and Economic Development Canada (ISED) classifies employer businesses by paid employees: <b>small</b> 1–99, <b>medium</b> 100–499, <b>large</b> 500+; <b>micro-enterprises</b> have 1–4. Self-employed businesses with no paid staff aren’t counted.",
+   "In December 2023 Canada had 1.21 million employer businesses: 97.8% small, 1.9% medium (23,395), and 0.3% large (3,128).",
+   "Choosing a legal form means weighing eight dimensions: start-up cost and regulation, control, taxes, available skills, getting along with co-owners, whether the business survives you, financing needs, and personal liability. No form offers everything, so there are trade-offs."]],
+  ["5.2","Sole Proprietorship",[
+   "Advantages: you make all decisions and keep all the income, and profits are taxed as personal income, with no special business taxes.",
+   "Disadvantages: you must supply every skill, the business ends when you do, financing depends on your own resources, and you bear <b>unlimited liability</b>, so personal assets (bank account, car, home) are at risk. Insurance lessens but doesn’t remove the exposure."]],
+  ["5.3","Partnership",[
+   "A <b>partnership</b> (general partnership) is owned by two or more people. About 10% of U.S. businesses are partnerships, including the big four accounting firms. It is easy and inexpensive to set up, though professional advice helps.",
+   "A <b>partnership agreement</b> sets out each partner’s contributions, the division of income or loss, responsibilities, conditions for selling an interest or dissolving, and how disputes are settled.",
+   "Each partner has unlimited liability for their own actions and for those of all the partners. In a <b>limited partnership</b>, one general partner runs the business and carries the liability, while limited partners risk only their investment.",
+   "Advantages: diverse talents, easier financing, and continuity if partners agree the firm survives a death; Indigenous–non-Indigenous partnerships share resources, create jobs, and support autonomy. Disadvantages: unlimited liability, shared decision-making, and shared profits. Ben &amp; Jerry chose a partnership."]],
+  ["5.4","Cooperatives",[
+   "A <b>cooperative</b> is a legal entity with corporate features (limited liability, unlimited life, elected board, administrative staff). Members pay fees and share profits in proportion to their contributions; because co-ops retain no profit, they aren’t taxed.",
+   "Co-ops are owned and democratically controlled by members (often one member, one vote), not investors. In 2014 there were 2.6 million co-ops with 1 billion members in over 145 countries. The text names four categories (consumer, producer, worker, purchasing/shared services) and focuses on two types.",
+   "<b>Buyer cooperatives</b> pool members’ purchasing power for lower prices (Ace Hardware, founded 1924; $9.1 billion revenue in 2023). <b>Seller cooperatives</b> help producers compete with large firms (Sunkist, Land O’Lakes, Ocean Spray, Blue Diamond; CHS is the largest U.S. co-op).",
+   "Principles: open membership, democratic member control, members’ economic participation, autonomy, education and training, cooperation among cooperatives, and concern for community."]],
+  ["5.5","Corporation",[
+   "A <b>corporation</b> is a legal entity separate from its owners: it can make contracts, buy and sell property, sue and be sued, and be taxed.",
+   "<b>Shareholders</b> own it through stock (30 of 100 shares = 30%). They elect a <b>board of directors</b>, which governs, sets goals, holds management accountable, hires and evaluates the CEO, and approves <b>dividends</b>.",
+   "Benefits: <b>limited liability</b> (the most important: shareholders lose at most what they invested), access to funds through stock sales and loans, specialized management, and continuity with easy transfer of ownership. <b>Private corporations</b> restrict stock to a few holders; <b>public corporations</b> sell to anyone.",
+   "Aboriginal <b>Economic Development Corporations (EDCs)</b> are for-profit corporations tied to First Nation, Métis, or Inuit governments; most reinvest up to half their after-tax revenue in their communities (example: Waubetek in northeastern Ontario).",
+   "Drawbacks: the <b>agency problem</b> (managers and shareholders may want different things), set-up costs of roughly $1,000–$6,000 or more, heavier regulation, and <b>double taxation</b> (profits taxed at the corporate level and again as dividends)."]],
+  ["5.6","Other Forms of Ownership",[
+   "A <b>limited liability company (LLC)</b> gives limited liability plus single taxation at the personal level. Owners are called members. Wyoming allowed LLCs first (1977), Hawaii last (1997); Crayola and Domino’s are LLCs.",
+   "Owners can still be personally liable if they personally guarantee a debt the firm fails to pay, fail to pay employment taxes, act fraudulently or illegally, or don’t treat the company as a separate entity.",
+   "A <b>not-for-profit corporation</b> serves a public purpose. If its work is charitable, religious, educational, scientific, or literary it can be tax-exempt, and donors can deduct contributions."]],
+  ["5.7","Mergers & Acquisitions",[
+   "Firms grow internally (Google hiring 2,000+) or by merging with or acquiring another firm, on the logic that 1 + 1 = 3: the combined company is worth more.",
+   "In 2013 Loblaw and Shoppers Drug Mart combined in a $12.4 billion deal that played to each other’s strengths and moved Loblaw into health and wellness. Sobeys acquired Safeway’s western Canadian business for $5.8 billion: 213 stores, 199 pharmacies, 62 gas stations, 10 liquor stores, 4 distribution centres, 12 manufacturing facilities, and $1.8 billion in real estate."]]
+ ],
+ terms:[
+  ["Small business (ISED)","A business with 1 to 99 paid employees."],
+  ["Medium-sized business","A business with 100 to 499 paid employees."],
+  ["Large business","A business with 500 or more paid employees."],
+  ["Micro-enterprise","A business with 1 to 4 employees."],
+  ["Sole proprietorship","A business owned by one person who makes all decisions, keeps all profits, and has unlimited liability."],
+  ["Unlimited liability","The owner is personally responsible for all business debts and losses, putting personal assets at risk."],
+  ["General partnership","A business owned jointly by two or more people who share decisions, profits, and unlimited liability."],
+  ["Partnership agreement","A document setting each partner’s contributions, profit split, duties, and rules for selling, dissolving, and settling disputes."],
+  ["Limited partnership","One general partner runs the business and bears liability; limited partners risk only their investment."],
+  ["Cooperative","A business owned and democratically controlled by its members, who share profits in proportion to their contributions."],
+  ["Buyer cooperative","A co-op that pools members’ purchasing power to get lower prices, such as Ace Hardware."],
+  ["Seller cooperative","A co-op in which producers join forces to compete with large producers, such as Sunkist or Ocean Spray."],
+  ["Corporation","A legal entity separate from its owners that can make contracts, sue and be sued, and be taxed."],
+  ["Shareholders","The owners of a corporation, who invest by buying shares of its stock."],
+  ["Board of directors","Group elected by shareholders that governs the corporation, sets policy, and hires the CEO."],
+  ["Dividends","Cash payments of corporate income to shareholders."],
+  ["Limited liability","Owners can lose no more than the amount they invested."],
+  ["Private corporation","A corporation whose stock is held by a few people and not sold to the general public."],
+  ["Public corporation","A corporation whose stock is available for sale to the general public."],
+  ["Agency problem","A conflict of interest when the party meant to act for another (managers for shareholders) pursues its own interests."],
+  ["Double taxation","Corporate profits taxed once as corporate income and again when shareholders receive dividends."],
+  ["Limited liability company (LLC)","A form combining limited liability with single taxation at the personal level; owners are called members."],
+  ["Not-for-profit corporation","An organization formed to serve a public purpose rather than financial gain, which can be exempt from income tax."],
+  ["Economic Development Corporation (EDC)","A for-profit corporation affiliated with a First Nation, Métis, or Inuit government that creates opportunities for community members."],
+  ["Merger or acquisition","Growing by combining with or buying another company, on the logic that the whole is worth more than the parts."]
+ ],
+ mc:[
+  ["Under ISED’s definitions, a company with 250 paid employees is:","Medium-sized",["Small","Large","A micro-enterprise"],"Medium-sized businesses have 100 to 499 paid employees."],
+  ["As of December 2023, about what share of Canada’s employer businesses were small?","97.8%",["50.0%","75.3%","1.9%"],"1.9% were medium-sized and 0.3% were large."],
+  ["How are a sole proprietor’s profits taxed?","As the owner’s personal income",["Twice, at corporate and personal levels","Not at all","As dividends"],"There are no special business income taxes for a sole proprietorship."],
+  ["What is the biggest drawback of a sole proprietorship?","Unlimited personal liability for the business’s debts",["Double taxation","Shared decision-making","Complex government reporting"],"The owner’s personal assets are at risk."],
+  ["In a general partnership, each partner is personally liable for:","Their own actions and the actions of all the partners",["Only their own actions","Only the amount they invested","Nothing, since the partnership is a separate entity"],"That’s why many people avoid partnerships."],
+  ["In a limited partnership, the limited partners:","Have limited involvement and can lose only what they invested",["Run the business day to day","Have unlimited liability","Must be corporations"],"A single general partner runs the business and carries the liability."],
+  ["Why couldn’t Ben and Jerry set up their ice cream business as a sole proprietorship?","There were two owners",["They wanted limited liability","Ice cream shops must be corporations","They needed to sell stock"],"A sole proprietorship has only one owner."],
+  ["Why are cooperatives not subject to taxes?","They don’t retain any profits",["They are government agencies","They have unlimited liability","They operate only in agriculture"],"Profits go back to members in proportion to their contributions."],
+  ["Ace Hardware is an example of:","A buyer cooperative",["A seller cooperative","A limited partnership","A natural monopoly"],"Members pool purchasing power to compete with Home Depot and Lowe’s."],
+  ["Many cooperatives follow which control principle?","One member, one vote",["One share, one vote","The largest investor decides","The board is appointed by government"],"Co-ops are democratically controlled by their members."],
+  ["What is the most important benefit of incorporating?","Limited liability for shareholders",["Lower set-up costs","No government oversight","Single taxation"],"Shareholders can lose no more than they invested."],
+  ["A corporation has issued 100 shares and you own 30. You own:","30% of the company",["3% of the company","70% of the company","A seat on the board automatically"],"Ownership depends on the percentage of stock held."],
+  ["Who elects a corporation’s board of directors?","The shareholders",["The CEO","The employees","The government"],"The board then hires and evaluates the CEO."],
+  ["Managers who care more about career advancement than company profits illustrate:","The agency problem",["Double taxation","Unlimited liability","Forward integration"],"Managers don’t necessarily own stock, so their goals can differ from shareholders’."],
+  ["What does “double taxation” mean for a corporation?","Profits are taxed at the corporate level and again when paid as dividends",["The corporation pays federal tax twice a year","Both partners pay the same tax","Sales tax is charged twice"],"This drawback discourages many small businesses from incorporating."],
+  ["A limited liability company (LLC) combines:","Limited liability with no double taxation",["Unlimited liability with double taxation","Public stock sales with tax exemption","One owner with unlimited liability"],"It takes the best features of corporations and partnerships."],
+  ["An LLC member can be held personally liable if they:","Personally guarantee a loan the company fails to repay",["Invest money in the business","Are called a member instead of a shareholder","Earn a profit"],"Other cases: unpaid employment taxes, fraud, or mixing personal and company assets."],
+  ["Which is NOT one of the cooperative principles listed in the text?","Maximizing returns for outside investors",["Open membership","Democratic member control","Concern for community"],"Co-ops are organized to meet members’ needs, not to build capital for investors."],
+  ["Most Aboriginal Economic Development Corporations reinvest how much of their after-tax revenue in their communities?","Up to half",["None of it","All of it","Exactly 10%"],"They aim to build economic independence and cultural resilience."],
+  ["The 2013 Loblaw–Shoppers Drug Mart deal mainly let Loblaw:","Expand into health, wellness, and pharmacy",["Enter the gas station business","Leave the grocery business","Become a cooperative"],"Loblaw had only about 5% of the pharmacy market."]
+ ],
+ tf:[
+  ["ISED counts self-employed businesses with no paid employees in its business statistics.",false,"They are generally excluded because they have no paid employees."],
+  ["Setting up a partnership is more complex than setting up a sole proprietorship.",true,"It’s still relatively easy and inexpensive."],
+  ["The big four public accounting firms are partnerships.",true,"Deloitte, PwC, Ernst & Young, and KPMG."],
+  ["A sole proprietorship continues automatically after the owner dies.",false,"When the owner is gone, the business dissolves."],
+  ["Partners can legally agree to let the partnership survive if a partner dies.",true,"This is one advantage of partnerships."],
+  ["Cooperatives distribute profits to members in proportion to their contributions.",true,"Members also pay annual fees."],
+  ["A corporation can be sued and taxed separately from its owners.",true,"It is a legal entity separate from the people who own it."],
+  ["Corporate shareholders can lose more than they invested.",false,"Limited liability caps their loss at their investment."],
+  ["Public corporations restrict who can buy their stock.",false,"Private corporations restrict stock; public corporations sell to anyone."],
+  ["Incorporating a business can cost roughly $1,000 to $6,000 or more.",true,"Filing, licensing, accounting, and legal fees add up."],
+  ["Wyoming was the first state to allow limited liability companies, in 1977.",true,"Hawaii was the last, in 1997."],
+  ["Donors to a not-for-profit corporation can deduct their contributions.",true,"Qualifying not-for-profits can also be exempt from income tax."],
+  ["Sobeys acquired Safeway’s western Canadian business in a $5.8 billion deal.",true,"It included 213 stores and $1.8 billion in real estate."],
+  ["Internal growth means growing by buying other companies.",false,"Internal growth is growing from within, such as hiring; buying firms is an acquisition."]
+ ]},
+
+{n:6, title:"Managing the Business Enterprise",
+ overview:"Building an organization’s foundation (mission, values, culture), its direction (goals and objectives), and its strategy (SWOT), then managing it through planning, organizing, leading, and controlling, with the roles, skills, and structures managers use.",
+ sections:[
+  ["6.1","Organizational Foundation",[
+   "A <b>mission statement</b> states the organization’s purpose and reason for existing; it can be short (Mary Kay) or detailed (Harley-Davidson). The chapter’s running example is Notes-4-You, a company selling class notes: “to provide high-quality class notes to college students.”",
+   "<b>Core values</b> are a small set of guiding principles about what is and isn’t appropriate (Volvo: safety, quality, environmental care; Notes-4-You: teamwork, trust, dependability). Firms tie them to evaluations and pay.",
+   "<b>Organizational culture</b> is a system of shared assumptions, values, and beliefs that shows employees appropriate behaviour. Peters and Waterman’s <i>In Search of Excellence</i> popularized the term in the 1980s. Culture is mostly invisible until you compare organizations.",
+   "Culture can be a key asset or a liability. Hard-to-imitate culture can be a competitive advantage; it must fit the environment (innovation suits high-tech, rigid tradition hurts it). Culture controls behaviour more effectively than rules, especially for unique problems.",
+   "Equity, inclusion, and diversity: in the 1950s over 70% of Canada’s workforce was male. Discrimination is illegal and prosecuted by the Canadian Human Rights Tribunal, and diverse teams bring fresh ideas and connect with diverse customers."]],
+  ["6.2","Organizational Direction",[
+   "To answer “What business are we in?”, identify <b>features</b> (tangible components that add value, like a shoe’s weight and flexibility) and, more importantly, <b>benefits</b> (what the customer gains, like running faster and more comfortably).",
+   "Blockbuster saw itself as a movie-rental business when its real benefit was at-home entertainment, so streaming services like Netflix replaced it.",
+   "<b>Goals</b> are major long-term accomplishments, best written as <b>SMART</b>: Specific, Measurable, Attainable, Relevant, Timely.",
+   "<b>Objectives</b> are shorter-term performance targets that move the firm toward a goal; they are clear, achievable, measurable, dated, and assigned to someone. McDonald’s targeted 3–5% annual sales growth and 6–7% income growth at existing restaurants.",
+   "Notes-4-You goals: a 10% return on profits in five years (objective: $20,000 sales and $2,000 profit in year one); a high-quality product (90%+ satisfaction on note quality); 98% customer satisfaction by year five (notes available within two days, 95% of the time)."]],
+  ["6.3","Organizational Strategies",[
+   "Strategies are the “how”: plans by department that allocate people, equipment, and money to reach strategic goals.",
+   "<b>SWOT analysis</b> matches Strengths and Weaknesses (internal; covered in Chapters 5–10) with Opportunities and Threats (external; covered in Chapters 1–4). A new helmet law is an opportunity for a helmet maker; big competitors entering is a threat.",
+   "Managers capitalize on strengths and opportunities, shore up weaknesses, and protect against threats."]],
+  ["6.4","The Management Process",[
+   "<b>Management</b> is the process of <b>planning</b>, <b>organizing</b>, <b>leading</b>, and <b>controlling</b>. Planning starts at the top and works down.",
+   "<b>Organizing</b> coordinates and allocates resources through division of labour, departmentalization, and delegation. The <b>managerial pyramid</b>: <b>top management</b> (CEO, president, VPs) makes strategic, long-range plans and sets values; <b>middle management</b> (division and department heads) makes tactical plans and starts implementation; <b>supervisory (first-line) managers</b>, the most numerous, make operational plans for daily work.",
+   "<b>Leading</b> means giving focus and direction and motivating people. Styles: <b>autocratic</b> (decides without input; suits emergencies or new teams on tight deadlines), <b>democratic/participative</b> (seeks input but makes the final call; often favoured because of buy-in), and <b>free-rein</b> (hands-off; requires trust and capable, willing people). Good leaders adapt their style.",
+   "<b>Transactional</b> leaders use authority from rank, rewarding results and disciplining mistakes. <b>Transformational</b> leaders mentor and challenge people to look beyond self-interest; experts see them as more effective in today’s collaborative organizations.",
+   "<b>Controlling</b> compares actual to planned performance in five steps: set standards, measure performance, compare and find deviations, determine the reasons, take corrective action. If Notes-4-You sells 80 packages instead of 100 because the copier kept failing, fix the copier; if the standard was based on overestimated enrolment, lower the standard to 80.",
+   "<b>Benchmarking</b> compares your practices to others’ to improve overall efficiency and effectiveness, by watching public information, partnering with firms in unrelated industries on shared functions, or joining consortiums where a consultant anonymizes and shares data."]],
+  ["6.5","Management Roles & Skills",[
+   "Managerial roles: <b>informational</b> (information gatherer, distributor, spokesperson), <b>interpersonal</b> (figurehead, leader, liaison), and <b>decisional</b> (entrepreneur, resource allocator, conflict resolver, negotiator).",
+   "<b>Technical skills</b> (doing specific tasks) get you hired and matter most early and for first-line managers. <b>Interpersonal (relational) skills</b> are critical for middle managers, who link top and first-line managers. <b>Conceptual skills</b> (abstract reasoning, analyzing complex situations) matter most at the top.",
+   "Everyone needs <b>communication</b> skills. <b>Time-management</b> tips: prioritize, set fixed times for calls and email, delegate routine tasks, don’t procrastinate, run meetings on time with an agenda, and cut unnecessary paperwork. <b>Decision-making</b> means defining the problem, analyzing possible solutions, and selecting the best one."]],
+  ["6.6","Determinants of Organizational Structure",[
+   "Organizing produces a formal structure through division of labour, departmentalization, and delegation. An <b>organization</b> is two or more people working toward a common objective with defined lines of authority, communication, and control.",
+   "Traditional structures are more rigid and group people by function, product, process, customer, or region; contemporary and team-based structures are more flexible.",
+   "<b>Division of labour</b> splits work into jobs; <b>specialization</b> is how far tasks are subdivided. It raises efficiency and consistency but can bore workers.",
+   "<b>Departmentalization</b> groups jobs into units, shown on an <b>organization chart</b>. Five types: <b>functional</b> (marketing, finance; Ethan Allen), <b>product</b> (ITT’s four divisions), <b>process</b> (Gazprom Neft; Pixar), <b>customer</b> (PNC: retail, asset management, corporate banking), and <b>geographic</b>. P&amp;G combines several in its “four pillars.”",
+   "A <b>line organization</b> has direct lines of authority from top to bottom and suits small firms. A <b>line-and-staff organization</b> adds <b>staff positions</b> that advise and support line managers (legal, public relations, HR), while line positions (production, marketing, finance) directly create goods and services."]]
+ ],
+ terms:[
+  ["Mission statement","A statement of an organization’s purpose and reason for existence."],
+  ["Core values","A small set of fundamental beliefs about what is and isn’t appropriate in conducting company activities."],
+  ["Organizational culture","A system of shared assumptions, values, and beliefs that shows employees what behaviour is appropriate."],
+  ["Feature","A physical or tangible component that enhances the value of a product or service."],
+  ["Benefit","The advantage a consumer gains that helps them accomplish their goal."],
+  ["Goals","Major accomplishments a company wants to achieve over a long period."],
+  ["SMART goals","Goals that are Specific, Measurable, Attainable, Relevant, and Timely."],
+  ["Objectives","Shorter-term, measurable performance targets that direct activities toward a goal."],
+  ["SWOT analysis","Assessing internal Strengths and Weaknesses and external Opportunities and Threats."],
+  ["Management","The process of planning, organizing, leading, and controlling."],
+  ["Planning","Setting goals and determining the best way to achieve them."],
+  ["Organizing","Coordinating and allocating a firm’s resources to carry out its plans."],
+  ["Leading","Providing focus and direction to others and motivating them to achieve organizational goals."],
+  ["Controlling","Comparing actual performance with planned performance and taking corrective action."],
+  ["Top management","The CEO, president, and VPs, who make strategic, long-range plans."],
+  ["Middle management","Division and department heads who make tactical plans and begin implementing strategy."],
+  ["Supervisory (first-line) management","The most numerous managers, who make operational plans for daily activities."],
+  ["Autocratic style","A leadership style in which the manager decides without input from subordinates."],
+  ["Democratic (participative) style","A leadership style that seeks subordinates’ input but keeps final decision authority."],
+  ["Free-rein style","A hands-off leadership style that gives employees considerable freedom to solve problems and decide."],
+  ["Transactional leadership","Leading through authority based on rank, rewarding met objectives and disciplining mistakes."],
+  ["Transformational leadership","Leading by mentoring and developing people and encouraging them to look beyond self-interest to the group’s."],
+  ["Benchmarking","Comparing your practices and processes with other organizations’ to improve overall efficiency and effectiveness."],
+  ["Technical skills","Skills needed to perform specific tasks; most important early in a career and for first-line managers."],
+  ["Interpersonal skills","The ability to get along with and motivate people; critical for middle managers."],
+  ["Conceptual skills","The ability to reason abstractly and analyze complex situations; most important for top managers."],
+  ["Division of labour","Dividing work into separate jobs and assigning tasks to workers."],
+  ["Specialization","The degree to which tasks are subdivided into smaller jobs."],
+  ["Departmentalization","Grouping people, tasks, and resources into organizational units."],
+  ["Delegation","Assigning authority and responsibilities."],
+  ["Organization chart","A visual representation of the structured relationships among tasks and the people with authority to do them."],
+  ["Line organization","A structure with direct, clear lines of authority and communication flowing from top managers downward."],
+  ["Staff positions","Roles that provide specialized advisory and support services to line managers, such as legal, PR, and HR."]
+ ],
+ mc:[
+  ["“To enrich the lives of women around the world” (Mary Kay) is an example of a:","Mission statement",["Core value","SMART objective","SWOT analysis"],"A mission statement states the organization’s purpose."],
+  ["Volvo’s commitment to safety, quality, and environmental care are its:","Core values",["Objectives","Features","Benefits"],"Core values are a small set of guiding principles."],
+  ["Who popularized the term “organizational culture” in the 1980s?","Peters and Waterman, In Search of Excellence",["Adam Smith, The Wealth of Nations","Michael Porter, five forces","Jim O’Neill, BRIC"],"They argued success came from a decisive, customer-oriented, empowering, people-oriented culture."],
+  ["Why is culture often a more powerful control mechanism than rules?","Rules are less helpful when problems are unique, while culture guides judgment",["Culture is written into employment contracts","Rules are illegal in Canada","Culture removes the need for managers"],"A customer-service culture helps employees decide what to do in situations no rule covers."],
+  ["What was Blockbuster’s key mistake?","It saw itself as a movie-rental business instead of an at-home entertainment business",["It charged too little for rentals","It defined too many core values","It used free-rein leadership"],"Identifying the customer benefit shows what business you’re really in."],
+  ["A running shoe’s light weight is a ______; helping the runner go faster is a ______.","Feature; benefit",["Benefit; feature","Goal; objective","Strength; opportunity"],"Features are tangible components; benefits are what the consumer gains."],
+  ["In a SMART goal, the “A” stands for:","Attainable",["Accurate","Ambitious","Assigned"],"Specific, Measurable, Attainable, Relevant, Timely."],
+  ["How do objectives differ from goals?","Objectives are shorter-term, measurable targets that direct activities toward a goal",["Objectives are long-term major accomplishments","Objectives are the same as core values","Objectives never have target dates"],"Goals are long-term; objectives break them into measurable steps."],
+  ["For a maker of children’s bicycle helmets, a new law requiring kids to wear helmets is:","An opportunity",["A strength","A weakness","A threat"],"It’s an external factor that could benefit the company."],
+  ["In a SWOT analysis, strengths and weaknesses are:","Internal factors",["External factors","Always financial","Set by government"],"Opportunities and threats are external."],
+  ["What is the correct order of the four management functions?","Planning, organizing, leading, controlling",["Leading, planning, controlling, organizing","Organizing, planning, leading, controlling","Controlling, leading, organizing, planning"],"Plan, then organize resources, lead people, and control results."],
+  ["Which level of management designs tactical plans for specific areas of the company?","Middle management",["Top management","Supervisory management","The board of directors"],"Top managers plan strategically; supervisors plan operationally."],
+  ["Which managers are the most numerous?","Supervisory (first-line) managers",["Top managers","Middle managers","Board members"],"They sit at the bottom of the managerial pyramid."],
+  ["During a fire emergency, which leadership style is most appropriate?","Autocratic",["Democratic","Free-rein","Participative"],"There’s no time for debate; the leader must decide quickly."],
+  ["Which leadership style is often favoured because people feel ownership (buy-in) of decisions?","Democratic",["Autocratic","Free-rein","Transactional"],"The leader seeks input but usually still makes the final decision."],
+  ["A leader who mentors subordinates and gives them challenging opportunities is:","Transformational",["Transactional","Autocratic","Free-rein"],"Transactional leaders rely on rank, rewards, and discipline."],
+  ["What is the first step in the five-step control process?","Set the standards for measuring performance",["Take corrective action","Measure performance","Determine the reasons for deviation"],"Standards come first; corrective action is last."],
+  ["Notes-4-You sold 80 packages instead of 100 because the copier kept breaking. The best response is to:","Fix the cause, such as increasing copier maintenance",["Lower the standard to 80","Change leadership style","Stop measuring sales"],"The standard was fine; performance fell short for a fixable reason."],
+  ["Notes-4-You sold 80 packages instead of 100 because enrolment was overestimated. The best response is to:","Adjust the standard to 80 packages",["Fix the copier","Fire the salespeople","Raise prices"],"Here the plan was wrong, not the performance."],
+  ["In a benchmarking consortium:","An outside consultant collects, anonymizes, and shares data among participants",["Firms copy competitors’ products","Government sets industry standards","Companies only read published rankings"],"Firms compare themselves without revealing their own performance."],
+  ["Acting as a company spokesperson is which type of managerial role?","Informational",["Interpersonal","Decisional","Technical"],"Informational roles: gatherer, distributor, spokesperson."],
+  ["Resolving conflicts and negotiating compromises are which type of managerial role?","Decisional",["Informational","Interpersonal","Conceptual"],"Decisional roles also include entrepreneur and resource allocator."],
+  ["Which skills are most critical for middle managers?","Interpersonal (relational) skills",["Technical skills","Conceptual skills only","Typing skills"],"Middle managers connect top and first-line managers."],
+  ["Pixar is divided into technology development, creative development, and production. This is:","Process departmentalization",["Customer departmentalization","Geographic departmentalization","Functional departmentalization"],"Units are based on stages of the production process."],
+  ["PNC organizes around retail banking, asset management, and corporate banking clients. This is:","Customer departmentalization",["Product departmentalization","Process departmentalization","Geographic departmentalization"],"Units are based on the type of customer served."],
+  ["Which of these are typically staff positions?","Legal counselling, public relations, and human resources",["Production, marketing, and finance","Assembly-line work","CEO and president"],"Staff positions advise and support line managers."]
+ ],
+ tf:[
+  ["Core values should guide the behaviour of every individual in the organization.",true,"Companies link values to evaluations and pay."],
+  ["Employees usually notice their organization’s culture most when they compare it with another organization.",true,"Culture is largely invisible from the inside."],
+  ["A culture that helps one company could hurt another company in a different environment.",true,"Culture must fit the demands of the company’s environment."],
+  ["In the 1950s, more than 70% of Canada’s workforce was male.",true,"Today’s workforce reflects much broader diversity."],
+  ["Objectives are long-term accomplishments, and goals are short-term targets.",false,"It’s the reverse: goals are long-term; objectives are shorter-term targets."],
+  ["External opportunities and threats were covered in Chapters 1–4.",true,"Internal strengths and weaknesses are covered in Chapters 5–10."],
+  ["Planning begins at the lowest level of the organization and works up.",false,"Planning begins at the highest level and works down."],
+  ["Top managers develop operational plans for daily activities.",false,"Top managers plan strategically; supervisors make operational plans."],
+  ["Under the democratic style, the leader usually still makes the final decision.",true,"Input is sought, but authority stays with the leader."],
+  ["Free-rein leadership works well with any team, whatever its readiness.",false,"It works only when people are willing and able to work independently."],
+  ["Experts generally see transformational leadership as more effective in today’s collaborative organizations.",true,"Leaders who can be both transactional and transformational are rare."],
+  ["Benchmarking can involve working with companies in unrelated industries.",true,"They compare shared functions like accounting or HR."],
+  ["Technical skills are generally acquired during formal education.",true,"They are refined through training and experience."],
+  ["A high degree of specialization can leave employees bored.",true,"It increases efficiency but reduces variety and challenge."],
+  ["Line positions are typically in production, marketing, and finance.",true,"Staff positions are in areas like legal, PR, and HR."],
+  ["A simple line organization is often well-suited to small, entrepreneurial firms.",true,"It has a simple design and broad managerial control."]
+ ]}
+];
+
+const TESTS = [
+  {id:"c1",group:"Chapter tests",name:"Chapter 1 test",chs:[1],tf:6,mc:10,match:6},
+  {id:"c2",group:"Chapter tests",name:"Chapter 2 test",chs:[2],tf:6,mc:10,match:6},
+  {id:"c3",group:"Chapter tests",name:"Chapter 3 test",chs:[3],tf:6,mc:10,match:6},
+  {id:"c4",group:"Chapter tests",name:"Chapter 4 test",chs:[4],tf:6,mc:10,match:6},
+  {id:"c5",group:"Chapter tests",name:"Chapter 5 test",chs:[5],tf:6,mc:10,match:6},
+  {id:"c6",group:"Chapter tests",name:"Chapter 6 test",chs:[6],tf:6,mc:10,match:6},
+  {id:"u1",group:"Mixed reviews",name:"Unit review: Chapters 1–3",chs:[1,2,3],tf:9,mc:15,match:8},
+  {id:"u2",group:"Mixed reviews",name:"Unit review: Chapters 4–6",chs:[4,5,6],tf:9,mc:15,match:8},
+  {id:"final",group:"Mixed reviews",name:"Cumulative exam: Chapters 1–6",chs:[1,2,3,4,5,6],tf:12,mc:24,match:10}
+];
+
+/* ---------- helpers ---------- */
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const strip=s=>String(s).replace(/<[^>]+>/g,"");
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const sample=(a,n)=>shuffle(a).slice(0,Math.min(n,a.length));
+const store={
+  get(k,d){try{const v=localStorage.getItem("mgmt1000:"+k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem("mgmt1000:"+k,JSON.stringify(v))}catch(e){}}
+};
+const chap=n=>CH[n-1];
+const allTerms=CH.flatMap(c=>c.terms.map((t,i)=>({id:c.n+"-"+i,ch:c.n,term:t[0],def:t[1]})));
+$("#fc-total").textContent=allTerms.length;
+
+/* ---------- tabs ---------- */
+const TABS=["summaries","flashcards","tests"];
+function setTab(name,push){
+  if(!TABS.includes(name))name="summaries";
+  TABS.forEach(t=>{
+    $("#panel-"+t).hidden=t!==name;
+    $("#tab-"+t).setAttribute("aria-selected",t===name?"true":"false");
+    $("#tab-"+t).tabIndex=t===name?0:-1;
+  });
+  if(push!==false){try{history.replaceState(null,"","#"+name)}catch(e){}}
+  store.set("tab",name);
+}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{setTab(b.dataset.tab);window.scrollTo({top:0})}));
+$(".tabrow").addEventListener("keydown",e=>{
+  if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft")return;
+  const cur=TABS.findIndex(t=>$("#tab-"+t).getAttribute("aria-selected")==="true");
+  const nx=(cur+(e.key==="ArrowRight"?1:-1)+TABS.length)%TABS.length;
+  setTab(TABS[nx]);$("#tab-"+TABS[nx]).focus();
+});
+
+/* ---------- summaries ---------- */
+let sumCh=store.get("sumCh",1);
+function renderSumChips(){
+  $("#sum-chips").innerHTML=CH.map(c=>`<button class="chip" data-ch="${c.n}" aria-pressed="${c.n===sumCh}">Chapter ${c.n}</button>`).join("");
+}
+function renderSummary(){
+  const c=chap(sumCh);
+  $("#sum-body").innerHTML=`
+    <div class="chapter-head">
+      <div class="num">Chapter ${c.n} of 6 · ${c.sections.length} sections · ${c.terms.length} key terms</div>
+      <h2>${esc(c.title)}</h2>
+      <p>${esc(c.overview)}</p>
+    </div>
+    <div class="sum-grid">
+      <div>
+        ${c.sections.map(s=>`<div class="section"><h3><span class="sid">${s[0]}</span><span>${esc(s[1])}</span></h3><ul>${s[2].map(p=>`<li>${p}</li>`).join("")}</ul></div>`).join("")}
+        <div class="row sum-actions">
+          <button class="btn" data-go-test="c${c.n}">Take the Chapter ${c.n} test</button>
+          <button class="btn ghost" data-go-fc="${c.n}">Study Chapter ${c.n} flashcards</button>
+          ${c.n<6?`<button class="btn ghost" data-next-ch="${c.n+1}">Next: Chapter ${c.n+1}</button>`:""}
+        </div>
+      </div>
+      <aside class="terms" aria-label="Key terms"><h4>Key terms</h4><dl>${c.terms.map(t=>`<div><dt>${esc(t[0])}</dt><dd>${esc(t[1])}</dd></div>`).join("")}</dl></aside>
+    </div>`;
+}
+$("#sum-chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;sumCh=+b.dataset.ch;store.set("sumCh",sumCh);renderSumChips();renderSummary();});
+$("#sum-body").addEventListener("click",e=>{
+  const t=e.target.closest("[data-go-test]"),f=e.target.closest("[data-go-fc]"),n=e.target.closest("[data-next-ch]");
+  if(t){setTab("tests");startTest(t.dataset.goTest);window.scrollTo({top:0});}
+  if(f){fc.sel=f.dataset.goFc;store.set("fcSel",fc.sel);buildDeck();renderFcChips();setTab("flashcards");window.scrollTo({top:0});}
+  if(n){sumCh=+n.dataset.nextCh;store.set("sumCh",sumCh);renderSumChips();renderSummary();$("#sum-chips").scrollIntoView({block:"start"});window.scrollBy(0,-60);}
+});
+
+/* ---------- flashcards ---------- */
+const fc={sel:store.get("fcSel","all"),deck:[],i:0,flipped:false,defFirst:store.get("defFirst",false),onlyLearning:store.get("onlyLearning",false)};
+let known=new Set(store.get("known",[]));
+function saveKnown(){store.set("known",[...known]);}
+function renderFcChips(){
+  const opts=[["all","All chapters"]].concat(CH.map(c=>[String(c.n),"Ch. "+c.n]));
+  $("#fc-chips").innerHTML=opts.map(o=>`<button class="chip" data-sel="${o[0]}" aria-pressed="${fc.sel===o[0]}">${o[1]}</button>`).join("");
+}
+function buildDeck(shuffled){
+  let pool=allTerms.filter(t=>fc.sel==="all"||String(t.ch)===fc.sel);
+  if(fc.onlyLearning)pool=pool.filter(t=>!known.has(t.id));
+  fc.deck=shuffled?shuffle(pool):pool;fc.i=0;fc.flipped=false;renderCard();
+}
+function renderCard(){
+  const area=$("#fc-area");
+  const scope=allTerms.filter(t=>fc.sel==="all"||String(t.ch)===fc.sel);
+  const nKnown=scope.filter(t=>known.has(t.id)).length;
+  if(!fc.deck.length){
+    area.innerHTML=`<div class="empty"><p style="font-family:var(--display);font-size:22px;font-weight:600;margin:0 0 6px">Every card here is marked “Got it.”</p><p style="margin:0 0 16px;color:var(--muted)">Turn off “Still learning only” to review them all, or reset to start fresh.</p><button class="btn" id="fc-reset">Reset these cards</button></div>`;
+    $("#fc-reset").onclick=()=>{scope.forEach(t=>known.delete(t.id));saveKnown();buildDeck();};
+    return;
+  }
+  const c=fc.deck[fc.i];
+  const front=fc.defFirst?{lab:"Definition",html:`<div class="txt-def">${esc(c.def)}</div>`}:{lab:"Term",html:`<div class="txt-term">${esc(c.term)}</div>`};
+  const back=fc.defFirst?{lab:"Term",html:`<div class="txt-term">${esc(c.term)}</div>`}:{lab:"Definition",html:`<div class="txt-def">${esc(c.def)}</div>`};
+  const isK=known.has(c.id);
+  area.innerHTML=`
+    <div class="stage">
+      <button class="card${fc.flipped?" flipped":""}" id="fc-card" aria-label="Flashcard. ${fc.flipped?back.lab:front.lab} showing. Press to flip.">
+        <div class="face front"><span class="lab">${front.lab}</span><span class="tag">Ch. ${c.ch}</span>${front.html}<span class="hint">Click or press Space to flip</span>${isK?'<span class="known">Got it ✓</span>':""}</div>
+        <div class="face back"><span class="lab">${back.lab}</span><span class="tag">Ch. ${c.ch}</span>${back.html}${isK?'<span class="known">Got it ✓</span>':""}</div>
+      </button>
+    </div>
+    <div class="bar"><i style="width:${((fc.i+1)/fc.deck.length*100).toFixed(1)}%"></i></div>
+    <div class="fc-nav">
+      <button class="btn ghost" id="fc-prev" ${fc.i===0?"disabled":""}>← Previous</button>
+      <span class="counter">${fc.i+1} / ${fc.deck.length}</span>
+      <button class="btn ghost" id="fc-next" ${fc.i===fc.deck.length-1?"disabled":""}>Next →</button>
+    </div>
+    <div class="sort">
+      <button class="btn learn" id="fc-learn">Still learning</button>
+      <button class="btn know" id="fc-know">Got it</button>
+      <button class="btn ghost" id="fc-shuffle">Shuffle</button>
+    </div>
+    <div class="tally">${nKnown} of ${scope.length} marked “Got it” · <span class="kbd">Space</span> flip · <span class="kbd">←</span> <span class="kbd">→</span> move · <span class="kbd">K</span> got it · <span class="kbd">L</span> still learning</div>`;
+  $("#fc-card").onclick=flip;
+  $("#fc-prev").onclick=()=>move(-1);
+  $("#fc-next").onclick=()=>move(1);
+  $("#fc-know").onclick=()=>mark(true);
+  $("#fc-learn").onclick=()=>mark(false);
+  $("#fc-shuffle").onclick=()=>buildDeck(true);
+}
+function flip(){fc.flipped=!fc.flipped;const el=$("#fc-card");if(el){el.classList.toggle("flipped",fc.flipped);}}
+function move(d){const n=fc.i+d;if(n<0||n>=fc.deck.length)return;fc.i=n;fc.flipped=false;renderCard();$("#fc-card")&&$("#fc-card").focus();}
+function mark(k){
+  const c=fc.deck[fc.i];if(!c)return;
+  if(k)known.add(c.id);else known.delete(c.id);saveKnown();
+  if(fc.onlyLearning&&k){fc.deck.splice(fc.i,1);if(fc.i>=fc.deck.length)fc.i=Math.max(0,fc.deck.length-1);fc.flipped=false;renderCard();return;}
+  if(fc.i<fc.deck.length-1){fc.i++;fc.flipped=false;}
+  renderCard();
+}
+$("#fc-chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;fc.sel=b.dataset.sel;store.set("fcSel",fc.sel);renderFcChips();buildDeck();});
+$("#fc-deffirst").checked=fc.defFirst;$("#fc-learning").checked=fc.onlyLearning;
+$("#fc-deffirst").addEventListener("change",e=>{fc.defFirst=e.target.checked;store.set("defFirst",fc.defFirst);fc.flipped=false;renderCard();});
+$("#fc-learning").addEventListener("change",e=>{fc.onlyLearning=e.target.checked;store.set("onlyLearning",fc.onlyLearning);buildDeck();});
+document.addEventListener("keydown",e=>{
+  if($("#panel-flashcards").hidden)return;
+  const tag=(e.target.tagName||"").toLowerCase();
+  if(tag==="input"||tag==="select"||tag==="textarea")return;
+  if(e.target.closest&&e.target.closest(".tabrow"))return;
+  if(e.key===" "||e.key==="Enter"){if(e.target===document.body){e.preventDefault();flip();}}
+  else if(e.key==="ArrowRight"){e.preventDefault();move(1);}
+  else if(e.key==="ArrowLeft"){e.preventDefault();move(-1);}
+  else if(e.key==="k"||e.key==="K"){mark(true);}
+  else if(e.key==="l"||e.key==="L"){mark(false);}
+});
+
+/* ---------- tests ---------- */
+let T=null; // current test state
+function bestOf(id){return store.get("best",{})[id];}
+function renderTestList(){
+  T=null;
+  const groups=[...new Set(TESTS.map(t=>t.group))];
+  $("#test-area").innerHTML=`<p class="intro-note">Each test mixes true/false, multiple choice, and matching, drawn at random from the chapter’s question bank. Press “New version” for a fresh set of questions on the same material.</p>`+
+  groups.map(g=>`<div class="group-label">${g}</div><div class="test-list">${TESTS.filter(t=>t.group===g).map(t=>{
+    const b=bestOf(t.id);const items=t.tf+t.mc+t.match;
+    return `<div class="tcard"><h3>${esc(t.name)}</h3><div class="meta">${items} questions · ${t.tf} true/false · ${t.mc} multiple choice · ${t.match} matching</div><div class="best">${b!=null?`Best score <b>${b}%</b>`:"Not taken yet"}</div><button class="btn" data-start="${t.id}">Start</button></div>`;
+  }).join("")}</div>`).join("");
+}
+$("#test-area").addEventListener("click",e=>{
+  const s=e.target.closest("[data-start]");if(s){startTest(s.dataset.start);window.scrollTo({top:0});return;}
+  if(!T)return;
+  const opt=e.target.closest(".opt");
+  if(opt&&!T.graded){const qi=+opt.dataset.q;T.answers[qi]=+opt.dataset.v;opt.parentElement.querySelectorAll(".opt").forEach(o=>o.setAttribute("aria-pressed",o===opt?"true":"false"));T.confirm=false;updateCount();return;}
+  if(e.target.closest("#t-back")){renderTestList();window.scrollTo({top:0});return;}
+  if(e.target.closest("#t-new,#t-new2")){startTest(T.cfg.id);window.scrollTo({top:0});return;}
+  if(e.target.closest("#t-retake")){T.answers={};T.graded=false;T.confirm=false;renderTest();window.scrollTo({top:0});return;}
+  if(e.target.closest("#t-submit")){submitTest();return;}
+});
+$("#test-area").addEventListener("change",e=>{
+  const s=e.target.closest("select[data-q]");if(!s||!T||T.graded)return;
+  const qi=+s.dataset.q,ri=+s.dataset.r;
+  T.answers[qi]=T.answers[qi]||{};
+  if(s.value==="")delete T.answers[qi][ri];else T.answers[qi][ri]=+s.value;
+  T.confirm=false;updateCount();
+});
+
+function buildTest(cfg){
+  const chs=cfg.chs.map(chap);
+  const items=[];
+  // true/false
+  const tfPool=chs.flatMap(c=>c.tf.map(x=>({ch:c.n,s:x[0],a:x[1],e:x[2]})));
+  sample(tfPool,cfg.tf).forEach(x=>items.push({type:"tf",ch:x.ch,stem:x.s,opts:["True","False"],correct:x.a?0:1,expl:x.e}));
+  // multiple choice: ~70% concept questions, rest built from key terms
+  const nConcept=Math.round(cfg.mc*0.7), nTerm=cfg.mc-nConcept;
+  const mcPool=chs.flatMap(c=>c.mc.map(x=>({ch:c.n,q:x[0],ok:x[1],bad:x[2],e:x[3]})));
+  const mcItems=sample(mcPool,nConcept).map(x=>{const o=shuffle([x.ok].concat(x.bad));return {type:"mc",ch:x.ch,stem:x.q,opts:o,correct:o.indexOf(x.ok),expl:x.e};});
+  const termPool=allTerms.filter(t=>cfg.chs.includes(t.ch));
+  const termPicks=sample(termPool,nTerm+cfg.match);
+  const forMC=termPicks.slice(0,nTerm), forMatch=termPicks.slice(nTerm);
+  forMC.forEach(t=>{
+    const others=sample(allTerms.filter(o=>o.ch===t.ch&&o.id!==t.id),3);
+    if(Math.random()<0.6){
+      const o=shuffle([t.term].concat(others.map(x=>x.term)));
+      mcItems.push({type:"mc",ch:t.ch,lead:"Which term matches this definition?",stem:t.def,opts:o,correct:o.indexOf(t.term),expl:`<b>${esc(t.term)}</b>: ${esc(t.def)}`,raw:true});
+    }else{
+      const o=shuffle([t.def].concat(others.map(x=>x.def)));
+      mcItems.push({type:"mc",ch:t.ch,lead:"Choose the best definition.",stem:t.term,opts:o,correct:o.indexOf(t.def),expl:`<b>${esc(t.term)}</b>: ${esc(t.def)}`,raw:true});
+    }
+  });
+  shuffle(mcItems).forEach(x=>items.push(x));
+  // matching
+  if(forMatch.length){
+    const termsAlpha=forMatch.map(t=>t.term).sort((a,b)=>a.localeCompare(b));
+    items.push({type:"match",rows:shuffle(forMatch).map(t=>({ch:t.ch,def:t.def,term:t.term,correct:termsAlpha.indexOf(t.term)})),terms:termsAlpha});
+  }
+  return items;
+}
+function startTest(id){
+  const cfg=TESTS.find(t=>t.id===id);if(!cfg)return;
+  T={cfg,items:buildTest(cfg),answers:{},graded:false,confirm:false};
+  renderTest();
+}
+function totalPoints(){return T.items.reduce((n,it)=>n+(it.type==="match"?it.rows.length:1),0);}
+function answeredCount(){
+  let n=0;T.items.forEach((it,i)=>{const a=T.answers[i];if(it.type==="match"){if(a)n+=Object.keys(a).length;}else if(a!=null)n++;});return n;
+}
+function updateCount(){const el=$("#t-count");if(el)el.textContent=`${answeredCount()} of ${totalPoints()} answered`;const w=$("#t-warn");if(w&&!T.confirm)w.textContent="";const sb=$("#t-submit");if(sb&&!T.confirm)sb.textContent="Submit test";}
+function renderTest(){
+  const cfg=T.cfg;
+  const secs={tf:[],mc:[],match:[]};
+  T.items.forEach((it,i)=>secs[it.type].push(i));
+  let qn=0;
+  const qHTML=i=>{
+    const it=T.items[i];qn++;
+    const sel=T.answers[i];
+    const keys=it.type==="tf"?["T","F"]:["A","B","C","D"];
+    return `<div class="q" id="q${i}"><div class="qtop"><span>Question ${qn}</span><span>Ch. ${it.ch}</span></div>
+      <p class="stem">${it.lead?`<em>${esc(it.lead)}</em>`:""}${esc(it.stem)}</p>
+      <div class="opts${it.type==="tf"?" two":""}">${it.opts.map((o,k)=>`<button class="opt" data-q="${i}" data-v="${k}" aria-pressed="${sel===k}"><span class="k">${keys[k]}</span><span>${esc(o)}</span></button>`).join("")}</div>
+      <div class="fbslot"></div></div>`;
+  };
+  const matchHTML=i=>{
+    const it=T.items[i];const a=T.answers[i]||{};
+    return `<div class="q" id="q${i}"><div class="qtop"><span>Match each definition to its term</span><span>${it.rows.length} pairs</span></div>
+      ${it.rows.map((r,ri)=>`<div class="mrow" data-r="${ri}"><div class="def">${esc(r.def)}</div><select data-q="${i}" data-r="${ri}" id="m${i}-${ri}" aria-label="Term for definition ${ri+1}"><option value="">Choose a term…</option>${it.terms.map((t,ti)=>`<option value="${ti}" ${a[ri]===ti?"selected":""}>${esc(t)}</option>`).join("")}</select><div class="fix" hidden></div></div>`).join("")}
+    </div>`;
+  };
+  const b=bestOf(cfg.id);
+  $("#test-area").innerHTML=`
+    <div class="test-head">
+      <div><div class="eyebrow">${esc(cfg.group)}${b!=null?` · Best ${b}%`:""}</div><h2>${esc(cfg.name)}</h2></div>
+      <div class="row"><button class="btn ghost" id="t-back">All tests</button><button class="btn ghost" id="t-new">New version</button></div>
+    </div>
+    <div id="t-result"></div>
+    ${secs.tf.length?`<div class="qsec"><h3>True or false</h3><p>${secs.tf.length} questions</p>${secs.tf.map(qHTML).join("")}</div>`:""}
+    ${secs.mc.length?`<div class="qsec"><h3>Multiple choice</h3><p>${secs.mc.length} questions</p>${secs.mc.map(qHTML).join("")}</div>`:""}
+    ${secs.match.length?`<div class="qsec"><h3>Matching</h3><p>Each term is used once.</p>${secs.match.map(matchHTML).join("")}</div>`:""}
+    <div class="submitbar"><span class="count" id="t-count"></span><span class="warn" id="t-warn" aria-live="polite"></span><button class="btn" id="t-submit">Submit test</button></div>`;
+  updateCount();
+}
+function submitTest(){
+  if(T.graded)return;
+  const total=totalPoints(),ans=answeredCount();
+  if(ans<total&&!T.confirm){T.confirm=true;$("#t-warn").textContent=`${total-ans} unanswered. Unanswered items count as wrong.`;$("#t-submit").textContent="Submit anyway";return;}
+  T.graded=true;
+  let score=0;const by={tf:[0,0],mc:[0,0],match:[0,0]};
+  T.items.forEach((it,i)=>{
+    const box=$("#q"+i);box.classList.add("graded");
+    if(it.type==="match"){
+      const a=T.answers[i]||{};
+      it.rows.forEach((r,ri)=>{
+        const row=box.querySelector(`.mrow[data-r="${ri}"]`);const ok=a[ri]===r.correct;
+        by.match[1]++;if(ok){score++;by.match[0]++;}
+        row.classList.add(ok?"is-right":"is-wrong");
+        row.querySelector("select").disabled=true;
+        if(!ok){const f=row.querySelector(".fix");f.hidden=false;f.textContent="Answer: "+r.term;}
+      });
+      return;
+    }
+    const a=T.answers[i],ok=a===it.correct;
+    by[it.type][1]++;if(ok){score++;by[it.type][0]++;}
+    box.querySelectorAll(".opt").forEach(o=>{const v=+o.dataset.v;if(v===it.correct)o.classList.add("is-right");else if(v===a)o.classList.add("is-wrong");o.disabled=true;});
+    const right=it.opts[it.correct];
+    box.querySelector(".fbslot").innerHTML=`<div class="feedback ${ok?"ok":"bad"}"><span class="verdict ${ok?"ok":"bad"}">${ok?"Correct.":(a==null?"Not answered.":"Not quite.")}</span> ${ok?"":`Answer: <b>${esc(right)}</b>. `}${it.raw?it.expl:esc(it.expl)}</div>`;
+  });
+  const pct=Math.round(score/total*100);
+  const best=store.get("best",{});if(best[T.cfg.id]==null||pct>best[T.cfg.id]){best[T.cfg.id]=pct;store.set("best",best);}
+  const msg=pct>=90?"Exam-ready on this material. Try a new version to make sure it sticks.":pct>=75?"Solid. Review the explanations below for the ones you missed.":pct>=60?"Getting there. Reread the summary sections for the chapters you missed, then try a new version.":"Start with the chapter summaries and flashcards, then come back for a new version.";
+  const lab={tf:"True/false",mc:"Multiple choice",match:"Matching"};
+  $("#t-result").innerHTML=`<div class="result"><div class="score">${pct}<small>%</small></div><div><div class="breakdown"><span><b>${score}</b> of ${total} correct</span>${Object.keys(by).filter(k=>by[k][1]).map(k=>`<span>${lab[k]} <b>${by[k][0]}/${by[k][1]}</b></span>`).join("")}</div><p class="msg">${msg}</p><div class="row" style="margin-top:12px"><button class="btn" id="t-new2">New version</button><button class="btn ghost" id="t-retake">Retake these questions</button></div></div></div>`;
+  $("#t-submit").disabled=true;$("#t-submit").textContent="Submitted";$("#t-warn").textContent="";
+  $("#t-result").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+/* ---------- boot ---------- */
+renderSumChips();renderSummary();renderFcChips();buildDeck();renderTestList();
+const hash=(location.hash||"").replace("#","");
+setTab(TABS.includes(hash)?hash:store.get("tab","summaries"),false);
+</script>
+
+</body></html>

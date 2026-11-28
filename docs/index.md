@@ -15,7 +15,7 @@ Free, exam-focused study guides for courses I've taken. Each guide covers the ke
 
     ---
 
-    Supply and demand, elasticity, market structures and more.
+    Study guides for economics courses.
 
     [:octicons-arrow-right-24: Browse economics](economics/index.md)
 
@@ -31,7 +31,7 @@ Free, exam-focused study guides for courses I've taken. Each guide covers the ke
 
     ---
 
-    Frameworks, key terms and case-style questions.
+    MGMT 1000 summaries, flashcards, practice tests and case study.
 
     [:octicons-arrow-right-24: Browse management](management/index.md)
 
