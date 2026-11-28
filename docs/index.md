@@ -19,13 +19,13 @@ Free, exam-focused study guides for courses I've taken. Each guide covers the ke
 
     [:octicons-arrow-right-24: Browse economics](economics/index.md)
 
--   :lucide-sigma:{ .lg .middle } **Math**
+-   :lucide-sigma:{ .lg .middle } **CALC1200**
 
     ---
 
-    Worked problems and formulas, step by step.
+    Calculus I study path: concept checks, practice and exam-level problems.
 
-    [:octicons-arrow-right-24: Browse math](math/index.md)
+    [:octicons-arrow-right-24: Browse CALC1200](CALC1200/index.md)
 
 -   :lucide-briefcase:{ .lg .middle } **Management**
 

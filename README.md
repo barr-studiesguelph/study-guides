@@ -55,7 +55,7 @@ study-guides/
     ├── index.md             ← home page
     ├── about.md
     ├── economics/
-    ├── math/
+    ├── CALC1200/
     ├── management/
     ├── javascripts/katex.js ← makes math formulas render
     └── stylesheets/extra.css
