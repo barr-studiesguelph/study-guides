@@ -1,0 +1,886 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Chapters 4–6 Study Path</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=Public+Sans:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap">
+<style>
+/* Layout: exam blue-book on graph paper — one narrow column, sticky tab bar, red-pen corrections */
+:root{
+  --paper:#EEF2F6; --sheet:#FFFFFF; --ink:#18212E; --muted:#566376; --rule:#D2DAE4;
+  --grid:rgba(39,71,168,.07); --accent:#2747A8; --accent-soft:#E4EAF9;
+  --red:#C42F26; --red-soft:#FBEAE8; --green:#22744A; --green-soft:#E3F2E9;
+  --serif:"STIX Two Text","Cambria","Times New Roman",serif;
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --hand:"Kalam","Segoe Print","Comic Sans MS",cursive;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0F141B; --sheet:#161D27; --ink:#E2E7EE; --muted:#9AA6B7; --rule:#2A3441;
+  --grid:rgba(142,166,255,.05); --accent:#8EA6FF; --accent-soft:#1D2843;
+  --red:#FF7D73; --red-soft:#3A1F1E; --green:#6ED39A; --green-soft:#15301F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0F141B; --sheet:#161D27; --ink:#E2E7EE; --muted:#9AA6B7; --rule:#2A3441;
+  --grid:rgba(142,166,255,.05); --accent:#8EA6FF; --accent-soft:#1D2843;
+  --red:#FF7D73; --red-soft:#3A1F1E; --green:#6ED39A; --green-soft:#15301F; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background-color:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.55;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.col{max-width:820px;margin:0 auto}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+sub{font-size:.7em}
+
+/* header */
+.top{padding-block:28px 18px}
+.eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,6vw,46px);line-height:1.05;margin:6px 0 8px;text-wrap:balance}
+h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.sub{margin:0;color:var(--muted);font-size:17px}
+
+/* tabs */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+.bar .col{display:flex;align-items:center;gap:12px}
+.tabs{display:flex;gap:2px;overflow-x:auto;flex:1;min-width:0;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{background:none;border:0;border-bottom:2px solid transparent;padding:12px 10px 10px;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--muted);white-space:nowrap;cursor:pointer;display:flex;align-items:center;gap:6px}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+.badge{font-size:11px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--red);color:var(--sheet);display:inline-grid;place-items:center}
+.badge[data-n="0"]{display:none}
+
+/* sections */
+main{padding-block:28px 72px}
+.panel{display:flex;flex-direction:column;gap:18px}
+.sec-head h2{font-size:30px;font-weight:600;line-height:1.15;margin:4px 0 6px;text-wrap:balance}
+.lede{margin:0;color:var(--muted);max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:10px;font-family:var(--sans);font-size:13px;color:var(--muted)}
+.meta strong{color:var(--ink);font-variant-numeric:tabular-nums}
+.link{background:none;border:0;padding:0;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:20px 20px 22px;min-width:0}
+.ref{background:var(--accent-soft);border-color:transparent}
+.ref h3{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.ref h4{font-size:18px;margin:18px 0 6px;font-weight:600}
+.ref p{margin:0 0 10px}
+.ref ol{margin:6px 0 0;padding-left:22px;display:grid;gap:6px}
+.ref ol li::marker{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--accent)}
+.note{font-family:var(--sans);font-size:13px;color:var(--muted)}
+.mb{font-family:var(--serif);background:var(--sheet);border-radius:4px;padding:12px 14px;margin:8px 0 12px;overflow-x:auto;line-height:1.7}
+.mb .c{font-family:var(--hand);color:var(--accent);font-size:15px;white-space:nowrap}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.two>*{min-width:0}
+.tbl{overflow-x:auto;margin-top:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--sans);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* questions */
+.qhead{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:6px}
+.qn{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.qtype{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.prompt{font-size:18px;margin:0 0 14px;max-width:66ch}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;padding:10px 12px;border:1px solid var(--rule);background:var(--sheet);border-radius:4px;cursor:pointer;font-family:var(--serif);font-size:17px;line-height:1.45}
+.opt:hover:not([disabled]){border-color:var(--accent)}
+.opt[disabled]{cursor:default}
+.opt .k{flex:none;width:24px;height:24px;border-radius:50%;border:1px solid var(--rule);display:grid;place-items:center;font-family:var(--sans);font-size:12px;font-weight:700;color:var(--muted);margin-top:1px}
+.opt.right{border-color:var(--green);background:var(--green-soft)}
+.opt.right .k{border-color:var(--green);color:var(--green)}
+.opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.opt.wrong .k{border-color:var(--red);color:var(--red)}
+.opt.dim{opacity:.6}
+
+.fb{margin-top:14px;padding:14px 16px;border-radius:4px;display:grid;gap:8px}
+.fb.bad{background:var(--red-soft)}
+.fb.good{background:var(--green-soft)}
+.pen{font-family:var(--hand);font-size:21px;line-height:1.1;font-weight:700}
+.fb.bad .pen{color:var(--red)}
+.fb.good .pen{color:var(--green)}
+.fb p{margin:0}
+.fb .lab{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px}
+.take{border-top:1px dashed var(--rule);padding-top:8px}
+details.others summary{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--accent);cursor:pointer}
+details.others ul{margin:8px 0 0;padding-left:18px;display:grid;gap:8px;font-size:16px}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.btn{font-family:var(--sans);font-size:14px;font-weight:600;padding:9px 14px;border-radius:4px;border:1px solid var(--accent);background:var(--accent);color:var(--sheet);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.warn{border-color:var(--red);background:transparent;color:var(--red)}
+.btn[disabled]{opacity:.5;cursor:default}
+
+/* ordering */
+.ord{display:grid;gap:14px}
+.ord h5{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.lines{display:grid;gap:6px;min-height:44px;counter-reset:ln}
+.seq{border:1px dashed var(--rule);border-radius:4px;padding:8px}
+.seq:empty::before{content:"Tap lines below to build your proof here.";font-family:var(--sans);font-size:13px;color:var(--muted);padding:6px}
+.line{display:flex;gap:10px;width:100%;text-align:left;padding:8px 10px;border:1px solid var(--rule);border-radius:4px;background:var(--sheet);cursor:pointer;font-family:var(--serif);font-size:16px;line-height:1.45}
+.seq .line{counter-increment:ln}
+.seq .line::before{content:counter(ln);font-family:var(--sans);font-size:12px;font-weight:700;color:var(--muted);min-width:16px;padding-top:2px}
+.line:hover{border-color:var(--accent)}
+.line.okl{border-color:var(--green);background:var(--green-soft)}
+.line.badl{border-color:var(--red);background:var(--red-soft)}
+
+/* writing */
+textarea{width:100%;min-height:150px;resize:vertical;font-family:var(--serif);font-size:16px;line-height:1.55;padding:12px;border:1px solid var(--rule);border-radius:4px;background:var(--paper);color:var(--ink)}
+.model{margin-top:14px;background:var(--green-soft);border-radius:4px;padding:14px 16px}
+.model .lab{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+.model p{margin:6px 0 0}
+.rub{margin-top:14px;display:grid;gap:8px}
+.rub label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border:1px solid var(--rule);border-radius:4px;cursor:pointer}
+.rub input{margin-top:5px;accent-color:var(--accent);flex:none;width:16px;height:16px}
+.rub small{display:block;font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.4;margin-top:2px}
+
+/* plan */
+.plan{display:grid;gap:0;margin:0;padding:0;list-style:none}
+.plan li{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--rule)}
+.plan li:last-child{border-bottom:0}
+.plan .t{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.plan b{font-weight:600}
+.plan .d{display:block;font-size:15px;color:var(--muted)}
+.rules{margin:0;padding-left:22px;display:grid;gap:10px}
+.rules li::marker{font-family:var(--sans);font-weight:700;color:var(--red)}
+@media (max-width:520px){.plan li{grid-template-columns:56px 1fr}.plan li .link{grid-column:2}}
+
+/* log */
+.logitem{display:grid;gap:8px}
+.logitem .tag{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
+.logitem .q{margin:0;font-size:16px;color:var(--muted)}
+.logitem .fix{font-family:var(--hand);font-size:19px;color:var(--red);line-height:1.3}
+.empty{text-align:center;color:var(--muted);padding:36px 20px}
+@media (prefers-reduced-motion:no-preference){.fb,.model{animation:in .18s ease-out}@keyframes in{from{transform:translateY(-3px)}to{transform:none}}}
+</style>
+
+<header class="gut"><div class="col top">
+  <a href="../" style="display:inline-block;margin-bottom:12px;font-family:var(--sans);font-size:14px;color:var(--muted)">&larr; Study Hub: CALC1200</a>
+  <p class="eyebrow">Calculus I · Test prep</p>
+  <h1>Chapters 4–6 Study Path</h1>
+  <p class="sub">Limits of every kind · ε–δ, ε–N and M–δ proofs · choosing δ = min{…} · continuity, IVT &amp; EVT · derivatives from the definition</p>
+</div></header>
+
+<nav class="bar gut"><div class="col">
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" data-tab="plan">Start here</button>
+    <button class="tab" role="tab" data-tab="assume">Limit proofs</button>
+    <button class="tab" role="tab" data-tab="delta">Choosing δ</button>
+    <button class="tab" role="tab" data-tab="evtivt">IVT &amp; EVT</button>
+    <button class="tab" role="tab" data-tab="limits">Limits &amp; derivatives</button>
+    <button class="tab" role="tab" data-tab="log">Mistake log <span class="badge" id="logBadge" data-n="0">0</span></button>
+  </div>
+</div></nav>
+
+<main class="gut"><div class="col">
+
+<section class="panel" id="p-plan">
+  <div class="sec-head">
+    <p class="eyebrow">Start here</p>
+    <h2>How to use this study path</h2>
+    <p class="lede">Each part opens with a blue template box, then drills. A wrong answer is marked in red pen with an explanation, and a counterexample where one exists. Every mistake goes into the mistake log so you can review them all at the end. Your answers save in your browser.</p>
+  </div>
+  <div class="card">
+    <ol class="plan">
+      <li><span class="t">Part 1</span><span><b>Limit proofs</b><span class="d">What to assume, and in what order, for ε–δ, ε–N and M–δ proofs.</span></span><button class="link" data-go="assume">Open</button></li>
+      <li><span class="t">Part 2</span><span><b>Choosing δ = min{…}</b><span class="d">Restricting x, bounding the extra factor, and the right numbers in the brackets.</span></span><button class="link" data-go="delta">Open</button></li>
+      <li><span class="t">Part 3</span><span><b>IVT &amp; EVT</b><span class="d">Hypotheses, spotting errors in answers, then four written answers you mark against a rubric.</span></span><button class="link" data-go="evtivt">Open</button></li>
+      <li><span class="t">Part 4</span><span><b>Limits, continuity &amp; derivatives</b><span class="d">Computing limits, types of discontinuity, derivatives from the definition and the derivative rules.</span></span><button class="link" data-go="limits">Open</button></li>
+      <li><span class="t">Review</span><span><b>Mistake log</b><span class="d">Read the red takeaways. Redo anything you missed twice.</span></span><button class="link" data-go="log">Open</button></li>
+    </ol>
+  </div>
+  <div class="card">
+    <p class="eyebrow" style="margin-bottom:10px">Five rules that cost marks when forgotten</p>
+    <ol class="rules">
+      <li><b>ε is given, δ is built.</b> Every ε–δ proof starts “Let ε &gt; 0.” and δ may depend only on ε (and a), never on x.</li>
+      <li><b>Any restriction on x in your scratch work must go inside δ.</b> That is what the min is for: δ = min{1, ε/K}.</li>
+      <li><b>K is the largest value</b> of the extra factor on the restricted interval. If the factor is in a denominator, bound it from below, away from 0.</li>
+      <li><b>IVT/EVT: name the function, say “continuous on [a, b] because …”,</b> show the values, cite the theorem by name, and finish with “there exists c ∈ (a, b) …”.</li>
+      <li><b>Closed interval method checks the endpoints too.</b> Critical numbers inside (a, b) plus f(a) and f(b), then compare.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="panel" id="p-assume" hidden>
+  <div class="sec-head">
+    <p class="eyebrow">Part 1</p>
+    <h2>Making assumptions in limit proofs</h2>
+    <p class="lede">The order of the lines is the logic. ε first, then δ, then x.</p>
+    <div class="meta" data-meta="assume"></div>
+  </div>
+  <div class="card ref">
+    <h3>Template · ε–δ limit</h3>
+    <p><b>Definition.</b> lim<sub>x→a</sub> f(x) = L means: for every ε &gt; 0 there is a δ &gt; 0 such that 0 &lt; |x − a| &lt; δ ⇒ |f(x) − L| &lt; ε.</p>
+    <div class="mb">
+      Let ε &gt; 0. <span class="c">← arbitrary, you don't choose it</span><br>
+      Choose δ = ______ . Then δ &gt; 0. <span class="c">← you choose it, from ε only</span><br>
+      Suppose 0 &lt; |x − a| &lt; δ. <span class="c">← the only thing you know about x</span><br>
+      Then … so |f(x) − L| &lt; ε. <span class="c">← reached, never assumed</span><br>
+      Therefore lim<sub>x→a</sub> f(x) = L. ∎
+    </div>
+    <h4>Other kinds of limits</h4>
+    <div class="tbl"><table>
+      <thead><tr><th>Statement</th><th>Let…</th><th>Suppose…</th><th>Show…</th></tr></thead>
+      <tbody>
+        <tr><td>lim<sub>x→a⁺</sub> f(x) = L</td><td>ε &gt; 0, choose δ</td><td>a &lt; x &lt; a + δ</td><td>|f(x) − L| &lt; ε</td></tr>
+        <tr><td>lim<sub>x→a⁻</sub> f(x) = L</td><td>ε &gt; 0, choose δ</td><td>a − δ &lt; x &lt; a</td><td>|f(x) − L| &lt; ε</td></tr>
+        <tr><td>lim<sub>x→∞</sub> f(x) = L</td><td>ε &gt; 0, choose N</td><td>x &gt; N</td><td>|f(x) − L| &lt; ε</td></tr>
+        <tr><td>lim<sub>x→−∞</sub> f(x) = L</td><td>ε &gt; 0, choose N</td><td>x &lt; N</td><td>|f(x) − L| &lt; ε</td></tr>
+        <tr><td>lim<sub>x→a</sub> f(x) = ∞</td><td>M &gt; 0, choose δ</td><td>0 &lt; |x − a| &lt; δ</td><td>f(x) &gt; M</td></tr>
+        <tr><td>lim<sub>x→a</sub> f(x) = −∞</td><td>M &lt; 0, choose δ</td><td>0 &lt; |x − a| &lt; δ</td><td>f(x) &lt; M</td></tr>
+        <tr><td>lim<sub>x→∞</sub> f(x) = ∞</td><td>M &gt; 0, choose N</td><td>x &gt; N</td><td>f(x) &gt; M</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="items" id="items-assume" style="display:grid;gap:18px"></div>
+</section>
+
+<section class="panel" id="p-delta" hidden>
+  <div class="sec-head">
+    <p class="eyebrow">Part 2</p>
+    <h2>What goes in the brackets of δ = min{…}</h2>
+    <p class="lede">Each wrong option comes with a specific ε and x that break it, so you can see the failure instead of taking it on trust.</p>
+    <div class="meta" data-meta="delta"></div>
+  </div>
+  <div class="card ref">
+    <h3>Template · the min recipe</h3>
+    <ol>
+      <li><b>Factor.</b> Write |f(x) − L| = |x − a| · |g(x)|.</li>
+      <li><b>Restrict.</b> Assume |x − a| &lt; 1. Use ½ instead if 1 would let a denominator reach 0 or leave the domain.</li>
+      <li><b>Bound.</b> On that interval find K with |g(x)| &lt; K. Take the <b>largest</b> |g| can be. If g is a fraction, its denominator gets its <b>smallest</b> size.</li>
+      <li><b>Solve.</b> |x − a| · K &lt; ε whenever |x − a| &lt; ε/K.</li>
+      <li><b>Combine.</b> δ = min{1, ε/K}. Now both restrictions hold at once.</li>
+    </ol>
+    <h4>Worked: lim<sub>x→3</sub> x² = 9</h4>
+    <div class="mb">
+      |x² − 9| = |x − 3| · |x + 3|<br>
+      |x − 3| &lt; 1 ⇒ 2 &lt; x &lt; 4 ⇒ 5 &lt; x + 3 &lt; 7 <span class="c">← use 7, the top</span><br>
+      7 |x − 3| &lt; ε ⇔ |x − 3| &lt; ε/7<br>
+      δ = min{1, ε/7}
+    </div>
+    <p class="note">Why min and not max: |x − a| &lt; min{p, q} gives |x − a| &lt; p <b>and</b> |x − a| &lt; q. A max only guarantees one of them.</p>
+  </div>
+  <div class="items" id="items-delta" style="display:grid;gap:18px"></div>
+</section>
+
+<section class="panel" id="p-evtivt" hidden>
+  <div class="sec-head">
+    <p class="eyebrow">Part 3</p>
+    <h2>Writing EVT &amp; IVT answers</h2>
+    <p class="lede">Most lost marks come from skipped lines, not wrong maths. Learn the template, spot the gaps in other people's answers, then write your own and mark it against the rubric.</p>
+    <div class="meta" data-meta="evtivt"></div>
+  </div>
+  <div class="two">
+    <div class="card ref">
+      <h3>Template · IVT</h3>
+      <p><b>Theorem.</b> If f is continuous on [a, b] and N is strictly between f(a) and f(b), then there exists c ∈ (a, b) with f(c) = N.</p>
+      <ol>
+        <li>Let g(x) = … (move everything to one side if x appears on both sides).</li>
+        <li>g is continuous on <b>[a, b]</b> because … (polynomial, sum/product/quotient with non-zero denominator, composition).</li>
+        <li>g(a) = … &lt; 0 and g(b) = … &gt; 0.</li>
+        <li>So 0 is between g(a) and g(b).</li>
+        <li>By the Intermediate Value Theorem, there exists c ∈ (a, b) such that g(c) = 0, so [original equation] holds at x = c.</li>
+      </ol>
+    </div>
+    <div class="card ref">
+      <h3>Template · EVT</h3>
+      <p><b>Theorem.</b> If f is continuous on a closed, bounded interval [a, b], then f attains an absolute max and an absolute min on [a, b].</p>
+      <ol>
+        <li>f is continuous on [a, b] because …, so by the EVT f has an absolute max and min there.</li>
+        <li>Find f′(x). Critical numbers: f′(c) = 0 or f′(c) does not exist.</li>
+        <li>Keep only critical numbers inside (a, b).</li>
+        <li>Evaluate f at those and at <b>both endpoints</b>.</li>
+        <li>Largest value is the absolute max, smallest is the absolute min. Give the value and every x where it occurs.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="items" id="items-evtivt" style="display:grid;gap:18px"></div>
+</section>
+
+<section class="panel" id="p-limits" hidden>
+  <div class="sec-head">
+    <p class="eyebrow">Part 4</p>
+    <h2>Limits, continuity &amp; derivatives</h2>
+    <p class="lede">Computing limits of every kind, types of discontinuity, derivatives from the definition, and the derivative rules.</p>
+    <div class="meta" data-meta="limits"></div>
+  </div>
+  <div class="card ref">
+    <h3>Toolkit · which technique?</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>You see</th><th>Do this</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>f continuous at a</td><td>Substitute x = a</td><td>lim<sub>x→2</sub> (x² + 1) = 5</td></tr>
+        <tr><td>0/0, polynomials</td><td>Factor, cancel, substitute</td><td>(x² − 9)/(x − 3) = x + 3 → 6</td></tr>
+        <tr><td>0/0 with a square root</td><td>Multiply by the conjugate</td><td>(√x − 2)/(x − 4) → 1/4</td></tr>
+        <tr><td>sin(kx)/x as x → 0</td><td>Rewrite as k · sin(kx)/(kx)</td><td>sin(3x)/x → 3</td></tr>
+        <tr><td>Bounded × (something → 0)</td><td>Squeeze theorem</td><td>x sin(1/x) → 0</td></tr>
+        <tr><td>Rational function, x → ±∞</td><td>Divide by the highest power of x</td><td>(3x² − x)/(5x² + 2) → 3/5</td></tr>
+        <tr><td>∞ − ∞ with a square root</td><td>Multiply by the conjugate</td><td>√(x² + x) − x → 1/2</td></tr>
+        <tr><td>Nonzero number ÷ 0</td><td>Check the sign on each side</td><td>1/(x − 2) → −∞ as x → 2⁻</td></tr>
+      </tbody>
+    </table></div>
+    <h4>Continuity at a</h4>
+    <p>f is continuous at a when all three hold: f(a) is defined, lim<sub>x→a</sub> f(x) exists, and the two are equal.</p>
+    <h4>Derivative from the definition</h4>
+    <div class="mb">f′(x) = lim<sub>h→0</sub> [f(x + h) − f(x)] / h <span class="c">← combine, cancel h, then let h → 0</span></div>
+  </div>
+  <div class="items" id="items-limits" style="display:grid;gap:18px"></div>
+</section>
+
+<section class="panel" id="p-log" hidden>
+  <div class="sec-head">
+    <p class="eyebrow">Final review</p>
+    <h2>Mistake log</h2>
+    <p class="lede">Every wrong answer, wrong proof order and missed rubric item, newest first. Review the red takeaways before your test.</p>
+    <div class="row"><button class="btn warn" id="clearLog">Clear log</button></div>
+  </div>
+  <div id="logList" style="display:grid;gap:14px"></div>
+</section>
+
+</div></main>
+
+<script>
+const DATA = {
+assume:[
+{type:'mc',id:'a1',prompt:'You are proving lim<sub>x→2</sub> (3x + 1) = 7. What is the first line of the proof?',
+ options:[
+  {t:'Let ε > 0.',ok:true,why:'The definition says “for every ε > 0”, so you start with an arbitrary ε someone hands you. Everything after has to work for that ε, whatever it is.'},
+  {t:'Let δ > 0.',why:'δ is not given to you. The definition says “there exists δ”, which means you construct it. Starting with “Let δ > 0” would claim every δ works, which is false and not what was asked.'},
+  {t:'Suppose |(3x + 1) − 7| < ε.',why:'That is the conclusion you are trying to reach. Assuming it makes the proof circular. It belongs in scratch work only.'},
+  {t:'Let ε = 0.01.',why:'A specific ε proves the statement for that one tolerance only. The proof has to work for every ε > 0, so ε must stay arbitrary.'}],
+ fix:'Open every ε–δ proof with “Let ε > 0.” ε is given; δ is built.'},
+{type:'mc',id:'a2',prompt:'After “Let ε > 0. Choose δ = …”, what do you assume about x?',
+ options:[
+  {t:'0 < |x − a| < δ',ok:true,why:'This is exactly the hypothesis in the definition. You assume x is within δ of a (but not equal to a), then show |f(x) − L| < ε.'},
+  {t:'|x − a| < ε',why:'ε measures how close the output f(x) must be to L. The distance from x to a is controlled by δ. Mixing them up is the most common slip in this line.'},
+  {t:'|f(x) − L| < δ',why:'Both letters are in the wrong place. Input distance |x − a| goes with δ; output distance |f(x) − L| goes with ε.'},
+  {t:'|x − a| ≤ δ',why:'The definition uses strict inequalities and the “0 <” part. With ≤ you may only reach |f(x) − L| ≤ ε, and you have allowed x = a, which a limit ignores.'}],
+ fix:'Assume 0 < |x − a| < δ (input ↔ δ). Prove |f(x) − L| < ε (output ↔ ε).'},
+{type:'mc',id:'a3',prompt:'Why does the assumption say 0 < |x − a| < δ and not just |x − a| < δ?',
+ options:[
+  {t:'It excludes x = a. A limit describes f near a, not at a, and f(a) may be undefined or different from L.',ok:true,why:'Example: (x² − 9)/(x − 3) is undefined at 3 but its limit there is 6. The “0 <” keeps x = a out of the picture.'},
+  {t:'Because an absolute value can’t be negative.',why:'Absolute values are already ≥ 0, so that would add nothing. The point is the strict part: it rules out |x − a| = 0, which means x = a.'},
+  {t:'To make sure δ is positive.',why:'δ > 0 is a separate requirement on your choice of δ. The “0 <” is a condition on x.'},
+  {t:'It’s optional; graders accept either.',why:'It changes the meaning. Without it, f(a) would also have to be within ε of L, which is continuity at a, a stronger statement.'}],
+ fix:'“0 < |x − a|” means x ≠ a. The value f(a) never matters for a limit.'},
+{type:'mc',id:'a4',prompt:'In scratch work for lim<sub>x→3</sub> x² = 9 you write “assume |x − 3| < 1, so 2 < x < 4.” What makes this assumption legal in the final proof?',
+ options:[
+  {t:'Choosing δ ≤ 1, for example δ = min{1, ε/7}.',ok:true,why:'The proof only lets you assume 0 < |x − 3| < δ. If δ ≤ 1, then |x − 3| < δ ≤ 1 follows. That is the whole reason the 1 sits inside the min.'},
+  {t:'Nothing extra; x is close to 3 anyway.',why:'“Close” has no meaning in a proof. The only information about x is |x − 3| < δ. If δ could be 10, x could be 12, and |x + 3| < 7 would be false.'},
+  {t:'You can never assume anything extra about x.',why:'You can, as long as your choice of δ forces it. Building extra restrictions into δ is the standard technique for non-linear limits.'},
+  {t:'It is legal as long as ε < 1.',why:'The restriction is on how far x is from 3, which δ controls. You cannot assume ε is small; the min handles large ε for you.'}],
+ fix:'Every extra restriction on x from scratch work must appear inside δ = min{…}.'},
+{type:'mc',id:'a5',prompt:'A student’s “proof” of lim<sub>x→2</sub> (3x + 1) = 7:<div class="mb">|3x + 1 − 7| < ε ⇒ 3|x − 2| < ε ⇒ |x − 2| < ε/3. So δ = ε/3. ∎</div>What is wrong with it?',
+ options:[
+  {t:'It is scratch work written as the proof: it starts by assuming the conclusion |f(x) − L| < ε.',ok:true,why:'The proof has to run forwards: Let ε > 0, choose δ = ε/3, suppose 0 < |x − 2| < δ, then 3|x − 2| < 3δ = ε. Finding δ is not the same as proving it works.'},
+  {t:'δ should be min{1, ε/3}.',why:'There is no extra x-dependent factor in a linear function, so no restriction is needed. ε/3 is fine.'},
+  {t:'δ should be 3ε.',why:'That is too big. ε = 1 gives δ = 3; x = 4 gives |13 − 7| = 6 > 1.'},
+  {t:'Nothing; it is complete.',why:'It never shows that 0 < |x − 2| < δ implies the conclusion. Graders want the forward direction written out.'}],
+ fix:'Scratch work runs backwards from |f(x) − L| < ε. The proof runs forwards from 0 < |x − a| < δ.'},
+{type:'mc',id:'a6',prompt:'Which opening correctly sets up a proof that lim<sub>x→∞</sub> (2x + 1)/x = 2?',
+ options:[
+  {t:'Let ε > 0. Choose N = 1/ε. Suppose x > N.',ok:true,why:'At infinity, “x close to a” becomes “x large”, written x > N. Then x > 0 and |(2x + 1)/x − 2| = 1/x < 1/N = ε.'},
+  {t:'Let ε > 0. Choose δ = 1/ε. Suppose 0 < |x − ∞| < δ.',why:'∞ is not a number, so |x − ∞| means nothing. “x → ∞” is written as x > N.'},
+  {t:'Let N > 0. Choose ε = 1/N. Suppose x > N.',why:'The quantifiers are reversed. ε comes first and is arbitrary; you choose N in terms of ε.'},
+  {t:'Let ε > 0. Suppose x > ε.',why:'The threshold has to be chosen so it works, here N = 1/ε. Using ε itself fails: ε = 0.1 and x = 1 gives |3 − 2| = 1 > 0.1.'}],
+ fix:'x → ∞: “Let ε > 0. Choose N = … Suppose x > N.” Then show |f(x) − L| < ε.'},
+{type:'mc',id:'a7',prompt:'Which opening correctly proves lim<sub>x→0</sub> 1/x² = ∞?',
+ options:[
+  {t:'Let M > 0. Choose δ = 1/√M. Suppose 0 < |x| < δ.',ok:true,why:'Then x² < 1/M, so 1/x² > M. For infinite limits the target is “bigger than any M”, and a bigger M needs a smaller δ.'},
+  {t:'Let ε > 0. Choose δ = ε. Suppose 0 < |x| < δ.',why:'For an infinite limit, f(x) isn’t within ε of a number L. It has to exceed any bound M, so the proof starts “Let M > 0.”'},
+  {t:'Let M > 0. Choose δ = √M. Suppose 0 < |x| < δ.',why:'Wrong direction: bigger M gives bigger δ, so x may sit further from 0. M = 100 gives δ = 10; x = 5 gives 1/25 = 0.04, nowhere near 100.'},
+  {t:'Let M > 0. Choose δ = 1/M. Suppose 0 < |x| < δ.',why:'This gives 1/x² > M², which is less than M when M < 1. With M = ¼: δ = 4 and x = 3 gives 1/9 < ¼. Solve x² < 1/M properly to get δ = 1/√M.'}],
+ fix:'f(x) → ∞: “Let M > 0. Choose δ. Suppose 0 < |x − a| < δ.” Show f(x) > M. Bigger M ⇒ smaller δ.'},
+{type:'order',id:'o1',prompt:'Put the proof of lim<sub>x→3</sub> x² = 9 in order. Two lines are traps; leave them out.',
+ steps:[
+  {t:'Let ε > 0.',why:'Every ε–δ proof starts by fixing an arbitrary ε.'},
+  {t:'Choose δ = min{1, ε/7}. Then δ > 0.',why:'δ comes right after ε and uses only ε. Say it is positive.'},
+  {t:'Suppose 0 < |x − 3| < δ.',why:'x is introduced only after δ exists, with the assumption from the definition.'},
+  {t:'Since δ ≤ 1, |x − 3| < 1, so 2 < x < 4 and |x + 3| < 7.',why:'Use the first number in the min to bound the extra factor.'},
+  {t:'Since δ ≤ ε/7, |x − 3| < ε/7.',why:'Use the second number in the min.'},
+  {t:'So |x² − 9| = |x − 3| · |x + 3| < (ε/7) · 7 = ε.',why:'Multiply the two bounds to reach the conclusion.'},
+  {t:'Therefore lim x→3 of x² = 9. ∎',why:'State what you proved.'}],
+ order:[[0],[1],[2],[3,4],[5],[6]],
+ traps:[
+  {t:'Suppose |x² − 9| < ε.',why:'That is the conclusion. Assuming it makes the proof circular.'},
+  {t:'Let δ > 0.',why:'δ is not arbitrary. You construct it from ε, so the line is “Choose δ = …”.'}],
+ fix:'Order: ε, then δ, then x, then bound, then conclusion.'}
+],
+delta:[
+{type:'mc',id:'d1',prompt:'Scratch work for lim<sub>x→3</sub> x² = 9 gives |x² − 9| = |x − 3| · |x + 3|. Which δ gives a correct proof?',
+ options:[
+  {t:'δ = min{1, ε/7}',ok:true,why:'The 1 forces |x − 3| < 1, so 2 < x < 4 and |x + 3| < 7. The ε/7 then gives |x − 3| · |x + 3| < (ε/7) · 7 = ε.'},
+  {t:'δ = ε/7',why:'The bound |x + 3| < 7 only holds because you assumed |x − 3| < 1, and nothing enforces that. Counterexample: ε = 70 gives δ = 10; x = 12 is within 10 of 3, but |144 − 9| = 135 > 70.'},
+  {t:'δ = min{1, ε/5}',why:'On 2 < x < 4, x + 3 is between 5 and 7. You need the largest value, 7, or the product can exceed ε. Counterexample: ε = 5 gives δ = 1; x = 3.9 gives |15.21 − 9| = 6.21 > 5.'},
+  {t:'δ = max{1, ε/7}',why:'max picks the larger number, so x only satisfies one restriction. Counterexample: ε = 0.07 gives δ = 1; x = 3.9 gives 6.21 > 0.07.'}],
+ fix:'δ = min{1, ε/K}, with K the LARGEST value of the extra factor when |x − a| < 1.'},
+{type:'mc',id:'d2',prompt:'For lim<sub>x→2</sub> (x² + x) = 6, |x² + x − 6| = |x − 2| · |x + 3|. Restricting to |x − 2| < 1, which δ works?',
+ options:[
+  {t:'δ = min{1, ε/6}',ok:true,why:'|x − 2| < 1 gives 1 < x < 3, so 4 < x + 3 < 6. Use the top value, 6.'},
+  {t:'δ = min{1, ε/5}',why:'5 is x + 3 at the centre x = 2, but x can be anywhere in (1, 3), where x + 3 gets close to 6. Counterexample: ε = 5, δ = 1, x = 2.9 gives |8.41 + 2.9 − 6| = 5.31 > 5.'},
+  {t:'δ = min{1, ε/4}',why:'4 is the smallest value of x + 3 on (1, 3). A lower bound makes the inequality point the wrong way. ε = 4, δ = 1, x = 2.9 gives 5.31 > 4.'},
+  {t:'δ = min{1, 6ε}',why:'You need 6|x − 2| < ε, which means |x − 2| < ε/6. Multiplying inverts it. ε = 0.1 gives δ = 0.6; x = 2.5 gives |6.25 + 2.5 − 6| = 2.75 > 0.1.'}],
+ fix:'Plug in the endpoint that makes the factor largest, not the centre value x = a.'},
+{type:'mc',id:'d3',prompt:'Same limit, lim<sub>x→2</sub> (x² + x) = 6. A friend writes δ = min{½, ε/6} instead of min{1, ε/6}. Is the proof still valid?',
+ options:[
+  {t:'Yes. A smaller δ only shrinks the set of x you must handle; |x − 2| < ½ still gives |x + 3| < 5.5 < 6.',ok:true,why:'δ is never unique. Any positive δ smaller than one that works also works.'},
+  {t:'No. δ has to be exactly min{1, ε/6}.',why:'δ is not unique. The definition asks for some δ, and any smaller positive δ also satisfies it.'},
+  {t:'No. The cap in the min must always be 1.',why:'1 is a convenient choice, not a rule. Any positive cap works if the bound is redone; with ½ you could even use ε/5.5.'},
+  {t:'Only when ε < ½.',why:'The proof must hold for every ε > 0, and this one does. The min handles large ε.'}],
+ fix:'Any smaller positive δ also works. When unsure about a bound, shrinking δ is safe.'},
+{type:'mc',id:'d4',prompt:'For lim<sub>x→1</sub> 1/x = 1, |1/x − 1| = |x − 1| / |x|. Which δ works?',
+ options:[
+  {t:'δ = min{½, ε/2}',ok:true,why:'|x − 1| < ½ gives ½ < x < 3/2, so 1/|x| < 2. Then |1/x − 1| < 2|x − 1| < 2 · ε/2 = ε.'},
+  {t:'δ = min{1, ε/2}',why:'|x − 1| < 1 allows x close to 0, where 1/x blows up, so 1/|x| has no bound. Counterexample: ε = 2 gives δ = 1; x = 0.1 gives |10 − 1| = 9 > 2.'},
+  {t:'δ = min{½, 2ε}',why:'Inverted. With 1/|x| < 2 you need 2|x − 1| < ε, so |x − 1| < ε/2. Counterexample: ε = 0.1 gives δ = 0.2; x = 0.85 gives |1.176 − 1| = 0.176 > 0.1.'},
+  {t:'δ = min{½, 2ε/3}',why:'This uses the largest |x| (3/2), but |x| is in the denominator, so you need its smallest value (½). Counterexample: ε = ¾ gives δ = ½; x = 0.51 gives |1.96 − 1| = 0.96 > 0.75.'}],
+ fix:'Factor in a denominator: cap δ so x stays away from 0 (½ here), then bound |x| from BELOW.'},
+{type:'mc',id:'d5',prompt:'For lim<sub>x→4</sub> (5x − 3) = 17, do you need a min?',
+ options:[
+  {t:'No. |5x − 3 − 17| = 5|x − 4|, so δ = ε/5 works.',ok:true,why:'No x-dependent factor is left to bound, so there is nothing to restrict. min{1, ε/5} would also be correct, just unnecessary.'},
+  {t:'Yes, δ must be min{1, ε/5}.',why:'It would be valid (smaller δ always is), but it isn’t required. The min only earns its place when you bound a factor like |x + 3| that changes with x.'},
+  {t:'No, δ = 5ε.',why:'You need 5|x − 4| < ε, so |x − 4| < ε/5. With δ = 5ε and ε = 1, x = 6 gives |27 − 17| = 10 > 1.'},
+  {t:'No, δ = ε.',why:'The factor 5 is missing. ε = 1, x = 4.5 gives |19.5 − 17| = 2.5 > 1.'}],
+ fix:'Linear f: δ = ε / |slope|. Save the min for non-linear f.'},
+{type:'mc',id:'d6',prompt:'You chose δ = min{1, ε/7} and assumed 0 < |x − 3| < δ. Which facts about x can you now use?',
+ options:[
+  {t:'|x − 3| < 1 and |x − 3| < ε/7, both at once.',ok:true,why:'|x − 3| < δ and δ is at most each number in the min, so x satisfies both. That is the entire reason to use min.'},
+  {t:'Only |x − 3| < 1.',why:'δ ≤ ε/7 as well, so you also get |x − 3| < ε/7. You need both: one to bound |x + 3|, one to finish.'},
+  {t:'Only whichever of 1 and ε/7 is smaller.',why:'If |x − 3| is less than the smaller number, it is automatically less than the larger one too. You get both.'},
+  {t:'|x − 3| = min{1, ε/7}.',why:'The assumption is a strict inequality, |x − 3| < δ, not an equation.'}],
+ fix:'|x − a| < min{p, q} ⇒ |x − a| < p AND |x − a| < q. Write both lines in the proof.'},
+{type:'mc',id:'d7',prompt:'For lim<sub>x→2</sub> x³ = 8, |x³ − 8| = |x − 2| · |x² + 2x + 4|. Restricting to |x − 2| < 1, which δ works?',
+ options:[
+  {t:'δ = min{1, ε/19}',ok:true,why:'1 < x < 3, and x² + 2x + 4 increases for x > 0, so it stays below 9 + 6 + 4 = 19.'},
+  {t:'δ = min{1, ε/12}',why:'12 is the value at the centre x = 2. Counterexample: ε = 12, δ = 1, x = 2.9 gives |24.389 − 8| = 16.389 > 12.'},
+  {t:'δ = min{1, ε/7}',why:'7 = 1 + 2 + 4 is the value at x = 1, a lower bound. ε = 7, δ = 1, x = 2.9 gives 16.389 > 7.'},
+  {t:'δ = min{1, 19ε}',why:'Inverted: you need |x − 2| < ε/19. ε = 0.1 gives δ = 1; x = 2.9 gives 16.389 > 0.1.'}],
+ fix:'Bound each piece using the worst x in (a − 1, a + 1). For x² + 2x + 4 on (1, 3) that is x = 3.'},
+{type:'mc',id:'d8',prompt:'For lim<sub>x→4</sub> √x = 2, |√x − 2| = |x − 4| / (√x + 2) ≤ |x − 4| / 2. Which δ is correct?',
+ options:[
+  {t:'δ = min{4, 2ε}',ok:true,why:'The 4 keeps 0 < x < 8, so √x is defined. Then |√x − 2| ≤ |x − 4| / 2 < 2ε / 2 = ε.'},
+  {t:'δ = 2ε',why:'The algebra is right, but large ε breaks the domain: ε = 5 gives δ = 10, which allows x = −3, where √x is undefined. The 4 in the min keeps x positive.'},
+  {t:'δ = min{4, (√x + 2)ε}',why:'δ cannot depend on x. You fix δ before x is chosen, so it may use only ε (and the point a).'},
+  {t:'δ = max{4, 2ε}',why:'max makes δ at least 4, so x can be negative or far away. Use min to keep both restrictions.'}],
+ fix:'δ depends only on ε. A min can also protect the domain (keep x where f is defined).'}
+],
+evtivt:[
+{type:'mc',id:'e1',prompt:'f(x) = 1/x on (0, 1]. Does the EVT guarantee an absolute maximum?',
+ options:[
+  {t:'No. The interval isn’t closed (0 is missing), and in fact f is unbounded near 0, so there is no max.',ok:true,why:'EVT needs continuity on a closed, bounded interval. Here 1/x → ∞ as x → 0⁺. (There is an absolute min, 1 at x = 1.)'},
+  {t:'Yes, because f is continuous on (0, 1].',why:'Continuity alone isn’t enough. The interval must also be closed and bounded.'},
+  {t:'Yes, because the interval is bounded.',why:'Bounded but not closed. The missing endpoint 0 is exactly where f escapes to ∞.'},
+  {t:'No, because f is not differentiable.',why:'EVT doesn’t need differentiability, and 1/x is differentiable on (0, 1] anyway. The problem is the open end.'}],
+ fix:'EVT needs both: f continuous AND the interval closed and bounded, [a, b].'},
+{type:'mc',id:'e2',prompt:'To show x³ + x − 1 = 0 has a root in (0, 1) with the IVT, which hypothesis must you state?',
+ options:[
+  {t:'f(x) = x³ + x − 1 is continuous on [0, 1] because it is a polynomial.',ok:true,why:'Continuity on the closed interval is the only hypothesis of the IVT (plus N between the endpoint values).'},
+  {t:'f is differentiable on (0, 1).',why:'True, but that is a hypothesis of the Mean Value Theorem and Rolle’s Theorem, not the IVT.'},
+  {t:'f(0) = f(1).',why:'That is Rolle’s Theorem. Here f(0) = −1 and f(1) = 1, and you need them on opposite sides of 0.'},
+  {t:'f is increasing on [0, 1].',why:'That would show the root is unique. The IVT question only asks for existence.'}],
+ fix:'IVT needs only continuity on [a, b]. Differentiability and f(a) = f(b) belong to MVT and Rolle.'},
+{type:'mc',id:'e3',prompt:'Which IVT conclusion is written correctly for f(x) = x³ + x − 1 on [0, 1]?',
+ options:[
+  {t:'There exists c ∈ (0, 1) such that f(c) = 0.',ok:true,why:'Existence of some c in the open interval, stated with the theorem’s wording.'},
+  {t:'f(c) = 0 for c = 0.68.',why:'The IVT says a c exists. It never tells you its value, so don’t name one.'},
+  {t:'There exists c ∈ (0, 1) such that f′(c) = 0.',why:'That is Rolle’s Theorem’s conclusion, about the derivative.'},
+  {t:'f has exactly one root in (0, 1).',why:'Uniqueness needs an extra argument (for example f′(x) = 3x² + 1 > 0). The IVT alone gives at least one.'}],
+ fix:'IVT conclusion: “there exists c ∈ (a, b) such that f(c) = N.” Existence only, no value.'},
+{type:'mc',id:'e4',prompt:'g(x) = 1/(x − 2) on [1, 3]. g(1) = −1 and g(3) = 1. Can you conclude g(c) = 0 for some c in (1, 3)?',
+ options:[
+  {t:'No. g isn’t continuous on [1, 3] (undefined at x = 2), so the IVT doesn’t apply. In fact 1/(x − 2) is never 0.',ok:true,why:'A sign change means nothing without continuity on the whole closed interval.'},
+  {t:'Yes, by the IVT, since g changes sign.',why:'The sign change is only half the hypothesis. g jumps from −∞ to +∞ at x = 2 and never equals 0.'},
+  {t:'Yes, because g is continuous on its domain.',why:'Continuous on its domain is not continuous on [1, 3]. The interval contains x = 2, where g is undefined.'},
+  {t:'No, because g is decreasing.',why:'Decreasing has nothing to do with it. The reason is the discontinuity at x = 2.'}],
+ fix:'Before citing IVT or EVT, check [a, b] for zero denominators, logs of non-positive numbers, roots of negatives.'},
+{type:'mc',id:'e5',prompt:'A student writes: “Let f(x) = x³ + x − 1. f(0) = −1 and f(1) = 1, so by the IVT f(c) = 0 for some c in (0, 1).” What costs marks?',
+ options:[
+  {t:'No continuity statement: “f is a polynomial, so it is continuous on [0, 1].”',ok:true,why:'Continuity is the hypothesis that lets the theorem apply. Graders look for it, with a reason.'},
+  {t:'It never computes f′(x).',why:'The derivative plays no role in the IVT.'},
+  {t:'It doesn’t find the value of c.',why:'The IVT only promises c exists. You are not expected to find it.'},
+  {t:'Nothing; it is complete.',why:'It skips the main hypothesis. Most rubrics give a mark for “continuous on [0, 1] because …”.'}],
+ fix:'Always write “f is continuous on [a, b] because …” before citing IVT or EVT.'},
+{type:'mc',id:'e6',prompt:'A student writes: “f is continuous on (0, 2) and f(0) < 0 < f(2), so by the IVT there is c with f(c) = 0.” What fix earns full marks?',
+ options:[
+  {t:'Say f is continuous on the closed interval [0, 2].',ok:true,why:'The IVT uses f(0) and f(2), so f must be continuous at the endpoints too. Example: f(0) = −1 and f(x) = 1 for 0 < x ≤ 2 is continuous on (0, 2), has f(0) < 0 < f(2), and never equals 0.'},
+  {t:'Say f is differentiable on (0, 2).',why:'That is an MVT hypothesis. It doesn’t fix the missing endpoints.'},
+  {t:'Give the value of c.',why:'The IVT is about existence; nobody expects a value.'},
+  {t:'Swap to f(0) > 0 > f(2).',why:'Either direction works. N just has to be between f(a) and f(b).'}],
+ fix:'Continuity goes on the CLOSED interval [a, b].'},
+{type:'mc',id:'e7',prompt:'Absolute extrema of f(x) = x³ − 3x + 1 on [0, 3]. A student writes: “f′(x) = 3x² − 3 = 0 ⇒ x = ±1. f(1) = −1, f(−1) = 3. Absolute max 3, absolute min −1.” What went wrong?',
+ options:[
+  {t:'x = −1 is outside [0, 3], and the endpoints were never checked. f(0) = 1, f(3) = 19, so the absolute max is 19 at x = 3.',ok:true,why:'Closed interval method: critical numbers inside (a, b), plus both endpoints, then compare. The absolute min −1 at x = 1 was right.'},
+  {t:'They should have used the second derivative test.',why:'That classifies local extrema. For absolute extrema on [a, b], compare f-values at critical numbers and endpoints.'},
+  {t:'They should have solved f(x) = 0.',why:'Roots of f are where the graph crosses the axis, not where it peaks or dips.'},
+  {t:'Nothing; the answer is correct.',why:'f(3) = 27 − 9 + 1 = 19 is larger than 3, and x = −1 isn’t even in the interval.'}],
+ fix:'Critical numbers IN (a, b) + both endpoints. Endpoints are where marks go missing.'},
+{type:'order',id:'o2',prompt:'Put the IVT answer to “Show x³ + x − 1 = 0 has a solution in (0, 1)” in order. Two lines are traps.',
+ steps:[
+  {t:'Let f(x) = x³ + x − 1.',why:'Name the function you apply the theorem to.'},
+  {t:'f is a polynomial, so f is continuous on [0, 1].',why:'State the hypothesis, with a reason, on the closed interval.'},
+  {t:'f(0) = −1 < 0 and f(1) = 1 > 0.',why:'Compute both endpoint values.'},
+  {t:'So 0 is between f(0) and f(1).',why:'Say explicitly that N = 0 is between the endpoint values.'},
+  {t:'By the Intermediate Value Theorem, there exists c ∈ (0, 1) with f(c) = 0.',why:'Cite the theorem by name and state its conclusion.'},
+  {t:'So x³ + x − 1 = 0 has a solution in (0, 1).',why:'Translate back to the question asked.'}],
+ order:[[0],[1,2],[3],[4],[5]],
+ traps:[
+  {t:'Let c = 0.68.',why:'The IVT gives existence only. Never pick a value for c.'},
+  {t:'Suppose f(c) = 0.',why:'That assumes what you want to show.'}],
+ fix:'IVT order: name f → continuous on [a, b] → endpoint values → N is between → “By the IVT, there exists c ∈ (a, b)…” → answer the question.'},
+{type:'write',id:'w1',prompt:'Show that the equation cos x = x has a solution in (0, π/2).',
+ model:'<p>Let g(x) = cos x − x. Since cos x and x are continuous everywhere, their difference g is continuous on [0, π/2].</p><p>g(0) = cos 0 − 0 = 1 &gt; 0, and g(π/2) = cos(π/2) − π/2 = −π/2 &lt; 0.</p><p>So 0 is between g(π/2) and g(0). By the Intermediate Value Theorem, there exists c ∈ (0, π/2) such that g(c) = 0, that is, cos c = c.</p>',
+ rubric:[
+  {t:'Defined one function g(x) = cos x − x',why:'The IVT is about one function hitting one value. With x on both sides, move everything over first.'},
+  {t:'Said g is continuous on the CLOSED interval [0, π/2], with a reason',why:'This is the hypothesis. No reason or an open interval loses the mark.'},
+  {t:'Computed g(0) and g(π/2) with actual numbers',why:'Show the values, not just “positive” and “negative”.'},
+  {t:'Stated that 0 is between the two values',why:'This is the second hypothesis. Write it out.'},
+  {t:'Wrote “By the Intermediate Value Theorem, there exists c ∈ (0, π/2)…”',why:'Name the theorem and use existence wording.'},
+  {t:'Translated back: cos c = c',why:'Answer the question that was asked, not just g(c) = 0.'}]},
+{type:'write',id:'w2',prompt:'Explain why f(x) = x³ − 6x² + 9x + 2 has an absolute max and min on [0, 4], then find them.',
+ model:'<p>f is a polynomial, so it is continuous on the closed, bounded interval [0, 4]. By the Extreme Value Theorem, f attains an absolute maximum and minimum on [0, 4].</p><p>f′(x) = 3x² − 12x + 9 = 3(x − 1)(x − 3). f′ exists everywhere, so the critical numbers are x = 1 and x = 3, both in (0, 4).</p><p>f(0) = 2, f(1) = 6, f(3) = 2, f(4) = 6.</p><p>Absolute max: 6, at x = 1 and x = 4. Absolute min: 2, at x = 0 and x = 3.</p>',
+ rubric:[
+  {t:'Justified existence: continuous (polynomial) on a closed, bounded interval, then cited the EVT',why:'The question says “explain why”. That mark is only for the EVT sentence.'},
+  {t:'Found f′(x) and factored it correctly',why:'3(x − 1)(x − 3). Factoring makes the critical numbers easy to read off.'},
+  {t:'Noted f′ exists everywhere and both critical numbers are inside (0, 4)',why:'Critical numbers include where f′ doesn’t exist, and only those inside the interval count.'},
+  {t:'Evaluated f at both critical numbers AND both endpoints',why:'Four values. Skipping endpoints is the classic mistake; here f(4) ties the max.'},
+  {t:'Stated each extreme value with ALL x-locations (ties)',why:'The max 6 occurs at x = 1 and x = 4; the min 2 at x = 0 and x = 3. Listing one location loses part marks.'}]},
+{type:'write',id:'w3',prompt:'Show that f(x) = x⁵ + 2x takes the value 10 for some x in (1, 2).',
+ model:'<p>f is a polynomial, so it is continuous on [1, 2].</p><p>f(1) = 1 + 2 = 3 and f(2) = 32 + 4 = 36.</p><p>Since 3 &lt; 10 &lt; 36, the value N = 10 is between f(1) and f(2). By the Intermediate Value Theorem, there exists c ∈ (1, 2) such that f(c) = 10.</p>',
+ rubric:[
+  {t:'Continuity on [1, 2] with a reason',why:'Same hypothesis every time.'},
+  {t:'Computed f(1) = 3 and f(2) = 36',why:'Show the endpoint values.'},
+  {t:'Wrote “3 < 10 < 36” (N between the values)',why:'N doesn’t have to be 0. Here you can use N = 10 directly, no need to subtract.'},
+  {t:'Concluded with the IVT by name and c ∈ (1, 2), f(c) = 10',why:'Existence wording, named theorem.'}]},
+{type:'write',id:'w4',prompt:'Does f(x) = x² on (−1, 2) have an absolute maximum? An absolute minimum? Does the EVT apply?',
+ model:'<p>The EVT does not apply because (−1, 2) is not closed.</p><p>As x → 2⁻, x² gets arbitrarily close to 4, but x = 2 is not in the interval, so f never reaches 4 and every value it does reach is beaten by a larger one. There is no absolute maximum.</p><p>There is an absolute minimum: 0 at x = 0, since x² ≥ 0 and 0 is in the interval.</p><p>When a hypothesis fails, the EVT just gives no guarantee. Extrema may or may not exist.</p>',
+ rubric:[
+  {t:'Named the failed hypothesis: the interval is not closed',why:'f is continuous, so continuity isn’t the problem. Be specific.'},
+  {t:'Explained no absolute max: values approach 4 but 4 is never reached',why:'“Approached but not attained” is the key phrase.'},
+  {t:'Found the absolute min 0 at x = 0',why:'Extrema can exist even when the EVT doesn’t apply.'},
+  {t:'Did NOT claim “EVT fails, so there are no extrema”',why:'A theorem whose hypotheses fail tells you nothing either way.'}]}
+],
+limits:[
+{type:'mc',id:'l1',prompt:'lim<sub>x→2⁻</sub> 1/(x − 2) = ?',
+ options:[
+  {t:'−∞',ok:true,why:'For x slightly less than 2, x − 2 is a tiny negative number, so 1/(x − 2) is a huge negative number.'},
+  {t:'+∞',why:'Check the sign: x < 2 makes the denominator negative. Try x = 1.9: 1/(−0.1) = −10.'},
+  {t:'Does not exist',why:'The two-sided limit doesn’t exist (−∞ left, +∞ right), but this asks only for the left-hand limit, which is −∞.'},
+  {t:'0',why:'A small denominator makes a fraction big, not small.'}],
+ fix:'One-sided infinite limits: test the sign with a number just on that side (x = 1.9).'},
+{type:'mc',id:'l2',prompt:'lim<sub>x→∞</sub> (3x² − x) / (5x² + 2) = ?',
+ options:[
+  {t:'3/5',ok:true,why:'Divide top and bottom by x²: (3 − 1/x)/(5 + 2/x²) → 3/5.'},
+  {t:'0',why:'That happens when the denominator has the higher degree. Here both are degree 2.'},
+  {t:'∞',why:'That happens when the numerator has the higher degree.'},
+  {t:'−1/2',why:'That’s the ratio of the lower-order terms, which vanish after dividing by x².'}],
+ fix:'Equal degrees at ±∞ → ratio of leading coefficients.'},
+{type:'mc',id:'l3',prompt:'lim<sub>x→−∞</sub> √(x² + 1) / x = ?',
+ options:[
+  {t:'−1',ok:true,why:'√(x² + 1) behaves like √(x²) = |x| = −x for x < 0, so the ratio → −x/x = −1.'},
+  {t:'1',why:'√(x²) = |x|, not x. For negative x, |x| = −x, which flips the sign.'},
+  {t:'0',why:'Top and bottom both grow like |x|.'},
+  {t:'−∞',why:'Top and bottom grow at the same rate, so the ratio settles at a finite number.'}],
+ fix:'√(x²) = |x|. At −∞, |x| = −x, so pull out −x, not x.'},
+{type:'mc',id:'l4',prompt:'lim<sub>x→0</sub> |x| / x = ?',
+ options:[
+  {t:'Does not exist',ok:true,why:'From the right it is x/x = 1; from the left it is −x/x = −1. The one-sided limits disagree.'},
+  {t:'1',why:'That is only the right-hand limit.'},
+  {t:'−1',why:'That is only the left-hand limit.'},
+  {t:'0',why:'A 0/0 form doesn’t mean the limit is 0. Simplify each side.'}],
+ fix:'A two-sided limit exists only if both one-sided limits exist and agree.'},
+{type:'mc',id:'l5',prompt:'lim<sub>x→0</sub> x · sin(1/x) = ?',
+ options:[
+  {t:'0',ok:true,why:'Squeeze: −|x| ≤ x sin(1/x) ≤ |x|, and both outer functions → 0.'},
+  {t:'Does not exist',why:'sin(1/x) alone oscillates, but multiplying by x → 0 squeezes the oscillation flat.'},
+  {t:'1',why:'You may be thinking of sin x / x → 1. This is a different limit.'},
+  {t:'∞',why:'|x sin(1/x)| ≤ |x|, which is tiny near 0.'}],
+ fix:'Bounded × (something → 0) → 0. Write the squeeze inequality to earn the marks.'},
+{type:'mc',id:'l6',prompt:'lim<sub>x→∞</sub> ( √(x² + x) − x ) = ?',
+ options:[
+  {t:'1/2',ok:true,why:'Multiply by the conjugate: x / (√(x² + x) + x). Divide by x: 1 / (√(1 + 1/x) + 1) → 1/2.'},
+  {t:'0',why:'∞ − ∞ is indeterminate, not 0.'},
+  {t:'∞',why:'Both terms grow, but their difference levels off. Use the conjugate.'},
+  {t:'1',why:'After the conjugate the denominator is √(x² + x) + x ≈ 2x, not x.'}],
+ fix:'∞ − ∞ with a square root: multiply by the conjugate.'},
+{type:'mc',id:'dd1',prompt:'From the limit definition, what is f′(x) for f(x) = 1/x?',
+ options:[
+  {t:'−1/x²',ok:true,why:'[1/(x + h) − 1/x]/h = −h / (h · x(x + h)) = −1/(x(x + h)) → −1/x².'},
+  {t:'1/x²',why:'Sign lost when combining fractions: x − (x + h) = −h.'},
+  {t:'−1/(x(x + h))',why:'Right algebra, but you forgot to let h → 0.'},
+  {t:'ln x',why:'That is an antiderivative of 1/x, not its derivative.'}],
+ fix:'Combine fractions first, cancel h, then let h → 0. Don’t leave h in the answer.'},
+{type:'mc',id:'dd2',prompt:'Is f(x) = |x| differentiable at x = 0?',
+ options:[
+  {t:'No. The difference quotient |h|/h → −1 from the left and 1 from the right.',ok:true,why:'The one-sided slopes disagree, so there is a corner and no derivative.'},
+  {t:'Yes, because |x| is continuous at 0.',why:'Differentiable ⇒ continuous, but not the other way around. |x| is the standard counterexample.'},
+  {t:'Yes, f′(0) = 0.',why:'The left slope is −1 and the right slope is 1. No single slope exists.'},
+  {t:'No, because |x| isn’t continuous at 0.',why:'|x| is continuous at 0. It fails only because of the corner.'}],
+ fix:'Continuity does not imply differentiability. Check left and right difference quotients.'},
+{type:'mc',id:'dd3',prompt:'lim<sub>h→0</sub> ( √(4 + h) − 2 ) / h = ?',
+ options:[
+  {t:'1/4',ok:true,why:'It is f′(4) for f(x) = √x, and f′(x) = 1/(2√x), giving 1/4. Rationalizing gives 1/(√(4 + h) + 2) → 1/4, the same.'},
+  {t:'1/2',why:'That is 1/√4, missing the ½ in f′(x) = 1/(2√x).'},
+  {t:'0',why:'0/0 is indeterminate, not 0.'},
+  {t:'Does not exist',why:'0/0 is indeterminate, not undefined. Rationalize or spot the derivative.'}],
+ fix:'(f(a + h) − f(a))/h as h → 0 is f′(a). Spotting it skips the algebra.'},
+{type:'mc',id:'dd4',prompt:'d/dx [ sin(x²) ] = ?',
+ options:[
+  {t:'2x cos(x²)',ok:true,why:'Chain rule: outer derivative cos(·) with the inside unchanged, times the inside’s derivative 2x.'},
+  {t:'cos(x²)',why:'Missing the chain-rule factor (x²)′ = 2x.'},
+  {t:'cos(2x)',why:'The inside stays x² in the outer derivative; 2x goes outside as a factor.'},
+  {t:'2x cos(2x)',why:'The inside should stay x², not become 2x.'}],
+ fix:'Chain rule: outer′(inside unchanged) × inside′.'},
+{type:'mc',id:'n1',prompt:'lim<sub>x→3</sub> (x² − 9) / (x − 3) = ?',
+ options:[
+  {t:'6',ok:true,why:'Factor: (x − 3)(x + 3)/(x − 3) = x + 3 for x ≠ 3. Then substitute: 3 + 3 = 6.'},
+  {t:'0',why:'Substituting gives 0/0, which is indeterminate, not 0. It means you have more work to do.'},
+  {t:'Does not exist',why:'The function is undefined at x = 3, but a limit ignores x = 3 itself. Near 3 the values approach 6.'},
+  {t:'3',why:'3 is the point x approaches, not the value the function approaches.'}],
+ fix:'0/0 means more work: factor, cancel, then substitute.'},
+{type:'mc',id:'n2',prompt:'lim<sub>x→0</sub> sin(3x) / x = ?',
+ options:[
+  {t:'3',ok:true,why:'Rewrite as 3 · sin(3x)/(3x). As x → 0, 3x → 0, so sin(3x)/(3x) → 1 and the limit is 3.'},
+  {t:'1',why:'sin u / u → 1 needs the same u on top and bottom. Here the bottom is x, not 3x, so a factor of 3 is left over.'},
+  {t:'1/3',why:'Inverted. Multiply and divide by 3 so the bottom matches: 3 · sin(3x)/(3x).'},
+  {t:'0',why:'Substituting gives 0/0, which is indeterminate, not 0.'}],
+ fix:'Make the bottom match the inside: sin(kx)/x = k · sin(kx)/(kx) → k.'},
+{type:'mc',id:'n3',prompt:'f is continuous at x = a means:',
+ options:[
+  {t:'f(a) is defined, lim<sub>x→a</sub> f(x) exists, and they are equal.',ok:true,why:'All three conditions are needed. Compactly: lim f(x) = f(a).'},
+  {t:'f(a) is defined and lim<sub>x→a</sub> f(x) exists.',why:'They must also be equal. If f(2) = 5 but f(x) → 4 near 2, both exist and f is still not continuous at 2.'},
+  {t:'f is differentiable at a.',why:'That is a stronger condition. |x| is continuous at 0 but not differentiable there.'},
+  {t:'The left and right limits at a both exist.',why:'They must also agree with each other and with f(a). A jump has both one-sided limits but no continuity.'}],
+ fix:'Continuity at a: f(a) defined, the limit exists, and lim f(x) = f(a).'},
+{type:'mc',id:'n4',prompt:'f(x) = (x² − 1) / (x − 1). What kind of discontinuity does f have at x = 1?',
+ options:[
+  {t:'Removable',ok:true,why:'For x ≠ 1, f(x) = x + 1, so the limit at 1 exists (it is 2) but f(1) is undefined. Defining f(1) = 2 would fix it.'},
+  {t:'Jump',why:'A jump needs one-sided limits that disagree. Here both sides approach 2.'},
+  {t:'Infinite',why:'After cancelling, no zero denominator is left. The values approach 2; they don’t blow up.'},
+  {t:'None; f is continuous at 1',why:'f(1) is undefined (0/0), and continuity needs f(1) to be defined.'}],
+ fix:'Removable: limit exists, f(a) missing or different. Jump: one-sided limits differ. Infinite: f → ±∞.'},
+{type:'mc',id:'n5',prompt:'f(x) = kx + 1 for x &lt; 2, and f(x) = x² for x ≥ 2. Which k makes f continuous at x = 2?',
+ options:[
+  {t:'k = 3/2',ok:true,why:'Right side and f(2): 2² = 4. Left limit: 2k + 1. Continuity needs 2k + 1 = 4, so k = 3/2.'},
+  {t:'k = 2',why:'Then the left limit is 2(2) + 1 = 5, but f(2) = 4. The pieces don’t meet.'},
+  {t:'k = 5/2',why:'That solves 2k − 1 = 4. The left piece is kx + 1, so the equation is 2k + 1 = 4.'},
+  {t:'No value of k works',why:'Any k with 2k + 1 = 4 works. Set the two sides equal at x = 2 and solve.'}],
+ fix:'Piecewise continuity: set left limit = right limit = f(a) at the break point, then solve.'},
+{type:'mc',id:'n6',prompt:'The tangent line to y = x² at x = 3 is:',
+ options:[
+  {t:'y = 6x − 9',ok:true,why:'Slope f′(3) = 2(3) = 6. Point (3, 9). y − 9 = 6(x − 3), so y = 6x − 9.'},
+  {t:'y = 2x + 3',why:'2 is from f′(x) = 2x before plugging in. The slope is f′(3) = 6, not 2.'},
+  {t:'y = 6x',why:'The slope is right, but the line must pass through (3, 9). Here 6(3) = 18, not 9.'},
+  {t:'y − 3 = 6(x − 9)',why:'The point is (3, 9): x = 3 and y = 9. The coordinates are swapped.'}],
+ fix:'Tangent at x = a: slope f′(a), point (a, f(a)), then y − f(a) = f′(a)(x − a).'},
+{type:'mc',id:'n7',prompt:'d/dx [ x² sin x ] = ?',
+ options:[
+  {t:'2x sin x + x² cos x',ok:true,why:'Product rule: (x²)′ sin x + x² (sin x)′ = 2x sin x + x² cos x.'},
+  {t:'2x cos x',why:'That multiplies the two derivatives. The derivative of a product is f′g + fg′.'},
+  {t:'2x sin x',why:'Only the first half of the product rule. The x² cos x term is missing.'},
+  {t:'x² cos x',why:'Only the second half of the product rule. The 2x sin x term is missing.'}],
+ fix:'Product rule: (fg)′ = f′g + fg′. Two terms, always.'},
+{type:'mc',id:'n8',prompt:'d/dx [ x / (x² + 1) ] = ?',
+ options:[
+  {t:'(1 − x²) / (x² + 1)²',ok:true,why:'Quotient rule: [1 · (x² + 1) − x · 2x] / (x² + 1)² = (1 − x²)/(x² + 1)².'},
+  {t:'(x² − 1) / (x² + 1)²',why:'The top is in the wrong order. It is top′ · bottom − top · bottom′.'},
+  {t:'1 / (2x)',why:'Derivative of the top over derivative of the bottom is not the quotient rule.'},
+  {t:'(1 − x²) / (x² + 1)',why:'The bottom must be squared: (x² + 1)².'}],
+ fix:'Quotient rule: (top′ · bottom − top · bottom′) / bottom². Top′ goes first.'}
+]};
+
+const SEC_NAMES={assume:'Limit proofs',delta:'Choosing δ',evtivt:'IVT & EVT',limits:'Limits & derivatives'};
+const KEY='calc1200-ch4-6-v1';
+let S={ans:{},first:{},ord:{},rub:{},drafts:{},log:[]};
+try{const raw=localStorage.getItem(KEY);if(raw)S=Object.assign(S,JSON.parse(raw));}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+
+function hash(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;}
+function shuffled(n,seed){let a=[...Array(n).keys()],x=hash(seed)||1;
+  const r=()=>{x^=x<<13;x>>>=0;x^=x>>17;x^=x<<5;x>>>=0;return x/4294967296;};
+  for(let i=n-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const txt=h=>{const d=document.createElement('div');d.innerHTML=h;return d.textContent.replace(/\s+/g,' ').trim();};
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+function addLog(e){
+  if(S.log.some(l=>l.q===e.q&&l.you===e.you))return;
+  e.t=Date.now();S.log.unshift(e);save();renderLog();
+}
+
+/* ---------- multiple choice ---------- */
+function renderMC(q,sec,n,host){
+  const el=host||document.createElement('div');
+  el.className='card';el.id='q-'+q.id;
+  const order=shuffled(q.options.length,q.id);
+  const chosen=S.ans[q.id];const done=chosen!==undefined;
+  const correctIdx=q.options.findIndex(o=>o.ok);
+  let h=`<div class="qhead"><span class="qn">Question ${n}</span><span class="qtype">Multiple choice</span></div><div class="prompt">${q.prompt}</div><div class="opts">`;
+  order.forEach((oi,pos)=>{
+    const o=q.options[oi];let cls='opt';
+    if(done){if(o.ok)cls+=' right';else if(oi===chosen)cls+=' wrong';else cls+=' dim';}
+    h+=`<button class="${cls}" data-i="${oi}" ${done?'disabled':''}><span class="k">${'ABCD'[pos]}</span><span>${esc(o.t)}</span></button>`;
+  });
+  h+='</div>';
+  if(done){
+    const c=q.options[chosen],r=q.options[correctIdx];
+    if(c.ok){
+      h+=`<div class="fb good"><span class="pen">✓ Correct</span><p>${esc(c.why)}</p></div>`;
+    }else{
+      h+=`<div class="fb bad"><span class="pen">✗ Here’s what went wrong</span>
+        <p><span class="lab">You chose</span>${esc(c.t)}</p>
+        <p><span class="lab">Why it’s wrong</span>${esc(c.why)}</p>
+        <p><span class="lab">Correct answer</span>${esc(r.t)} ${esc(r.why)}</p>
+        <p class="take"><span class="lab">Remember</span>${esc(q.fix)}</p></div>`;
+    }
+    const others=q.options.map((o,i)=>({o,i})).filter(x=>!x.o.ok&&x.i!==chosen);
+    h+=`<details class="others" style="margin-top:12px"><summary>Why the other options are wrong</summary><ul>${others.map(x=>`<li><b>${esc(x.o.t)}</b> ${esc(x.o.why)}</li>`).join('')}</ul></details>`;
+    h+=`<div class="row"><button class="btn ghost" data-retry>Try again</button></div>`;
+  }
+  el.innerHTML=h;
+  el.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
+    const i=+b.dataset.i;S.ans[q.id]=i;
+    if(S.first[q.id]===undefined)S.first[q.id]=!!q.options[i].ok;
+    if(!q.options[i].ok){const r=q.options[correctIdx];addLog({sec:SEC_NAMES[sec],q:txt(q.prompt),you:q.options[i].t,why:q.options[i].why,right:r.t,fix:q.fix});}
+    save();renderMC(q,sec,n,el);renderMeta(sec);
+  }));
+  const rt=el.querySelector('[data-retry]');
+  if(rt)rt.addEventListener('click',()=>{delete S.ans[q.id];save();renderMC(q,sec,n,el);renderMeta(sec);});
+  return el;
+}
+
+/* ---------- ordering ---------- */
+function checkOrder(o,seq){
+  const trap=seq.find(k=>k[0]==='t');
+  if(trap){const t=o.traps[+trap.slice(1)];return{ok:false,bad:seq.indexOf(trap),title:`“${t.t}” doesn’t belong in the proof.`,why:t.why,you:t.t};}
+  let pos=0;
+  for(const g of o.order){
+    const slice=seq.slice(pos,pos+g.length).map(k=>+k.slice(1));
+    if(!(slice.length===g.length&&g.every(i=>slice.includes(i)))){
+      let p=pos;for(let j=0;j<g.length;j++){const k=seq[pos+j];if(k===undefined||!g.includes(+k.slice(1))){p=pos+j;break;}}
+      const exp=o.steps[g.find(i=>!slice.includes(i))];
+      if(seq.length<=p)return{ok:false,bad:p,title:`Your proof stops early. Line ${p+1} should be: “${exp.t}”`,why:exp.why,you:'Stopped after line '+p};
+      const got=o.steps[+seq[p].slice(1)];
+      return{ok:false,bad:p,title:`Line ${p+1} is out of place. It should be: “${exp.t}”`,why:exp.why+' You put “'+got.t+'” there instead.',you:got.t+' (as line '+(p+1)+')'};
+    }
+    pos+=g.length;
+  }
+  return{ok:true};
+}
+function renderOrder(o,sec,n,host){
+  const el=host||document.createElement('div');el.className='card';el.id='q-'+o.id;
+  const st=S.ord[o.id]||(S.ord[o.id]={seq:[],res:null});
+  const all=[...o.steps.map((_,i)=>'s'+i),...o.traps.map((_,i)=>'t'+i)];
+  const pool=shuffled(all.length,o.id+'p').map(i=>all[i]).filter(k=>!st.seq.includes(k));
+  const lineText=k=>k[0]==='s'?o.steps[+k.slice(1)].t:o.traps[+k.slice(1)].t;
+  const res=st.res;
+  let h=`<div class="qhead"><span class="qn">Question ${n}</span><span class="qtype">Proof order</span></div><div class="prompt">${o.prompt}</div><div class="ord">
+   <div><h5>Your proof</h5><div class="lines seq">${st.seq.map((k,i)=>{let c='line';if(res){if(res.ok||i<res.bad)c+=' okl';else if(i===res.bad)c+=' badl';}return `<button class="${c}" data-rm="${k}">${esc(lineText(k))}</button>`;}).join('')}</div></div>
+   <div><h5>Available lines</h5><div class="lines">${pool.map(k=>`<button class="line" data-add="${k}">${esc(lineText(k))}</button>`).join('')}</div></div></div>
+   <div class="row"><button class="btn" data-check ${st.seq.length?'':'disabled'}>Check my proof</button><button class="btn ghost" data-reset>Start over</button></div>`;
+  if(res){
+    h+=res.ok?`<div class="fb good"><span class="pen">✓ That’s a complete, correctly ordered proof</span><p>${esc(o.fix)}</p></div>`
+      :`<div class="fb bad"><span class="pen">✗ Here’s what went wrong</span><p>${esc(res.title)}</p><p><span class="lab">Why</span>${esc(res.why)}</p><p class="take"><span class="lab">Remember</span>${esc(o.fix)}</p></div>`;
+  }
+  el.innerHTML=h;
+  el.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>{st.seq.push(b.dataset.add);st.res=null;save();renderOrder(o,sec,n,el);}));
+  el.querySelectorAll('[data-rm]').forEach(b=>b.addEventListener('click',()=>{st.seq=st.seq.filter(k=>k!==b.dataset.rm);st.res=null;save();renderOrder(o,sec,n,el);}));
+  el.querySelector('[data-reset]').addEventListener('click',()=>{st.seq=[];st.res=null;save();renderOrder(o,sec,n,el);});
+  el.querySelector('[data-check]').addEventListener('click',()=>{
+    const r=checkOrder(o,st.seq);st.res=r;
+    if(S.first[o.id]===undefined)S.first[o.id]=r.ok;
+    if(!r.ok)addLog({sec:SEC_NAMES[sec],q:txt(o.prompt),you:r.you,why:r.title+' '+r.why,right:'See the correct order in the drill.',fix:o.fix});
+    save();renderOrder(o,sec,n,el);renderMeta(sec);
+  });
+  return el;
+}
+
+/* ---------- writing with rubric ---------- */
+function renderWrite(w,sec,n,host){
+  const el=host||document.createElement('div');el.className='card';el.id='q-'+w.id;
+  const st=S.rub[w.id]||(S.rub[w.id]={shown:false,checks:[],logged:false});
+  let h=`<div class="qhead"><span class="qn">Question ${n}</span><span class="qtype">Write it out · mark yourself</span></div><div class="prompt">${esc(w.prompt)}</div>
+   <label class="note" for="draft-${w.id}" style="display:block;margin-bottom:6px">Write the full answer as you would on the exam (or on paper, then tap the button).</label>
+   <textarea id="draft-${w.id}" placeholder="Let g(x) = …">${esc(S.drafts[w.id]||'')}</textarea>`;
+  if(!st.shown){h+=`<div class="row"><button class="btn" data-show>Show model answer and mark mine</button></div>`;}
+  else{
+    h+=`<div class="model"><span class="lab">Model answer</span>${w.model}</div>
+     <div class="rub"><p class="eyebrow" style="margin:4px 0 0">Tick what your answer included</p>${w.rubric.map((r,i)=>`<label><input type="checkbox" id="rb-${w.id}-${i}" data-i="${i}" ${st.checks[i]?'checked':''} ${st.logged?'disabled':''}><span>${esc(r.t)}<small>${esc(r.why)}</small></span></label>`).join('')}</div>`;
+    if(!st.logged)h+=`<div class="row"><button class="btn" data-done>Done marking</button></div>`;
+    else{
+      const missed=w.rubric.filter((_,i)=>!st.checks[i]);
+      h+=missed.length?`<div class="fb bad"><span class="pen">✗ ${missed.length} of ${w.rubric.length} missed, added to your log</span><p>${missed.map(m=>esc(m.t)).join(' · ')}</p></div>`
+        :`<div class="fb good"><span class="pen">✓ Full marks</span><p>Every rubric line is there.</p></div>`;
+      h+=`<div class="row"><button class="btn ghost" data-again>Write it again</button></div>`;
+    }
+  }
+  el.innerHTML=h;
+  const ta=el.querySelector('textarea');
+  ta.addEventListener('input',()=>{S.drafts[w.id]=ta.value;save();});
+  const sh=el.querySelector('[data-show]');if(sh)sh.addEventListener('click',()=>{st.shown=true;save();renderWrite(w,sec,n,el);});
+  el.querySelectorAll('.rub input').forEach(c=>c.addEventListener('change',()=>{st.checks[+c.dataset.i]=c.checked;save();}));
+  const dn=el.querySelector('[data-done]');
+  if(dn)dn.addEventListener('click',()=>{
+    st.logged=true;const missed=w.rubric.filter((_,i)=>!st.checks[i]);
+    if(S.first[w.id]===undefined)S.first[w.id]=missed.length===0;
+    missed.forEach(m=>addLog({sec:SEC_NAMES[sec],q:w.prompt,you:'Left out of your write-up',why:m.why,right:m.t,fix:m.t}));
+    save();renderWrite(w,sec,n,el);renderMeta(sec);
+  });
+  const ag=el.querySelector('[data-again]');
+  if(ag)ag.addEventListener('click',()=>{S.rub[w.id]={shown:false,checks:[],logged:false};S.drafts[w.id]='';save();renderWrite(w,sec,n,el);});
+  return el;
+}
+
+/* ---------- section meta ---------- */
+function renderMeta(sec){
+  const m=document.querySelector(`[data-meta="${sec}"]`);if(!m)return;
+  const items=DATA[sec];
+  const tried=items.filter(q=>S.first[q.id]!==undefined).length;
+  const right=items.filter(q=>S.first[q.id]===true).length;
+  m.innerHTML=`<span><strong>${right}</strong> right first try</span><span><strong>${tried}</strong> of ${items.length} attempted</span><button class="link" data-resetsec>Reset this section</button>`;
+  m.querySelector('[data-resetsec]').addEventListener('click',()=>{
+    items.forEach(q=>{delete S.ans[q.id];delete S.first[q.id];delete S.ord[q.id];delete S.rub[q.id];delete S.drafts[q.id];});
+    save();renderSection(sec);
+  });
+}
+function renderSection(sec){
+  const host=document.getElementById('items-'+sec);host.innerHTML='';
+  DATA[sec].forEach((q,i)=>{
+    const f=q.type==='mc'?renderMC:q.type==='order'?renderOrder:renderWrite;
+    host.appendChild(f(q,sec,i+1));
+  });
+  renderMeta(sec);
+}
+
+/* ---------- log ---------- */
+let clearArmed=false;
+function renderLog(){
+  const n=S.log.length;const b=document.getElementById('logBadge');b.textContent=n;b.dataset.n=n;
+  const L=document.getElementById('logList');
+  if(!n){L.innerHTML=`<div class="card empty"><p style="margin:0 0 4px;font-size:18px;color:var(--ink)">No mistakes logged yet.</p><p style="margin:0" class="note">Wrong answers, out-of-order proofs and missed rubric lines show up here automatically.</p></div>`;return;}
+  L.innerHTML=S.log.map(e=>`<div class="card logitem"><span class="tag">${esc(e.sec)}</span><p class="q">${esc(e.q)}</p>
+    <div class="fb bad" style="margin-top:0"><p><span class="lab">You</span>${esc(e.you)}</p><p><span class="lab">Why it’s wrong</span>${esc(e.why)}</p><p><span class="lab">Correct</span>${esc(e.right)}</p></div>
+    <div class="fix">→ ${esc(e.fix)}</div></div>`).join('');
+}
+document.getElementById('clearLog').addEventListener('click',e=>{
+  if(!clearArmed){clearArmed=true;e.target.textContent='Tap again to clear everything';setTimeout(()=>{clearArmed=false;e.target.textContent='Clear log';},3500);return;}
+  S.log=[];save();renderLog();clearArmed=false;e.target.textContent='Clear log';
+});
+
+/* ---------- tabs ---------- */
+const TABS=['plan','assume','delta','evtivt','limits','log'];
+function show(t){
+  if(!TABS.includes(t))t='plan';
+  TABS.forEach(x=>{document.getElementById('p-'+x).hidden=x!==t;});
+  document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===t));
+  try{history.replaceState(null,'','#'+t);}catch(e){}
+  window.scrollTo({top:0});
+}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.go)));
+
+['assume','delta','evtivt','limits'].forEach(renderSection);
+renderLog();
+let h0='';try{h0=(location.hash||'').slice(1);}catch(e){}
+show(h0||'plan');
+</script>
+
+</body></html>
